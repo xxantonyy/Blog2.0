@@ -1,0 +1,21 @@
+{
+  "Профиль": "Profile",
+  "Редактировать": "Change data",
+  "Ваша фамилия": "Your lastname",
+  "Ваше имя": "Your name",
+  "profile.erorr message": "Error",
+  "profile.error message": "Try to refresh website",
+  "Отменить": "Cancel",
+  "Сохранить": "Save",
+  "Возраст": "Years",
+  "Город": "Your City",
+  "Введите число": "Enter number",
+  "profile.enterusername": "Enter user name",
+  "profile.Enter avatatr": "Enter url at avatar",
+  "Введите имя пользователя": "Enter Username",
+  "Введите ссылку на аватар": "Enter url at avatar",
+  "Введите вашу страну": "Enter your country",
+  "Введите вашу валюту": "Enter your currency",
+  "Укажите валюту": "Choose currency",
+  "Выберите страну": "Choose country"
+}
