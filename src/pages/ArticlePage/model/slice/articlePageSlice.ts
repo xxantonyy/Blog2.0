@@ -19,7 +19,7 @@ export const getArticles = articlePageAdapter.getSelectors<StateSchema>(
 );
 
 const articlePageSlice = createSlice({
-    name: 'articleDetailsCommentsSlice',
+    name: 'articlePageSlice',
     initialState: articlePageAdapter.getInitialState<ArticlePageSchema>({
         isLoading: false,
         error: undefined,
@@ -41,6 +41,7 @@ const articlePageSlice = createSlice({
         initState: (state) => {
             const view = localStorage.getItem(ARTICLE_VIEW_LOCAL_STORAGE_KEY) as ArticleView;
             state.view = view;
+            state.page = 1;
             state.limit = view === ArticleView.BIG ? 4 : 9;
             state._inited = true;
         },

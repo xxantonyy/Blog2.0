@@ -13,7 +13,7 @@ import { useSelector } from 'react-redux';
 import {
     getArticView, getArticleIsloading,
 } from 'pages/ArticlePage/model/selectors/getArticleSelectors';
-import { Page } from 'shared/ui/Page/Page';
+import { Page } from 'widgets/Page/Page';
 import { fetchNextArticlePage } from 'pages/ArticlePage/model/service/fetchNextArticlePage';
 import { initArticlesPage } from 'pages/ArticlePage/model/service/initArticlesPage';
 import { articlePageActions, articlePageReducer, getArticles } from '../../model/slice/articlePageSlice';
@@ -45,7 +45,7 @@ const ActiclesPage = (props: ActiclesPageProps) => {
     }, [dispatch]);
 
     useInitialEffect(() => {
-        dispatch(initArticlesPage);
+        dispatch(initArticlesPage());
     });
 
     return (

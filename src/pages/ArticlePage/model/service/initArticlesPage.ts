@@ -18,6 +18,7 @@ export const initArticlesPage = createAsyncThunk<
             } = thunkApi;
 
             const inited = getArticleInited(getState());
+            console.log(inited);
 
             if (!inited) {
                 dispatch(articlePageActions.initState());
