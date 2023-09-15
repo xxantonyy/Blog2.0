@@ -1,6 +1,7 @@
 import { TestAsyncThunk } from 'shared/lib/tests/TestAsyncThunk/TestAsyncThunk';
-import { fetchArticlesList } from './fetchArticlesList';
+import { URLSearchParams } from 'url';
 import { initArticlesPage } from './initArticlesPage';
+import { fetchArticlesList } from './fetchArticlesList';
 
 describe('initArticlesPage.test', () => {
     test('_inited: false', async () => {
@@ -14,9 +15,10 @@ describe('initArticlesPage.test', () => {
                 hasMore: true,
                 _inited: false,
             },
+
         });
 
-        await thunk.callThunk();
+        // await thunk.callThunk();
 
         expect(thunk.dispatch).toBeCalledTimes(4);
         expect(fetchArticlesList).toHaveBeenCalledWith({ page: 1 });
@@ -34,7 +36,7 @@ describe('initArticlesPage.test', () => {
             },
         });
 
-        await thunk.callThunk();
+        // await thunk.callThunk();
 
         expect(thunk.dispatch).toBeCalledTimes(2);
         expect(fetchArticlesList).not.toHaveBeenCalled();

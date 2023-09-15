@@ -14,11 +14,11 @@
   "articles": [
     {
       "id": "1",
-      "title": "Javascript news",
+      "title": "Javascript news СВЕЖАЯ",
       "subtitle": "Что нового в JS за 2022 год?",
-      "img": "https://teknotower.com/wp-content/uploads/2020/11/js.png",
+      "img": "https://changellenge.com/upload/resize_cache/iblock/b76/1240_600_2/b76ab4078193d04a9e7659fbccd24dab.jpg",
       "views": 1022,
-      "createdAt": "26.02.2022",
+      "createdAt": "26.04.2022",
       "userId": "1",
       "type": [
         "IT"
@@ -51,7 +51,7 @@
         {
           "id": "2",
           "type": "IMAGE",
-          "src": "https://hsto.org/r/w1560/getpro/habr/post_images/d56/a02/ffc/d56a02ffc62949b42904ca00c63d8cc1.png",
+          "src": "https://naked-science.ru/wp-content/uploads/2016/08/field_image_computer-programming_0.jpeg",
           "title": "Рисунок 1 - скриншот сайта"
         },
         {
@@ -71,7 +71,7 @@
         {
           "id": "8",
           "type": "IMAGE",
-          "src": "https://hsto.org/r/w1560/getpro/habr/post_images/d56/a02/ffc/d56a02ffc62949b42904ca00c63d8cc1.png",
+          "src": "https://gbcdn.mrgcdn.ru/uploads/geekbrains/public/ckeditor_assets/pictures/8749/retina-de697f3823c7007073876907190c5ba5.jpg",
           "title": "Рисунок 1 - скриншот сайта"
         },
         {
@@ -88,8 +88,8 @@
       "id": "2",
       "title": "Python news",
       "subtitle": "Что нового в JS за 2022 год?",
-      "img": "https://habrastorage.org/getpro/habr/post_images/d49/8d3/817/d498d381796001c1acbb991bb52bc199.webp",
-      "views": 1022,
+      "img": "https://gbcdn.mrgcdn.ru/uploads/geekbrains/public/ckeditor_assets/pictures/8749/retina-de697f3823c7007073876907190c5ba5.jpg",
+      "views": 5204,
       "createdAt": "26.02.2022",
       "userId": "1",
       "type": [
@@ -110,11 +110,11 @@
     },
     {
       "id": "3",
-      "title": "Kotlin news",
+      "title": "Kotlin news 2019",
       "subtitle": "Что нового в JS за 2022 год?",
-      "img": "https://gbcdn.mrgcdn.ru/uploads/post/1116/og_cover_image/7be512347c8377d063f988039edc669f",
-      "views": 1022,
-      "createdAt": "26.02.2022",
+      "img": "https://storage.theoryandpractice.ru/tnp/uploads/image_unit/000/102/400/image/base_b5d9f8d555.gif",
+      "views": 94002,
+      "createdAt": "26.02.2019",
       "userId": "1",
       "type": [
         "IT"
@@ -134,11 +134,11 @@
     },
     {
       "id": "4",
-      "title": "Python news",
+      "title": "Scala news",
       "subtitle": "Что нового в JS за 2022 год?",
-      "img": "https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://coursera-course-photos.s3.amazonaws.com/e3/f27630d13511e88dd241e68ded0cea/K_logo_800x800.png?auto=format%2Ccompress&dpr=1",
-      "views": 1022,
-      "createdAt": "26.02.2022",
+      "img": "https://abit.pskgu.ru/download.php/pskgu/files/PAGES/IMAGES/77501720-263a-4348-8912-95ac72eb1c2c/E32F0CE8813460190632BBB8BA933FC9?title=5.jpg",
+      "views": 10222,
+      "createdAt": "24.01.2022",
       "userId": "1",
       "type": [
         "IT"
@@ -158,11 +158,11 @@
     },
     {
       "id": "5",
-      "title": "Kotlin news",
+      "title": "Golang news",
       "subtitle": "Что нового в JS за 2022 год?",
-      "img": "https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://coursera-course-photos.s3.amazonaws.com/e3/f27630d13511e88dd241e68ded0cea/K_logo_800x800.png?auto=format%2Ccompress&dpr=1",
-      "views": 1022,
-      "createdAt": "26.02.2022",
+      "img": "https://www.kadrof.ru/sites/default/files/illustrations/study_programming.jpg",
+      "views": 10222,
+      "createdAt": "26.02.2020",
       "userId": "1",
       "type": [
         "IT"
@@ -182,9 +182,9 @@
     },
     {
       "id": "6",
-      "title": "Python news",
+      "title": "Java news",
       "subtitle": "Что нового в JS за 2022 год?",
-      "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTcRnseBcxb7KWCRn4jiKsiVje95qWUdSqOpGrWz_WH0A&s",
+      "img": "https://coddyschool.com/upload/iblock/3c2/dfju492sag9tjryw333s0vxopar0e6h3/Prevyu-Frontend_razrabotchik-415x300-72ppi_min.png",
       "views": 1022,
       "createdAt": "26.02.2022",
       "userId": "1",
@@ -206,11 +206,11 @@
     },
     {
       "id": "7",
-      "title": "Kotlin news",
+      "title": "Ruby news",
       "subtitle": "Что нового в JS за 2022 год?",
-      "img": "https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://coursera-course-photos.s3.amazonaws.com/e3/f27630d13511e88dd241e68ded0cea/K_logo_800x800.png?auto=format%2Ccompress&dpr=1",
-      "views": 1022,
-      "createdAt": "26.02.2022",
+      "img": "https://xakep.ru/wp-content/uploads/2019/07/231433/forth-h.jpg",
+      "views": 100,
+      "createdAt": "21.02.2022",
       "userId": "1",
       "type": [
         "IT"
@@ -230,10 +230,10 @@
     },
     {
       "id": "8",
-      "title": "Python news",
+      "title": "TypeScript news",
       "subtitle": "Что нового в JS за 2022 год?",
-      "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTcRnseBcxb7KWCRn4jiKsiVje95qWUdSqOpGrWz_WH0A&s",
-      "views": 1022,
+      "img": "https://sky.pro/media/wp-content/uploads/2023/01/7.1.-kak-osvoit-programmirovanie-s-nulya.png",
+      "views": 102222,
       "createdAt": "26.02.2022",
       "userId": "1",
       "type": [
@@ -256,7 +256,7 @@
       "id": "9",
       "title": "Kotlin news",
       "subtitle": "Что нового в JS за 2022 год?",
-      "img": "https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://coursera-course-photos.s3.amazonaws.com/e3/f27630d13511e88dd241e68ded0cea/K_logo_800x800.png?auto=format%2Ccompress&dpr=1",
+      "img": "https://sky.pro/media/wp-content/uploads/2022/02/glavnaya-2-1.png",
       "views": 1022,
       "createdAt": "26.02.2022",
       "userId": "1",
@@ -280,7 +280,7 @@
       "id": "10",
       "title": "Python news",
       "subtitle": "Что нового в JS за 2022 год?",
-      "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTcRnseBcxb7KWCRn4jiKsiVje95qWUdSqOpGrWz_WH0A&s",
+      "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQQqEsMV2THq6pGqpMY-65-v_boPevpT8KiWg&usqp=CAU",
       "views": 1022,
       "createdAt": "26.02.2022",
       "userId": "1",
@@ -304,7 +304,7 @@
       "id": "11",
       "title": "Kotlin news",
       "subtitle": "Что нового в JS за 2022 год?",
-      "img": "https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://coursera-course-photos.s3.amazonaws.com/e3/f27630d13511e88dd241e68ded0cea/K_logo_800x800.png?auto=format%2Ccompress&dpr=1",
+      "img": "https://media.istockphoto.com/id/1413990928/ru/%D1%84%D0%BE%D1%82%D0%BE/%D0%B0%D0%B1%D1%81%D1%82%D1%80%D0%B0%D0%BA%D1%82%D0%BD%D0%B0%D1%8F-%D0%BA%D0%BE%D0%BD%D1%86%D0%B5%D0%BF%D1%86%D0%B8%D1%8F-%D0%B0%D0%B2%D1%82%D0%BE%D0%BC%D0%B0%D1%82%D0%B8%D0%B7%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%BD%D0%BE%D0%B3%D0%BE-%D0%BF%D1%80%D0%BE%D0%B5%D0%BA%D1%82%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D1%8F-%D1%81-%D0%BA%D0%BE%D0%B4%D0%BE%D0%BC-%D1%8F%D0%B7%D1%8B%D0%BA%D0%B0-%D0%BF%D1%80%D0%BE%D0%B3%D1%80%D0%B0%D0%BC%D0%BC%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D1%8F-python.jpg?s=612x612&w=0&k=20&c=WWElPlfjIeWK0qM2sfEXxtS3hUS7-4faQNXEJbl8WR0=",
       "views": 1022,
       "createdAt": "26.02.2022",
       "userId": "1",
@@ -328,7 +328,7 @@
       "id": "12",
       "title": "Python news",
       "subtitle": "Что нового в JS за 2022 год?",
-      "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTcRnseBcxb7KWCRn4jiKsiVje95qWUdSqOpGrWz_WH0A&s",
+      "img": "https://images.ctfassets.net/kb5nb3knl2oy/5TvnSsjVORbfHlldf2HTn3/15d9be1d5c50a202f79a265e4c06da36/1_best_programming_language_for_AI.jpg?w=1200&h=430&q=80",
       "views": 1022,
       "createdAt": "26.02.2022",
       "userId": "1",
@@ -352,7 +352,7 @@
       "id": "13",
       "title": "Kotlin news",
       "subtitle": "Что нового в JS за 2022 год?",
-      "img": "https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://coursera-course-photos.s3.amazonaws.com/e3/f27630d13511e88dd241e68ded0cea/K_logo_800x800.png?auto=format%2Ccompress&dpr=1",
+      "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQfhKw7u0Qt0bh53WyyvG8EJ1CBbyE7SsOSWw&usqp=CAU",
       "views": 1022,
       "createdAt": "26.02.2022",
       "userId": "1",
@@ -376,7 +376,7 @@
       "id": "14",
       "title": "Python news",
       "subtitle": "Что нового в JS за 2022 год?",
-      "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTcRnseBcxb7KWCRn4jiKsiVje95qWUdSqOpGrWz_WH0A&s",
+      "img": "https://vladtime.ru/uploads/posts/2022-05/1652327835_1598593335_0b9685db-data-science-vs-software-engineering.jpg",
       "views": 1022,
       "createdAt": "26.02.2022",
       "userId": "1",
@@ -400,7 +400,7 @@
       "id": "15",
       "title": "Kotlin news",
       "subtitle": "Что нового в JS за 2022 год?",
-      "img": "https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://coursera-course-photos.s3.amazonaws.com/e3/f27630d13511e88dd241e68ded0cea/K_logo_800x800.png?auto=format%2Ccompress&dpr=1",
+      "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRuTBMQ7PwNnTvIYff8rMcXN6hhUOtVdPAhXA&usqp=CAU",
       "views": 1022,
       "createdAt": "26.02.2022",
       "userId": "1",
@@ -424,7 +424,7 @@
       "id": "16",
       "title": "Python news",
       "subtitle": "Что нового в JS за 2022 год?",
-      "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTcRnseBcxb7KWCRn4jiKsiVje95qWUdSqOpGrWz_WH0A&s",
+      "img": "https://cdn.fishki.net/upload/post/2018/02/26/2522513/tn/ab0f911d8707b882a27df302afd85902.jpg",
       "views": 1022,
       "createdAt": "26.02.2022",
       "userId": "1",
@@ -448,7 +448,7 @@
       "id": "17",
       "title": "Kotlin news",
       "subtitle": "Что нового в JS за 2022 год?",
-      "img": "https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://coursera-course-photos.s3.amazonaws.com/e3/f27630d13511e88dd241e68ded0cea/K_logo_800x800.png?auto=format%2Ccompress&dpr=1",
+      "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQfqBhkessB6BdwO_wdfVG_Ihli5PEG-YVmzeGC184IQQejIhbj-h1Sc7Lt3zxDXatkJa0&usqp=CAU",
       "views": 1022,
       "createdAt": "26.02.2022",
       "userId": "1",
@@ -469,15 +469,39 @@
       ]
     },
     {
-      "id": "1",
-      "title": "Kotlin news",
-      "subtitle": "Что нового в JS за 2022 год?",
-      "img": "https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://coursera-course-photos.s3.amazonaws.com/e3/f27630d13511e88dd241e68ded0cea/K_logo_800x800.png?auto=format%2Ccompress&dpr=1",
+      "id": "18",
+      "title": "Экономическая статья - ИНФЛЯЦИЯ!",
+      "subtitle": "Экономика",
+      "img": "https://fikiwiki.com/uploads/posts/2022-02/1644890742_8-fikiwiki-com-p-kartinki-yazikov-programmirovaniya-10.jpg",
       "views": 1022,
       "createdAt": "26.02.2022",
       "userId": "1",
       "type": [
-        "IT"
+        "ECONOMICS"
+      ],
+      "blocks": [
+        {
+          "id": "1",
+          "type": "TEXT",
+          "title": "Заголовок этого блока",
+          "paragraphs": [
+            "Программа, которую по традиции называют «Hello, world!», очень проста. Она выводит куда-либо фразу «Hello, world!», или другую подобную, средствами некоего языка.",
+            "JavaScript — это язык, программы на котором можно выполнять в разных средах. В нашем случае речь идёт о браузерах и о серверной платформе Node.js. Если до сих пор вы не написали ни строчки кода на JS и читаете этот текст в браузере, на настольном компьютере, это значит, что вы буквально в считанных секундах от своей первой JavaScript-программы.",
+            "Существуют и другие способы запуска JS-кода в браузере. Так, если говорить об обычном использовании программ на JavaScript, они загружаются в браузер для обеспечения работы веб-страниц. Как правило, код оформляют в виде отдельных файлов с расширением .js, которые подключают к веб-страницам, но программный код можно включать и непосредственно в код страницы. Всё это делается с помощью тега <script>. Когда браузер обнаруживает такой код, он выполняет его. Подробности о теге script можно посмотреть на сайте w3school.com. В частности, рассмотрим пример, демонстрирующий работу с веб-страницей средствами JavaScript, приведённый на этом ресурсе. Этот пример можно запустить и средствами данного ресурса (ищите кнопку Try it Yourself), но мы поступим немного иначе. А именно, создадим в каком-нибудь текстовом редакторе (например — в VS Code или в Notepad++) новый файл, который назовём hello.html, и добавим в него следующий код:"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "18",
+      "title": "Научная статья - Биология",
+      "subtitle": "БиологиЯ",
+      "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQjE4oPQnXtC4lFHy9ef0QNICEhR6SWjw_8MQ&usqp=CAU",
+      "views": 1022,
+      "createdAt": "26.02.2022",
+      "userId": "1",
+      "type": [
+        "SCIENCE"
       ],
       "blocks": [
         {

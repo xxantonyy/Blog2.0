@@ -29,5 +29,17 @@
   "Enter your comment": "Введите ваш комментарий\n",
   "Sent": "Отправить",
   "Reed more": "Читать дальше...",
-  "Back to List": "Назад к списку\n"
+  "Back to List": "Назад к списку\n",
+  "Sort by": "Сортировать по\n",
+  "Search": "Поиск",
+  "by": "по\n",
+  "increase": "Возрастание",
+  "decrease": "убыванию\n",
+  "date of creature": "дате создания",
+  "title": "название",
+  "views": "просмотры",
+  "Economics": "Экономика",
+  "All": "Все",
+  "IT": "Айти",
+  "Science": "Наука"
 }
