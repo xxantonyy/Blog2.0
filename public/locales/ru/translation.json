@@ -42,5 +42,9 @@
   "All": "Все",
   "IT": "Айти",
   "Science": "Наука",
-  "Recomendations": "Рекомендации\n"
+  "Recomendations": "Рекомендации\n",
+  "Redact": "Редактировать\n",
+  "Change with id": "Редактирование статьи с ID",
+  "create new article": "Создание новой Статьи",
+  "Create Article": "Создать статью"
 }
