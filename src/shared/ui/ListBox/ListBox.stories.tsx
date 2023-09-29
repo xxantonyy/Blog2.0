@@ -8,12 +8,58 @@ export default {
     argTypes: {
         backgroundColor: { control: 'color' },
     },
+    decorators: [
+        (Story) => <div style={{ padding: 100 }}><Story /></div>,
+    ],
 } as ComponentMeta<typeof ListBox>;
 
-const Template: ComponentStory<typeof ListBox> = (args) => <ListBox />;
+const Template: ComponentStory<typeof ListBox> = (args) => <ListBox {...args} />;
 
-export const Primary = Template.bind({});
-Primary.args = {
-    onChange: (value: string) => {},
-    value: 'dsfsdfsdf',
+export const BottomRight = Template.bind({});
+BottomRight.args = {
+    direction: 'bottom right',
+    items: [
+        {
+            content: '123123123', value: '1',
+        },
+        {
+            content: '2222', value: '2',
+        },
+    ],
+};
+export const BottomLeft = Template.bind({});
+BottomLeft.args = {
+    direction: 'bottom left',
+    items: [
+        {
+            content: '123123123', value: '1',
+        },
+        {
+            content: '2222', value: '2',
+        },
+    ],
+};
+export const TopLeft = Template.bind({});
+TopLeft.args = {
+    direction: 'top left',
+    items: [
+        {
+            content: '123123123', value: '1',
+        },
+        {
+            content: '2222', value: '2',
+        },
+    ],
+};
+export const TopRight = Template.bind({});
+TopRight.args = {
+    direction: 'top right',
+    items: [
+        {
+            content: '123123123', value: '1',
+        },
+        {
+            content: '2222', value: '2',
+        },
+    ],
 };
