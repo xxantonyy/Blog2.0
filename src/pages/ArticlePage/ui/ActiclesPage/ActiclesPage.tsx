@@ -10,16 +10,17 @@ import { DynamicModuleLoader, ReducersList } from 'shared/lib/components/Dynamic
 import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect/useInitialEffect';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { useSelector } from 'react-redux';
+import { Page } from 'widgets/Page/Page';
+import { useSearchParams } from 'react-router-dom';
 import {
     getArticView, getArticleIsloading,
-} from 'pages/ArticlePage/model/selectors/getArticleSelectors';
-import { Page } from 'widgets/Page/Page';
-import { fetchNextArticlePage } from 'pages/ArticlePage/model/service/fetchNextArticlePage';
-import { initArticlesPage } from 'pages/ArticlePage/model/service/initArticlesPage';
-import { useSearchParams } from 'react-router-dom';
+} from '../../model/selectors/getArticleSelectors';
+import { fetchNextArticlePage } from '../../model/service/fetchNextArticlePage';
+import { initArticlesPage } from '../../model/service/initArticlesPage';
 import { articlePageReducer, getArticles } from '../../model/slice/articlePageSlice';
 import cls from './ActiclesPage.module.scss';
 import { ArticlePageFilters } from '../ArticlePageFilters/ArticlePageFilters';
+import { ArticleInfinitePage } from '../ArticleInfinitePage/ArticleInfinitePage';
 
 interface ActiclesPageProps {
    className?: string;
@@ -33,30 +34,18 @@ const ActiclesPage = (props: ActiclesPageProps) => {
     const {
         className,
     } = props;
+
     const dispatch = useAppDispatch();
-    const articles = useSelector(getArticles.selectAll);
-    const ArticleIsLoading = useSelector(getArticleIsloading);
-    const ArticleIsView = useSelector(getArticView);
-    const [searchParams] = useSearchParams();
 
     const onLoadNextPart = useCallback(() => {
         dispatch(fetchNextArticlePage());
     }, [dispatch]);
 
-    useInitialEffect(() => {
-        dispatch(initArticlesPage(searchParams));
-    });
-
     return (
         <DynamicModuleLoader reducers={reducers} removeAfterUnmount={false}>
             <Page onScrollEnd={onLoadNextPart} className={classNames(cls.ActiclesPage, {}, [className])}>
                 <ArticlePageFilters />
-                <ArticleList
-                    isLoading={ArticleIsLoading}
-                    view={ArticleIsView}
-                    articles={articles}
-                    className={cls.list}
-                />
+                <ArticleInfinitePage />
             </Page>
         </DynamicModuleLoader>
 

@@ -4,7 +4,7 @@ import { MyDropdown } from './DropDown';
 import { Button } from '../Button/Button';
 
 export default {
-    title: 'shared/MyDropdown',
+    title: 'shared/Dropdown',
     component: MyDropdown,
     argTypes: {
         backgroundColor: { control: 'color' },
@@ -13,8 +13,8 @@ export default {
 
 const Template: ComponentStory<typeof MyDropdown> = (args) => <MyDropdown {...args} />;
 
-export const Primary = Template.bind({});
-Primary.args = {
+export const Normal = Template.bind({});
+Normal.args = {
     trigger: <Button>Open</Button>,
     items: [
         {

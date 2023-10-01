@@ -1,9 +1,9 @@
 import { Country } from 'entities/Country';
 import { Currency } from 'entities/Currency';
-import { ValidationError } from 'webpack';
-import { ProfileSchema, ValidateProfileError } from '../types/profile';
+import { ValidateProfileError } from 'entities/Profile/model/types/profile';
 import { profileActions, profileReducer } from './profileSlice';
 import { updateaProfileData } from '../services/updateaProfileData/updateaProfileData';
+import { ProfileSchema } from '../types/editableProfileCardSchema';
 
 const data = {
     username: 'admin',
