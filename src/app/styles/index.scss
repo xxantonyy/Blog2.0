@@ -21,7 +21,7 @@
 }
 
 *::-webkit-scrollbar {
-    width: 100px;
+    width: 12px;
     height: 8px;
   }
   
@@ -30,8 +30,7 @@
 }
   
 *::-webkit-scrollbar-thumb {
-    // background-color: var(--inverted-primary-color);
-    background: url('https://w.forfun.com/fetch/70/7047b702475924ba8f8044b5b5ca56ba.jpeg') center center/cover no-repeat;
+    background-color: var(--inverted-primary-color);
     border-radius: 20px;
     border: 2px solid var(--primary-color);
 }
