@@ -1,5 +1,7 @@
 {
   "": "",
+  "Admin": "Admin",
+  "Admin-Panel": "Admin-Panel",
   "All": "All",
   "Back to List": "Back to List",
   "Change": "Change",
@@ -22,6 +24,7 @@
       "": ""
     }
   },
+  "NotHaveAllow": "NotHaveAllow",
   "PROFILE PAGE": "PROFILE PAGE",
   "Profile": "Profile",
   "Recomendations": "Recomendations",
@@ -34,6 +37,7 @@
   "Tony App": "Tony App",
   "YourName": "YourName",
   "YourSecondName": "YourSecondName",
+  "adminPanel": "adminPanel",
   "by": "by",
   "city": "city",
   "comments 0": "comments 0",

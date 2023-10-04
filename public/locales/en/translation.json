@@ -50,5 +50,7 @@
   "Create Article": "Create Article",
   "Exit": "Exit\n",
   "Profile": "Profile",
-  "Error": "Error profile"
+  "Error": "Error profile",
+  "Admin": "Admin",
+  "NotHaveAllow": "You donta have Allow ot this page"
 }
