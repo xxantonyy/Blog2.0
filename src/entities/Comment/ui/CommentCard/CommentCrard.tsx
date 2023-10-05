@@ -23,10 +23,10 @@ export const CommentCrard = (props: CommentCrardProps) => {
 
     if (isLoading) {
         return (
-            <div className={classNames(cls.CommentCrard, {}, [className])}>
-                <div className={cls.header}>
+            <div className={classNames('', {}, [className])}>
+                <div>
                     <Skeleton width={30} height={30} border="50%" />
-                    <Skeleton height={16} width={100} className={cls.username} />
+                    <Skeleton height={16} width={100} />
                 </div>
                 <Skeleton width="100%" height={50} />
             </div>
