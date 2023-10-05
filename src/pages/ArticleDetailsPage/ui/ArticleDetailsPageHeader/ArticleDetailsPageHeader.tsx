@@ -7,7 +7,7 @@ import { useNavigate } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import { getUserAuthData } from 'entities/User';
 import { getArticleDetaislData } from 'entities/Article';
-import { getCanEditArticle } from 'pages/ArticleDetailsPage/selectors/article';
+import { getCanEditArticle } from '../../selectors/article';
 import cls from './ArticleDetailsPageHeader.module.scss';
 
 interface ArticleDetailsPageHeaderProps {

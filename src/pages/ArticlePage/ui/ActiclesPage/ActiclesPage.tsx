@@ -1,26 +1,16 @@
 /* eslint-disable max-len */
-import { classNames } from 'shared/lib/classNames/classNames';
 import {
     memo, useCallback,
 } from 'react';
-import {
-    ArticleList,
-} from 'entities/Article';
+import { classNames } from 'shared/lib/classNames/classNames';
 import { DynamicModuleLoader, ReducersList } from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
-import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect/useInitialEffect';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
-import { useSelector } from 'react-redux';
 import { Page } from 'widgets/Page/Page';
-import { useSearchParams } from 'react-router-dom';
-import {
-    getArticView, getArticleIsloading,
-} from '../../model/selectors/getArticleSelectors';
 import { fetchNextArticlePage } from '../../model/service/fetchNextArticlePage';
-import { initArticlesPage } from '../../model/service/initArticlesPage';
-import { articlePageReducer, getArticles } from '../../model/slice/articlePageSlice';
-import cls from './ActiclesPage.module.scss';
-import { ArticlePageFilters } from '../ArticlePageFilters/ArticlePageFilters';
+import { articlePageReducer } from '../../model/slice/articlePageSlice';
 import { ArticleInfinitePage } from '../ArticleInfinitePage/ArticleInfinitePage';
+import { ArticlePageFilters } from '../ArticlePageFilters/ArticlePageFilters';
+import cls from './ActiclesPage.module.scss';
 
 interface ActiclesPageProps {
    className?: string;
