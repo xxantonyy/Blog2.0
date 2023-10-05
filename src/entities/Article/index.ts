@@ -1,6 +1,6 @@
 export { ArticleDetails } from './ui/ArticleDetails/ArticleDetails';
 
-export { Article } from './model/types/article';
+export type { Article } from './model/types/article';
 export { ArticleView } from './model/types/article';
 export { ArticleSordField } from './model/types/article';
 
