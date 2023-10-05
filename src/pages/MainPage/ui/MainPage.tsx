@@ -16,19 +16,6 @@ const MainPage = () => {
     return (
         <Page>
             {t('Главная страница')}
-            <HStack>
-                <ListBox
-                // eslint-disable-next-line i18next/no-literal-string
-                    defaultValue="Выберите значение"
-                    onChange={(value: string) => {}}
-                    value={undefined}
-                    items={[
-                        { value: '1', content: '123' },
-                        { value: '2', content: 'dfgd', disabled: true },
-                        { value: '3', content: '12esdfg' },
-                    ]}
-                />
-            </HStack>
         </Page>
     );
 };

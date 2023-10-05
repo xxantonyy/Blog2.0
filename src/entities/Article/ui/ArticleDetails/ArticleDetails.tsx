@@ -1,14 +1,12 @@
+/* eslint-disable max-len */
 /* eslint-disable i18next/no-literal-string */
 import { classNames } from 'shared/lib/classNames/classNames';
 import { useTranslation } from 'react-i18next';
 import { DynamicModuleLoader, ReducersList } from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
-import { articleDetailsReducer } from 'entities/Article/model/slice/articleDetailsSlice';
 import { useSelector } from 'react-redux';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { memo, useCallback, useEffect } from 'react';
-import { fetchArticleById } from 'entities/Article/model/services/fetchArticleById';
 // eslint-disable-next-line max-len
-import { getArticleDetaislData, getArticleDetaislError, getArticleDetaislIsLoading } from 'entities/Article/model/selectors/articleDetails';
 
 import {
     Text, TextAlign, TextSize, TextTheme,
@@ -18,8 +16,11 @@ import { Avatar } from 'shared/ui/Avatar/Avatar';
 import EyeIcon from 'shared/assets/icons/eye-20-20.svg';
 import CalendarIcon from 'shared/assets/icons/calendar-20-20.svg';
 import { Icon } from 'shared/ui/Icon/icon';
-import { ArticleBlock, ArticleBlockType } from 'entities/Article/model/types/article';
 import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect/useInitialEffect';
+import { ArticleBlock, ArticleBlockType } from '../../model/types/article';
+import { getArticleDetaislData, getArticleDetaislError, getArticleDetaislIsLoading } from '../../model/selectors/articleDetails';
+import { fetchArticleById } from '../../model/services/fetchArticleById';
+import { articleDetailsReducer } from '../../model/slice/articleDetailsSlice';
 import cls from './ArticleDetails.module.scss';
 import { ArticleCodeBlockComponent } from '../ArticleCodeBlockComponent/ArticleCodeBlockComponent';
 import { ArticleImageBlockComponent } from '../ArticleImageBlockComponent/ArticleImageBlockComponent';
