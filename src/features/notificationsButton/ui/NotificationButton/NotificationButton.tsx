@@ -1,8 +1,12 @@
-import { SVGProps, VFC, memo } from 'react';
 import { NotificationList } from 'entities/Notification';
+import {
+    SVGProps, VFC, memo, useCallback, useState,
+} from 'react';
 import { Button, ButtonTheme } from 'shared/ui/Button/Button';
+import { Drawer } from 'shared/ui/Drawer/Drawer';
 import { Icon } from 'shared/ui/Icon/icon';
 import { MyPopover } from 'shared/ui/Popups';
+import { BrowserView, MobileView } from 'react-device-detect';
 import cls from './NotificationButton.module.scss';
 
 interface NotificationButtonProps {
@@ -16,14 +20,39 @@ export const NotificationButton = memo((props: NotificationButtonProps) => {
         svg,
     } = props;
 
+    const [isOpen, setIsOpen] = useState(false);
+
+    const OpenDrawer = useCallback(() => {
+        setIsOpen(true);
+    }, []);
+
+    const CloseDrawer = useCallback(() => {
+        setIsOpen(false);
+    }, []);
+
+    const trigger = (
+        <Button onClick={OpenDrawer} theme={ButtonTheme.CLEAR}>
+            <Icon inverted Svg={svg} />
+        </Button>
+    );
+
     return (
-        <MyPopover trigger={(
-            <Button theme={ButtonTheme.CLEAR}>
-                <Icon inverted Svg={svg} />
-            </Button>
-        )}
-        >
-            <NotificationList className={cls.notifications} />
-        </MyPopover>
+        <div>
+            <BrowserView>
+                {' '}
+                <MyPopover trigger={trigger}>
+                    <NotificationList className={cls.notifications} />
+                </MyPopover>
+
+            </BrowserView>
+            <MobileView>
+                {trigger}
+                <Drawer isOpen={isOpen} onClose={CloseDrawer}>
+                    <NotificationList />
+                </Drawer>
+
+            </MobileView>
+        </div>
+
     );
 });
