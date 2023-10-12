@@ -1,12 +1,12 @@
 /* eslint-disable i18next/no-literal-string */
 import { Menu } from '@headlessui/react';
-import { classNames } from '@/shared/lib/classNames/classNames';
 import { Fragment, ReactNode } from 'react';
+import { classNames } from '@/shared/lib/classNames/classNames';
 import { DropDownDirection } from '@/shared/types/ui';
-import cls from './DporDown.module.scss';
 import { AppLink } from '../../../AppLink/AppLink';
 import { mapDirectionClass } from '../../styles/consts';
 import popupCls from '../../styles/popup.module.scss';
+import cls from './DporDown.module.scss';
 
 export interface DropDownItem {
    disabled?: boolean;

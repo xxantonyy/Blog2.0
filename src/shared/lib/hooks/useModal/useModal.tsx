@@ -1,4 +1,3 @@
-import { useTheme } from '@/app/providers/ThemeProvider';
 import {
     MutableRefObject,
     useCallback,
@@ -6,6 +5,7 @@ import {
     useRef,
     useState,
 } from 'react';
+import { useTheme } from '@/app/providers/ThemeProvider';
 
 interface useModalProps {
    onClose?: () => void;

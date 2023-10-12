@@ -52,5 +52,8 @@
   "Profile": "Profile",
   "Error": "Error profile",
   "Admin": "Admin",
-  "NotHaveAllow": "You donta have Allow ot this page"
+  "NotHaveAllow": "You donta have Allow ot this page",
+  "your feedback": "Your feedback",
+  "Close": "Close",
+  "Send": "Send"
 }

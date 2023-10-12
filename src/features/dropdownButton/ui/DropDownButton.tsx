@@ -1,9 +1,9 @@
-import {
-    getUserAuthData, isUserAdmin, isUserManager, userActions,
-} from '@/entities/User';
 import { memo, useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
+import {
+    getUserAuthData, isUserAdmin, isUserManager, userActions,
+} from '@/entities/User';
 import { RoutePath } from '@/shared/config/routeConfig/routeConfig';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { Avatar } from '@/shared/ui/Avatar/Avatar';

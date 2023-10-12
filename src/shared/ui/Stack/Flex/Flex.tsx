@@ -1,6 +1,6 @@
-import { Mods, classNames } from '@/shared/lib/classNames/classNames';
 import { useTranslation } from 'react-i18next';
 import { ReactNode } from 'react';
+import { Mods, classNames } from '@/shared/lib/classNames/classNames';
 import cls from './Flex.module.scss';
 
 export type FlexJustify = 'start' | 'center' | 'end' | 'between';
@@ -40,6 +40,7 @@ export interface flexProps {
    align?: FlexAlign;
    direction?: FlexDirection;
    gap?: FlexGap;
+   max?: boolean
 }
 
 export const Flex = (props: flexProps) => {
@@ -50,6 +51,7 @@ export const Flex = (props: flexProps) => {
         align = 'center',
         direction = 'row',
         gap = 'gap4',
+        max,
     } = props;
     const { t } = useTranslation();
 
@@ -61,8 +63,12 @@ export const Flex = (props: flexProps) => {
         gap && directionGap[gap],
     ];
 
+    const mods: Mods = {
+        [cls.max]: max,
+    };
+
     return (
-        <div className={classNames(cls.Flex, {}, classes)}>
+        <div className={classNames(cls.Flex, mods, classes)}>
             {children}
         </div>
     );
