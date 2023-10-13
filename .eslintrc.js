@@ -66,7 +66,7 @@ module.exports = {
         'no-param-reassign': 'off',
         'no-undef': 'off',
         'linebreak-style': 'off',
-        'ttx/path-checker': 'error',
+        'ttx/path-checker': ['error', { allias: '@' }],
     },
     globals: {
         __IS_DEV__: true,

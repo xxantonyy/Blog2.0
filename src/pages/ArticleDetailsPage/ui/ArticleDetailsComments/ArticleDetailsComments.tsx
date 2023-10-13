@@ -1,11 +1,11 @@
 /* eslint-disable i18next/no-literal-string */
-import { classNames } from '@/shared/lib/classNames/classNames';
 import { useTranslation } from 'react-i18next';
 import { Suspense, memo, useCallback } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { classNames } from '@/shared/lib/classNames/classNames';
 import { CommentList } from '@/entities/Comment';
 import AddCommentForm from '@/features/AddCommentForm/ui/AddCommentForm';
 import { Text, TextSize } from '@/shared/ui/Text/Text';
-import { useDispatch, useSelector } from 'react-redux';
 import { useInitialEffect } from '@/shared/lib/hooks/useInitialEffect/useInitialEffect';
 import { Skeleton } from '@/shared/ui/Skeleton/Skeleton';
 import { fetchCommentsByArticleId } from '../../model/services/fetchCommentsBuArticleId/fetchCommentsBuArticleId';

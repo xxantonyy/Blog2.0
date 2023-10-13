@@ -1,9 +1,9 @@
-import { classNames } from '@/shared/lib/classNames/classNames';
 import { useTranslation } from 'react-i18next';
-import { Input } from '@/shared/ui/Input/Input';
-import { Button, ButtonTheme } from '@/shared/ui/Button/Button';
 import { useDispatch, useSelector } from 'react-redux';
 import { useCallback } from 'react';
+import { classNames } from '@/shared/lib/classNames/classNames';
+import { Input } from '@/shared/ui/Input/Input';
+import { Button, ButtonTheme } from '@/shared/ui/Button/Button';
 import { DynamicModuleLoader, ReducersList } from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
 import cls from './AddCommentForm.module.scss';
 import { getCommentFormError, getCommentFormText } from '../model/selectors/addCommentFormSelectors';
@@ -26,7 +26,6 @@ const AddCommentForm = (props: AddCommentFormProps) => {
     const { t } = useTranslation();
     const dispatch = useDispatch();
     const text = useSelector(getCommentFormText);
-    const error = useSelector(getCommentFormError);
 
     const onCommentTextChange = useCallback((value: string) => {
         dispatch(addCommentFormActions.setText(value));

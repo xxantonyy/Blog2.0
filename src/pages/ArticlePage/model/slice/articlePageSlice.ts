@@ -1,11 +1,11 @@
 import { createEntityAdapter, createSlice, PayloadAction } from '@reduxjs/toolkit';
+import { IgnorePlugin } from 'webpack';
 import { StateSchema } from '@/app/providers/StoreProvider';
 import {
     Article, ArticleSordField, ArticleView,
 } from '@/entities/Article';
 import { ARTICLE_VIEW_LOCAL_STORAGE_KEY } from '@/shared/const/localstorage';
 import { SortOrder } from '@/shared/types';
-import { IgnorePlugin } from 'webpack';
 import { ArticleTypes } from '@/entities/Article/model/types/article';
 import { ArticlePageSchema } from '../types/articlePageSchema';
 import { fetchArticlesList } from '../service/fetchArticlesList';
