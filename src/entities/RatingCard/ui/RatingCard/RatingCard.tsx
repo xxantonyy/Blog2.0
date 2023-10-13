@@ -11,31 +11,32 @@ import { Modal } from '@/shared/ui/Modal/Modal';
 import { Input } from '@/shared/ui/Input/Input';
 import { HStack } from '@/shared/ui/Stack/HStack/HStack';
 import { Button, ButtonTheme } from '@/shared/ui/Button/Button';
-import { $api } from '@/shared/api/api';
 import { Drawer } from '@/shared/ui/Drawer/Drawer';
 
 interface RatingCardProps {
    className?: string;
    title?: string;
    feedBackTitle?: string;
-   hasFreedback?: boolean;
+   hasFeedback?: boolean;
    onCancel?: (starsCount: number) => void;
    onAccept?: (starsCount: number, feedback?: string) => void;
+   rate?: number;
 }
 
 export const RatingCard = memo((props: RatingCardProps) => {
     const {
         className,
         feedBackTitle,
-        hasFreedback,
+        hasFeedback,
         onCancel,
         onAccept,
         title,
+        rate = 0,
     } = props;
     const { t } = useTranslation();
 
     const [isModalOpen, setIsModalOpen] = useState(false);
-    const [starsCount, setStarsCount] = useState(0);
+    const [starsCount, setStarsCount] = useState(rate);
     const [feedback, setFeedback] = useState('');
 
     const acceptHandler = useCallback(() => {
@@ -50,13 +51,13 @@ export const RatingCard = memo((props: RatingCardProps) => {
 
     const onSelectStars = useCallback((stars: number) => {
         setStarsCount(stars);
-        if (hasFreedback) {
+        if (hasFeedback) {
             setIsModalOpen(true);
         } else {
             onAccept?.(stars);
         }
         setIsModalOpen(true);
-    }, [hasFreedback, onAccept]);
+    }, [hasFeedback, onAccept]);
 
     const modalContent = (
         <VStack gap="gap32">
@@ -74,10 +75,10 @@ export const RatingCard = memo((props: RatingCardProps) => {
     );
 
     return (
-        <Card className={classNames(cls.RatingCard, {}, [className])}>
+        <Card max className={classNames(cls.RatingCard, {}, [className])}>
             <VStack align="center" gap="gap8">
-                <Text title={title} />
-                <StarRating size={40} onSelect={onSelectStars} />
+                <Text title={starsCount ? t('thank you for rating') : title} />
+                <StarRating selectedStars={starsCount} size={40} onSelect={onSelectStars} />
             </VStack>
             <BrowserView>
                 <Modal isOpen={isModalOpen} lazy onClose={closeHandler}>

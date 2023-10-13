@@ -677,5 +677,64 @@
       "username": "ulbi tv",
       "avatar": "https://koshka.top/uploads/posts/2021-12/1640316382_1-koshka-top-p-narisovannikh-kotikov-1.jpg"
     }
+  ],
+  "article-ratings": [
+    {
+      "id": "1",
+      "rate": 4,
+      "feedback": "Хорошая статья!",
+      "userId": "1",
+      "articleId": "1"
+    },
+    {
+      "id": "2",
+      "rate": 4,
+      "feedback": "Хорошая статья!",
+      "userId": "1",
+      "articleId": "2"
+    },
+    {
+      "userId": "1",
+      "articleId": "3",
+      "rate": 4,
+      "feedback": "ЕЕЕ бой",
+      "id": "MhTt2Go"
+    },
+    {
+      "userId": "1",
+      "articleId": "16",
+      "rate": 5,
+      "feedback": "",
+      "id": "1Tu1q1N"
+    },
+    {
+      "userId": "1",
+      "articleId": "10",
+      "rate": 4,
+      "id": "NjzhBi7"
+    },
+    {
+      "userId": "1",
+      "articleId": "13",
+      "rate": 5,
+      "feedback": "",
+      "id": "xoKBZXO"
+    }
+  ],
+  "profile-ratings": [
+    {
+      "id": "1",
+      "rate": 5,
+      "feedback": "Отличный пользователь!",
+      "userId": "1",
+      "profileId": "1"
+    },
+    {
+      "userId": "1",
+      "profileId": "2",
+      "rate": 5,
+      "feedback": "",
+      "id": "D5AuCtF"
+    }
   ]
 }
