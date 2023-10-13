@@ -67,6 +67,7 @@ module.exports = {
         'no-undef': 'off',
         'linebreak-style': 'off',
         'ttx/path-checker': ['error', { allias: '@' }],
+        'ttx/public-api-imports': ['error', { allias: '@' }],
     },
     globals: {
         __IS_DEV__: true,
