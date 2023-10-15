@@ -1,49 +1,15 @@
-import { RouteProps } from 'react-router-dom';
-import { MainPage } from '@/pages/MainPage';
+import { UserRole } from '@/entities/User';
 import { AboutPage } from '@/pages/AboutPage';
+import { AdminPanelPage } from '@/pages/AdminPanelPage';
+import { ArticleEditPage } from '@/pages/ArtcileEditPage';
+import { ArticleDetailsPage } from '@/pages/ArticleDetailsPage';
+import { ArticlesPage } from '@/pages/ArticlePage';
+import { ForbiddenPage } from '@/pages/ForbiddenPage';
+import { MainPage } from '@/pages/MainPage';
 import { NotFoundPage } from '@/pages/NotFoundPage';
 import { ProfilePage } from '@/pages/ProfilePage';
-import { ArticlesPage } from '@/pages/ArticlePage';
-import { ArticleDetailsPage } from '@/pages/ArticleDetailsPage';
-import { ArticleEditPage } from '@/pages/ArtcileEditPage';
-import { AdminPanelPage } from '@/pages/AdminPanelPage';
-import { UserRole } from '@/entities/User';
-import { ForbiddenPage } from '@/pages/ForbiddenPage';
-
-export type AppRoutProps = RouteProps & {
-    authOnly?: boolean;
-    roles?: UserRole[];
-}
-
-export enum AppRoutes {
-    MAIN = 'main',
-    ABOUT = 'about',
-    PROFILE = 'profile',
-    ARTICLES = 'articles',
-    ARTICLE_DETAILS = 'articles_details',
-    ARTICLE_CREATE = 'articles_create',
-    ARTICLE_EDIT = 'articles_edit',
-    ADMIN_PANEL = 'admin_panel',
-    FORBIDDEN_PAGE = 'forbidden_page',
-
-    // last
-    NOT_FOUND = 'not_found',
-}
-
-export const RoutePath: Record<AppRoutes, string> = {
-    [AppRoutes.MAIN]: '/',
-    [AppRoutes.ABOUT]: '/about',
-    [AppRoutes.PROFILE]: '/profile/', // + id:
-    [AppRoutes.ARTICLES]: '/articles',
-    [AppRoutes.ARTICLE_DETAILS]: '/articles/', // + id:
-    [AppRoutes.ARTICLE_CREATE]: '/articles/new',
-    [AppRoutes.ARTICLE_EDIT]: '/articles/:id/edit',
-    [AppRoutes.ADMIN_PANEL]: '/admin',
-    [AppRoutes.FORBIDDEN_PAGE]: '/forbidden',
-
-    // последний
-    [AppRoutes.NOT_FOUND]: '*',
-};
+import { AppRoutes, RoutePath } from '@/shared/const/router';
+import { AppRoutProps } from '@/shared/types/router';
 
 export const routeConfig: Record<AppRoutes, AppRoutProps> = {
     [AppRoutes.MAIN]: {

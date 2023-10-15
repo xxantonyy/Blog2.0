@@ -67,7 +67,13 @@ module.exports = {
         'no-undef': 'off',
         'linebreak-style': 'off',
         'ttx/path-checker': ['error', { allias: '@' }],
-        'ttx/public-api-imports': ['error', { allias: '@' }],
+        'ttx/public-api-imports': [
+            'error',
+            {
+                alias: '@',
+                testFilesPatterns: ['**/*.test.*', '**/*.story.*', '**/StoreDecorator.tsx'],
+            },
+        ],
     },
     globals: {
         __IS_DEV__: true,

@@ -6,7 +6,6 @@ import {
     getUserAuthData,
 } from '@/entities/User';
 import { LoginModal } from '@/features/AuthByUsername';
-import { DropDownButton } from '@/features/dropdownButton/ui/DropDownButton';
 import { NotificationButton } from '@/features/notificationsButton';
 import { RoutePath } from '@/shared/config/routeConfig/routeConfig';
 import { classNames } from '@/shared/lib/classNames/classNames';
@@ -16,6 +15,7 @@ import { HStack } from '@/shared/ui/Stack/HStack/HStack';
 import { Text, TextTheme } from '@/shared/ui/Text/Text';
 import NotificatoinPng from '../../../shared/assets/icons/notification-20-20.svg';
 import cls from './Navbar.module.scss';
+import { DropDownButton } from '@/features/dropdownButton';
 
 interface NavbarProps {
     className?: string;

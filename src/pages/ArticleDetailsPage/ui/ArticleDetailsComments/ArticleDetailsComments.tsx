@@ -4,7 +4,6 @@ import { Suspense, memo, useCallback } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { CommentList } from '@/entities/Comment';
-import AddCommentForm from '@/features/AddCommentForm/ui/AddCommentForm';
 import { Text, TextSize } from '@/shared/ui/Text/Text';
 import { useInitialEffect } from '@/shared/lib/hooks/useInitialEffect/useInitialEffect';
 import { Skeleton } from '@/shared/ui/Skeleton/Skeleton';
@@ -12,6 +11,7 @@ import { fetchCommentsByArticleId } from '../../model/services/fetchCommentsBuAr
 import { getArticleComments } from '../../model/slices/articleDetailsCommentsSlice';
 import { getArticleCommentsIsLoading } from '../../selectors/comments/comments';
 import { addCommentForArticle } from '../../model/services/addCommentForArticle/addCommentForArticle';
+import { AddCommentFormAsync as AddCommentForm } from '@/features/AddCommentForm';
 
 interface ArticleDetailsCommentsProps {
    className?: string;

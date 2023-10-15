@@ -6,9 +6,9 @@ import { AxiosInstance } from 'axios';
 import { CounterSchema } from '@/entities/Counter';
 import { UserSchema } from '@/entities/User';
 import { LoginSchema } from '@/features/AuthByUsername';
-import { ArticleDetailsSchema } from '@/entities/Article/model/types/articleDetailsSchema';
+import { ArticleDetailsSchema } from '@/entities/Article';
 import { ArticleDetailsCommentsSchema, ArticleDetailsPageRecommendationsSchema } from '@/pages/ArticleDetailsPage';
-import { AddCommentFormSchema } from '@/features/AddCommentForm/model/types/addCommentForm';
+import { AddCommentForm } from '@/features/AddCommentForm';
 import { ArticlePageSchema } from '@/pages/ArticlePage';
 import { UISchema } from '@/features/UI';
 import { rtkApi } from '@/shared/api/rtkApi';
@@ -25,7 +25,7 @@ export interface StateSchema {
     profile?: ProfileSchema;
     articleDetails?: ArticleDetailsSchema;
     articleDetailsComments?: ArticleDetailsCommentsSchema;
-    addCommentForm?: AddCommentFormSchema;
+    addCommentForm?: AddCommentForm;
     articlesPage?: ArticlePageSchema;
     articleRedommendations?: ArticleDetailsPageRecommendationsSchema;
 
