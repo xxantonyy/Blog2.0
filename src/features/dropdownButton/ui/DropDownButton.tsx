@@ -5,7 +5,7 @@ import {
     getUserAuthData, isUserAdmin, isUserManager, userActions,
 } from '@/entities/User';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
-import { Avatar } from '@/shared/ui/Avatar/Avatar';
+import { Avatar } from '@/shared/ui/Avatar';
 import { MyDropdown } from '@/shared/ui/Popups';
 import cls from './DropDownButton.module.scss';
 import { RoutePath } from '@/shared/const/router';

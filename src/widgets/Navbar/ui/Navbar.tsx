@@ -8,14 +8,14 @@ import {
 import { LoginModal } from '@/features/AuthByUsername';
 import { NotificationButton } from '@/features/notificationsButton';
 import { classNames } from '@/shared/lib/classNames/classNames';
-import { AppLink, AppLinkTheme } from '@/shared/ui/AppLink/AppLink';
-import { Button, ButtonTheme } from '@/shared/ui/Button/Button';
-import { HStack } from '@/shared/ui/Stack/HStack/HStack';
-import { Text, TextTheme } from '@/shared/ui/Text/Text';
+import { AppLink, AppLinkTheme } from '@/shared/ui/AppLink';
+import { Button, ButtonTheme } from '@/shared/ui/Button';
+import { Text, TextTheme } from '@/shared/ui/Text';
 import NotificatoinPng from '../../../shared/assets/icons/notification-20-20.svg';
 import cls from './Navbar.module.scss';
 import { DropDownButton } from '@/features/dropdownButton';
 import { RoutePath } from '@/shared/const/router';
+import { HStack } from '@/shared/ui/Stack/HStack/HStack';
 
 interface NavbarProps {
     className?: string;
