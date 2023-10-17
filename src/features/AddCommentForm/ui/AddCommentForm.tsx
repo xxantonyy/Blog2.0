@@ -6,7 +6,7 @@ import { Input } from '@/shared/ui/Input';
 import { Button, ButtonTheme } from '@/shared/ui/Button';
 import { DynamicModuleLoader, ReducersList } from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
 import cls from './AddCommentForm.module.scss';
-import { getCommentFormError, getCommentFormText } from '../model/selectors/addCommentFormSelectors';
+import { getCommentFormText } from '../model/selectors/addCommentFormSelectors';
 import { addCommentFormActions, addCommentFormReducer } from '../model/slices/addCommentFormSlice';
 
 interface AddCommentFormProps {

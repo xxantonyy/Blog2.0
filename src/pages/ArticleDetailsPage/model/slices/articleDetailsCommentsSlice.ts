@@ -1,5 +1,4 @@
 import {
-    EntityState,
     PayloadAction,
     createEntityAdapter,
     createSlice,
