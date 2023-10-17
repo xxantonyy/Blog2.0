@@ -4,10 +4,10 @@ import {
 import { useSelector } from 'react-redux';
 import { Route, Routes } from 'react-router-dom';
 import { getUserAuthData } from '@/entities/User';
-import { AppRoutProps } from '@/shared/config/routeConfig/routeConfig';
 import { PageLoader } from '@/shared/ui/PageLoader/PageLoader';
 import { RequireAuth } from './RequireAuth';
 import { routeConfig } from '../config/routeConfig';
+import { AppRoutProps } from '@/shared/types/router';
 
 const AppRouter = () => {
     const isAuth = useSelector(getUserAuthData);

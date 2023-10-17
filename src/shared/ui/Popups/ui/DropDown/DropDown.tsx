@@ -43,9 +43,11 @@ export function MyDropdown(props: DropDownProps) {
             <Menu.Items
                 className={classNames(cls.menu, {}, menuClasses)}
             >
-                {items.map((item) => {
+                {items.map((item, index) => {
                     const content = ({ active } : {active: boolean}) => (
                         <button
+                            // eslint-disable-next-line react/no-array-index-key
+                            key={index}
                             type="button"
                             onClick={item.onClick}
                             className={classNames(

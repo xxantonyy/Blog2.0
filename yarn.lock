@@ -8401,10 +8401,10 @@ eslint-plugin-react@^7.28.0, eslint-plugin-react@^7.29.2:
     semver "^6.3.0"
     string.prototype.matchall "^4.0.6"
 
-eslint-plugin-ttx@^0.0.5:
-  version "0.0.5"
-  resolved "https://registry.npmjs.org/eslint-plugin-ttx/-/eslint-plugin-ttx-0.0.5.tgz"
-  integrity sha512-R8KTEJMNN2Xe8F8ADMy1nvocl++D3MudnertYDYAKdvec9Vj9koUrt9jwbs1jxHoTPIkubVDpkGhRU31q+IfTA==
+eslint-plugin-ttx@^0.0.6:
+  version "0.0.6"
+  resolved "https://registry.npmjs.org/eslint-plugin-ttx/-/eslint-plugin-ttx-0.0.6.tgz"
+  integrity sha512-cum/xe2dYH1hJq7KxSe7n3BBYCvACsVSpAVbcTTOlTO6MlQ3NGkSfZ5iASd3vBHLDjcNpQ9y//YAAPdC5ahJUQ==
   dependencies:
     generator-eslint "^4.1.5"
     micromatch "^4.0.5"

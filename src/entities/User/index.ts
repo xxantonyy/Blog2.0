@@ -14,8 +14,5 @@ export type {
     UserSchema,
     User,
 } from './model/types/user';
-export {
-    UserRole,
-} from './model/types/user';
 
 export { getUserRoles, isUserAdmin, isUserManager } from './model/selectors/roleSelector';

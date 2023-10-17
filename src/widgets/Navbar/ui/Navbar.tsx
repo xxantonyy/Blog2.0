@@ -7,7 +7,6 @@ import {
 } from '@/entities/User';
 import { LoginModal } from '@/features/AuthByUsername';
 import { NotificationButton } from '@/features/notificationsButton';
-import { RoutePath } from '@/shared/config/routeConfig/routeConfig';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { AppLink, AppLinkTheme } from '@/shared/ui/AppLink/AppLink';
 import { Button, ButtonTheme } from '@/shared/ui/Button/Button';
@@ -16,6 +15,7 @@ import { Text, TextTheme } from '@/shared/ui/Text/Text';
 import NotificatoinPng from '../../../shared/assets/icons/notification-20-20.svg';
 import cls from './Navbar.module.scss';
 import { DropDownButton } from '@/features/dropdownButton';
+import { RoutePath } from '@/shared/const/router';
 
 interface NavbarProps {
     className?: string;

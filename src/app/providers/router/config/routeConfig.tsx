@@ -1,4 +1,3 @@
-import { UserRole } from '@/entities/User';
 import { AboutPage } from '@/pages/AboutPage';
 import { AdminPanelPage } from '@/pages/AdminPanelPage';
 import { ArticleEditPage } from '@/pages/ArtcileEditPage';
@@ -10,6 +9,7 @@ import { NotFoundPage } from '@/pages/NotFoundPage';
 import { ProfilePage } from '@/pages/ProfilePage';
 import { AppRoutes, RoutePath } from '@/shared/const/router';
 import { AppRoutProps } from '@/shared/types/router';
+import { UserRole } from '@/shared/types/user';
 
 export const routeConfig: Record<AppRoutes, AppRoutProps> = {
     [AppRoutes.MAIN]: {

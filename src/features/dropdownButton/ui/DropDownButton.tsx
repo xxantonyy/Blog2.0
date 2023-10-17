@@ -4,11 +4,11 @@ import { useSelector } from 'react-redux';
 import {
     getUserAuthData, isUserAdmin, isUserManager, userActions,
 } from '@/entities/User';
-import { RoutePath } from '@/shared/config/routeConfig/routeConfig';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { Avatar } from '@/shared/ui/Avatar/Avatar';
 import { MyDropdown } from '@/shared/ui/Popups';
 import cls from './DropDownButton.module.scss';
+import { RoutePath } from '@/shared/const/router';
 
 interface DropDownButtonProps {
    className?: string;

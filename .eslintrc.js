@@ -67,6 +67,13 @@ module.exports = {
         'no-undef': 'off',
         'linebreak-style': 'off',
         'ttx/path-checker': ['error', { allias: '@' }],
+        'ttx/layer-imports': [
+            'error',
+            {
+                alias: '@',
+                ignoreImportPatterns: ['**/StoreProvider', '**/testing'],
+            },
+        ],
         'ttx/public-api-imports': [
             'error',
             {
