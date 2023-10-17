@@ -1,8 +1,8 @@
+export { ArticleSortSelector } from './ui/ArticleSortSelector/ArticleSortSelector';
+
 export { ArticleTabs } from './ui/ArticleTabs/ArticleTabs';
 export type { ArticleDetailsSchema } from './model/types/articleDetailsSchema';
 export type { ArticleTextBlock } from '@/entities/Article/model/types/article';
-
-export { ArticleSortSelector } from './ui/ArticleSortSelector/ArticleSortSelector';
 
 export { ArticleTypes } from './model/types/article';
 

@@ -3,9 +3,9 @@ import { Avatar } from '@/shared/ui/Avatar';
 import { Text } from '@/shared/ui/Text';
 import { Skeleton } from '@/shared/ui/Skeleton';
 import { AppLink } from '@/shared/ui/AppLink';
-import { RoutePath } from '@/shared/config/routeConfig/routeConfig';
 import { Comment } from '../../model/types/comment';
 import cls from './CommentCrard.module.scss';
+import { RoutePath } from '@/shared/const/router';
 
 interface CommentCrardProps {
    className?: string;
