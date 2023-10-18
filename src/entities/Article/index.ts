@@ -1,6 +1,3 @@
-export { ArticleSortSelector } from './ui/ArticleSortSelector/ArticleSortSelector';
-
-export { ArticleTabs } from './ui/ArticleTabs/ArticleTabs';
 export type { ArticleDetailsSchema } from './model/types/articleDetailsSchema';
 export type { ArticleTextBlock } from '@/entities/Article/model/types/article';
 
@@ -16,7 +13,5 @@ export { ArticleView } from './model/types/article';
 export { ArticleSordField } from './model/types/article';
 
 export { ArticleList } from './ui/ArticleList/ArticleList';
-
-export { ArticleViewSelector } from './ui/ArticleViewSelector/ArticleViewSelector';
 
 export { getArticleDetaislData } from './model/selectors/articleDetails';

@@ -2,8 +2,7 @@ import { useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
 import {
-    ArticleSordField, ArticleTabs, ArticleTypes, ArticleView, ArticleViewSelector,
-    ArticleSortSelector,
+    ArticleSordField, ArticleTypes, ArticleView,
 } from '@/entities/Article';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
@@ -17,6 +16,9 @@ import {
     getArticOrder, getArticView, getArticleSearch, getArticleSort, getArticleType,
 } from '../../model/selectors/getArticleSelectors';
 import cls from './ArticlePageFilters.module.scss';
+import { ArticleTypeTabs } from '@/features/ArticleTypeTabs';
+import { ArticleViewSelector } from '@/features/ArticleViewSelector';
+import { ArticleSortSelector } from '@/features/ArticleSortSelector';
 
 interface ArticlePageFiltersProps {
    className?: string;
@@ -83,7 +85,7 @@ export const ArticlePageFilters = (props: ArticlePageFiltersProps) => {
             <Card className={cls.search}>
                 <Input value={search} onChange={onChangeSearch} placeholder={t('Search')} />
             </Card>
-            <ArticleTabs
+            <ArticleTypeTabs
                 value={type}
                 onChangeType={onTabClick}
             />

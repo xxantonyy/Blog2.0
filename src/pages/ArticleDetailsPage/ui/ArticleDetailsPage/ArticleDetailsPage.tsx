@@ -7,7 +7,6 @@ import { classNames } from '@/shared/lib/classNames/classNames';
 import { DynamicModuleLoader, ReducersList } from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
 import { ArticleRecommendationsList } from '@/features/articleRecommendationsList';
 import { articleDetailsCommentsReducer } from '../../model/slices/articleDetailsCommentsSlice';
-import { articleRecommendationsReducer } from '../../model/slices/articleDetailsPageRecommendationsSlice';
 import cls from './ArticleDetailsPage.module.scss';
 import { ArticleDetailsPageHeader } from '../ArticleDetailsPageHeader/ArticleDetailsPageHeader';
 import { ArticleDetailsComments } from '../ArticleDetailsComments/ArticleDetailsComments';
@@ -32,10 +31,8 @@ const ArticleDetailsPage = (props: ArticleDetailsPageProps) => {
             </div>
         );
     }
-
     const reducer: ReducersList = {
         articleDetailsComments: articleDetailsCommentsReducer,
-        articleRedommendations: articleRecommendationsReducer,
     };
 
     return (

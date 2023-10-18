@@ -14,7 +14,7 @@ import { Text, TextTheme } from '@/shared/ui/Text';
 import NotificatoinPng from '../../../shared/assets/icons/notification-20-20.svg';
 import cls from './Navbar.module.scss';
 import { DropDownButton } from '@/features/dropdownButton';
-import { getRouteArticlesCreate } from '@/shared/const/router';
+import { getRouteArticleCreate } from '@/shared/const/router';
 import { HStack } from '@/shared/ui/Stack/HStack/HStack';
 
 interface NavbarProps {
@@ -46,7 +46,7 @@ export const Navbar = memo(({ className }: NavbarProps) => {
                 <AppLink
                     theme={AppLinkTheme.SECONDARY}
                     className={cls.linkCreate}
-                    to={getRouteArticlesCreate()}
+                    to={getRouteArticleCreate()}
                 >
                     {t('Create Article')}
                 </AppLink>

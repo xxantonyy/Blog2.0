@@ -9,7 +9,7 @@ import { NotFoundPage } from '@/pages/NotFoundPage';
 import { ProfilePage } from '@/pages/ProfilePage';
 import {
     // eslint-disable-next-line max-len
-    AppRoutes, getRouteAbout, getRouteArticleDetails, getRouteArticles, getRouteArticlesCreate, getRouteArticlesEdit, getRouteForbidden, getRouteMain, getRoutePanel, getRouteProfile,
+    AppRoutes, getRouteAbout, getRouteArticleDetails, getRouteArticles, getRouteForbidden, getRouteMain, getRouteProfile, getRouteAdmin, getRouteArticleCreate, getRouteArticleEdit,
 } from '@/shared/const/router';
 import { AppRoutProps } from '@/shared/types/router';
 import { UserRole } from '@/shared/types/user';
@@ -39,17 +39,17 @@ export const routeConfig: Record<AppRoutes, AppRoutProps> = {
         authOnly: true,
     },
     [AppRoutes.ARTICLE_EDIT]: {
-        path: getRouteArticlesCreate(),
+        path: getRouteArticleCreate(),
         element: <ArticleEditPage />,
         authOnly: true,
     },
     [AppRoutes.ARTICLE_CREATE]: {
-        path: getRouteArticlesEdit(':id'),
+        path: getRouteArticleEdit(':id'),
         element: <ArticleEditPage />,
         authOnly: true,
     },
     [AppRoutes.ADMIN_PANEL]: {
-        path: getRoutePanel(),
+        path: getRouteAdmin(),
         element: <AdminPanelPage />,
         authOnly: true,
         roles: [UserRole.ADMIN, UserRole.MANAGER],

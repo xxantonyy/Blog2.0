@@ -1,70 +1,66 @@
 import { useTranslation } from 'react-i18next';
-import { useMemo } from 'react';
+import { memo, useMemo } from 'react';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { Select, SelectOptions } from '@/shared/ui/Select';
 import { SortOrder } from '@/shared/types';
 import cls from './ArticleSortSelector.module.scss';
-import { ArticleSordField } from '../../model/types/article';
+import { ArticleSordField } from '@/entities/Article';
 
 interface ArticleSortSelectorProps {
-   className?: string;
-   sort: ArticleSordField;
-   order: SortOrder;
-   onChangeOrder: (newOrder: SortOrder)=> void;
-   onChangeSort: (newSort: ArticleSordField)=> void;
+    className?: string;
+    sort: ArticleSordField;
+    order: SortOrder;
+    onChangeOrder: (newOrder: SortOrder) => void;
+    onChangeSort: (newSort: ArticleSordField) => void;
 }
 
-export const ArticleSortSelector = (props: ArticleSortSelectorProps) => {
+export const ArticleSortSelector = memo((props: ArticleSortSelectorProps) => {
     const {
-        className,
-        onChangeOrder,
-        onChangeSort,
-        order,
-        sort,
+        className, onChangeOrder, onChangeSort, order, sort,
     } = props;
     const { t } = useTranslation();
 
-    const orderOptions = useMemo <SelectOptions<SortOrder>[]>(() => [
+    const orderOptions = useMemo<SelectOptions<SortOrder>[]>(() => [
         {
             value: 'asc',
-            content: t('increase'),
+            content: t('возрастанию'),
         },
         {
             value: 'desc',
-            content: t('decrease'),
+            content: t('убыванию'),
         },
     ], [t]);
 
-    const sortFieldOptions = useMemo <SelectOptions<ArticleSordField>[]>(() => [
+    const sortFieldOptions = useMemo<SelectOptions<ArticleSordField>[]>(() => [
         {
             value: ArticleSordField.CREATED,
-            content: t('date of creature'),
+            content: t('дате создания'),
         },
         {
             value: ArticleSordField.TITLE,
-            content: t('title'),
+            content: t('названию'),
         },
         {
             value: ArticleSordField.VIEWS,
-            content: t('views'),
+            content: t('просмотрам'),
         },
     ], [t]);
 
     return (
         <div className={classNames(cls.ArticleSortSelector, {}, [className])}>
-            <Select
+            <Select<ArticleSordField>
                 options={sortFieldOptions}
-                label={t('Sort by')}
+                label={t('Сортировать ПО')}
                 value={sort}
                 onChange={onChangeSort}
             />
             <Select
                 options={orderOptions}
-                label={t('by')}
+                label={t('по')}
                 value={order}
                 onChange={onChangeOrder}
                 className={cls.order}
             />
         </div>
     );
-};
+});

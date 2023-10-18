@@ -27,7 +27,7 @@ export interface StateSchema {
     articleDetailsComments?: ArticleDetailsCommentsSchema;
     addCommentForm?: AddCommentForm;
     articlesPage?: ArticlePageSchema;
-    articleRedommendations?: ArticleDetailsPageRecommendationsSchema;
+    articleRecommendations?: ArticleDetailsPageRecommendationsSchema;
 
 }
 

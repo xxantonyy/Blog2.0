@@ -6,12 +6,14 @@ interface BuildBabelLoaderProps extends BuildOptions {
 }
 
 export function buildBabelLoader({ isDev, isTsx }:BuildBabelLoaderProps) {
+    const isProd = !isDev;
     return {
         test: isTsx ? /\.(jsx|tsx)$/ : /\.(js|ts)$/,
         exclude: /node_modules/,
         use: {
             loader: 'babel-loader',
             options: {
+                cacheDirectory: true,
                 presets: ['@babel/preset-env'],
                 plugins: [
                     [
@@ -28,9 +30,11 @@ export function buildBabelLoader({ isDev, isTsx }:BuildBabelLoaderProps) {
                         },
                     ],
                     '@babel/plugin-transform-runtime',
-                    isTsx && [
+                    isTsx && isProd && [
                         babelRemovePropsPlugin,
-                        { props: ['data-testid'] },
+                        {
+                            props: ['data-testid'],
+                        },
                     ],
                     isDev && require.resolve('react-refresh/babel'),
                 ].filter(Boolean),
