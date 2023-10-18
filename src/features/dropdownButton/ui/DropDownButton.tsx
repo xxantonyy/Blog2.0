@@ -8,7 +8,7 @@ import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch
 import { Avatar } from '@/shared/ui/Avatar';
 import { MyDropdown } from '@/shared/ui/Popups';
 import cls from './DropDownButton.module.scss';
-import { RoutePath } from '@/shared/const/router';
+import { getRoutePanel, getRouteProfile } from '@/shared/const/router';
 
 interface DropDownButtonProps {
    className?: string;
@@ -38,11 +38,11 @@ export const DropDownButton = memo((props: DropDownButtonProps) => {
                 items={[
                     {
                         content: t('Profile'),
-                        href: RoutePath.profile + authData.id,
+                        href: getRouteProfile(authData.id),
                     },
                     ...(isAdminPanelAvable ? [{
                         content: t('Admin'),
-                        href: RoutePath.admin_panel,
+                        href: getRoutePanel(),
                     }] : []),
 
                     {

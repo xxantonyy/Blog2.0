@@ -5,7 +5,7 @@ import { Skeleton } from '@/shared/ui/Skeleton';
 import { AppLink } from '@/shared/ui/AppLink';
 import { Comment } from '../../model/types/comment';
 import cls from './CommentCrard.module.scss';
-import { RoutePath } from '@/shared/const/router';
+import { getRouteProfile } from '@/shared/const/router';
 
 interface CommentCrardProps {
    className?: string;
@@ -34,7 +34,7 @@ export const CommentCrard = (props: CommentCrardProps) => {
 
     return (
         <div className={classNames(cls.CommentCrard, {}, [className])}>
-            <AppLink to={`${RoutePath.profile}${comment.user.id}`} className={cls.header}>
+            <AppLink to={getRouteProfile(comment.user.id)} className={cls.header}>
                 {comment.user.avatar ? <Avatar className={cls.avatar} size={30} src={comment.user.avatar} /> : null}
                 <Text className={cls.username} text={comment.user.username} />
             </AppLink>
