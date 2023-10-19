@@ -16,6 +16,9 @@ import {
 import cls from './ArticleListItem.module.scss';
 import { ArticleTextBlockComponent } from '../ArticleTextCodeComponent copy/ArticleTextBlockComponent';
 import { getRouteArticleDetails } from '@/shared/const/router';
+import { AppImage } from '@/shared/ui/AppImage';
+import NoPhoto from '@/shared/assets/icons/no_photo.png';
+import { Skeleton } from '@/shared/ui/Skeleton';
 
 interface ArticleListItemProps {
    className?: string;
@@ -44,7 +47,13 @@ export const ArticleListItem = memo((props: ArticleListItemProps) => {
                     </div>
                     <Text title={article.title} className={cls.title} />
                     <Text text={article.type.join(', ')} className={cls.types} />
-                    <img src={article.img} alt={article.title} className={cls.img} />
+                    <AppImage
+                        src={article.img}
+                        alt={article.title}
+                        className={cls.img}
+                        fallback={<Skeleton width="100%" height={250} />}
+                        errorFallback={<Icon width="100%" height={250} Svg={NoPhoto} />}
+                    />
                     {textBlocks && (
                         <ArticleTextBlockComponent block={textBlocks} className={cls.textblock} />
                     )}
@@ -75,7 +84,13 @@ export const ArticleListItem = memo((props: ArticleListItemProps) => {
             <div className={classNames(cls.ArticleListItem, {}, [className, cls[view]])}>
                 <Card className={cls.card}>
                     <div className={cls.imageWrapper}>
-                        <img src={article.img} alt={article.img} className={cls.img} />
+                        <AppImage
+                            fallback={<Skeleton width={200} height={200} />}
+                            src={article.img}
+                            alt={article.img}
+                            className={cls.img}
+                            errorFallback={<Icon width={200} height={200} Svg={NoPhoto} />}
+                        />
                         <Text text={article.createdAt} className={cls.date} />
                     </div>
                     <div className={cls.infoWrapper}>
