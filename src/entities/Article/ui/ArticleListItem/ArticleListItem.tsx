@@ -17,7 +17,7 @@ import cls from './ArticleListItem.module.scss';
 import { ArticleTextBlockComponent } from '../ArticleTextCodeComponent copy/ArticleTextBlockComponent';
 import { getRouteArticleDetails } from '@/shared/const/router';
 import { AppImage } from '@/shared/ui/AppImage';
-import NoPhoto from '@/shared/assets/icons/no_photo.png';
+// import NoPhoto from '@/shared/assets/icons/no_photo.png';
 import { Skeleton } from '@/shared/ui/Skeleton';
 
 interface ArticleListItemProps {
@@ -52,7 +52,7 @@ export const ArticleListItem = memo((props: ArticleListItemProps) => {
                         alt={article.title}
                         className={cls.img}
                         fallback={<Skeleton width="100%" height={250} />}
-                        errorFallback={<Icon width="100%" height={250} Svg={NoPhoto} />}
+                        // errorFallback={<Icon width="100%" height={250} Svg={NoPhoto} />}
                     />
                     {textBlocks && (
                         <ArticleTextBlockComponent block={textBlocks} className={cls.textblock} />
@@ -89,7 +89,7 @@ export const ArticleListItem = memo((props: ArticleListItemProps) => {
                             src={article.img}
                             alt={article.img}
                             className={cls.img}
-                            errorFallback={<Icon width={200} height={200} Svg={NoPhoto} />}
+                            // errorFallback={<Icon width={200} height={200} Svg={NoPhoto} />}
                         />
                         <Text text={article.createdAt} className={cls.date} />
                     </div>
