@@ -3,10 +3,13 @@ import { Dispatch } from 'redux';
 import { fetchNextArticlePage } from './fetchNextArticlePage';
 import { articlePageActions } from '../slice/articlePageSlice';
 import { StateSchema } from '@/app/providers/StoreProvider';
+// eslint-disable-next-line ttx/layer-imports
+import { ThunkExtraArg } from '@/app/providers/StoreProvider/config/StateSchema';
 
 describe('fetchNextArticlePage', () => {
     let dispatch: Dispatch;
     let getState: () => StateSchema;
+    let extraArg: ThunkExtraArg;
 
     beforeEach(() => {
         dispatch = jest.fn();
@@ -33,7 +36,7 @@ describe('fetchNextArticlePage', () => {
         isLoadingSpy.mockReturnValue(initialState.articlePage.isLoading);
 
         const result = fetchNextArticlePage();
-        const response = await result(dispatch, getState, undefined);
+        const response = await result(dispatch, getState, extraArg);
 
         // Expect that setPage and fetchArticlesList have been dispatched
         expect(dispatch).toHaveBeenCalledWith(articlePageActions.setPage(2));

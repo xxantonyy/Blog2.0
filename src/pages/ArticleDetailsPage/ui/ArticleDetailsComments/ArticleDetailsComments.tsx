@@ -1,7 +1,7 @@
 /* eslint-disable i18next/no-literal-string */
 import { useTranslation } from 'react-i18next';
 import { Suspense, memo, useCallback } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import { useSelector } from 'react-redux';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { CommentList } from '@/entities/Comment';
 import { Text, TextSize } from '@/shared/ui/Text';
@@ -12,6 +12,7 @@ import { getArticleComments } from '../../model/slices/articleDetailsCommentsSli
 import { getArticleCommentsIsLoading } from '../../selectors/comments/comments';
 import { addCommentForArticle } from '../../model/services/addCommentForArticle/addCommentForArticle';
 import { AddCommentFormAsync as AddCommentForm } from '@/features/AddCommentForm';
+import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
 
 interface ArticleDetailsCommentsProps {
    className?: string;
@@ -25,7 +26,7 @@ export const ArticleDetailsComments = memo((props: ArticleDetailsCommentsProps) 
     } = props;
     const { t } = useTranslation();
 
-    const dispatch = useDispatch();
+    const dispatch = useAppDispatch();
     const commetns = useSelector(getArticleComments.selectAll);
     const IsLoading = useSelector(getArticleCommentsIsLoading);
 
