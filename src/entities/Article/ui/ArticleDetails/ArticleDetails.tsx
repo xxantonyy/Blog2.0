@@ -25,6 +25,8 @@ import { ArticleCodeBlockComponent } from '../ArticleCodeBlockComponent/ArticleC
 import { ArticleImageBlockComponent } from '../ArticleImageBlockComponent/ArticleImageBlockComponent';
 import { ArticleTextBlockComponent } from '../ArticleTextCodeComponent copy/ArticleTextBlockComponent';
 import cls from './ArticleDetails.module.scss';
+import { HStack } from '@/shared/ui/Stack/HStack/HStack';
+import { VStack } from '@/shared/ui/Stack/VStack/VStack';
 
 interface ArticleDetailsProps {
     className?: string;
@@ -100,28 +102,37 @@ export const ArticleDetails = memo((props: ArticleDetailsProps) => {
     } else {
         content = (
             <>
-                <div className={cls.avatarWrapper}>
-                    <Avatar
-                        size={200}
-                        src={article?.img}
-                        className={cls.avatar}
+                <HStack justify="center" max className={cls.avatarWrapper}>
+                    <div className={cls.avatarWrapper}>
+                        <Avatar
+                            size={200}
+                            src={article?.img}
+                            className={cls.avatar}
+                        />
+                    </div>
+                </HStack>
+                <VStack
+                    gap="gap4"
+                    max
+                    data-testid="ArticleDetails.Info"
+                >
+                    <Text
+                        className={cls.title}
+                        title={article?.title}
+                        text={article?.subtitle}
+                        size={TextSize.L}
                     />
-                </div>
-                <Text
-                    className={cls.title}
-                    title={article?.title}
-                    text={article?.subtitle}
-                    size={TextSize.L}
-                />
-                <div className={cls.articleInfo}>
-                    <Icon className={cls.icon} Svg={EyeIcon} />
-                    <Text text={String(article?.views)} />
-                </div>
-                <div className={cls.articleInfo}>
-                    <Icon className={cls.icon} Svg={CalendarIcon} />
-                    <Text text={article?.createdAt} />
-                </div>
-                {article?.blocks.map(renderBlock)}
+                    <div className={cls.articleInfo}>
+                        <Icon className={cls.icon} Svg={EyeIcon} />
+                        <Text text={String(article?.views)} />
+                    </div>
+                    <div className={cls.articleInfo}>
+                        <Icon className={cls.icon} Svg={CalendarIcon} />
+                        <Text text={article?.createdAt} />
+                    </div>
+                    {article?.blocks.map(renderBlock)}
+                </VStack>
+
             </>
         );
     }

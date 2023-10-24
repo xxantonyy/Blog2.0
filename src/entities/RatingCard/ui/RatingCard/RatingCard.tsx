@@ -61,14 +61,24 @@ export const RatingCard = memo((props: RatingCardProps) => {
     }, [hasFeedback, onAccept]);
 
     const modalContent = (
-        <VStack gap="gap32">
+        <VStack
+            gap="gap32"
+        >
             <Text title={feedBackTitle} />
-            <Input placeholder={t('your feedback')} value={feedback} onChange={setFeedback} />
+            <Input
+                data-testid="RatingCard.Input"
+                placeholder={t('your feedback')}
+                value={feedback}
+                onChange={setFeedback}
+            />
             <HStack gap="gap8" justify="end" max>
                 <Button onClick={closeHandler} theme={ButtonTheme.OUTLINE_RED}>
                     {t('Close')}
                 </Button>
-                <Button onClick={acceptHandler}>
+                <Button
+                    data-testid="RatingCard.Send"
+                    onClick={acceptHandler}
+                >
                     {t('Send')}
                 </Button>
             </HStack>
@@ -76,10 +86,21 @@ export const RatingCard = memo((props: RatingCardProps) => {
     );
 
     return (
-        <Card max className={classNames(cls.RatingCard, {}, [className])}>
-            <VStack align="center" gap="gap8">
+        <Card
+            data-testid="RatingCard"
+            max
+            className={classNames(cls.RatingCard, {}, [className])}
+        >
+            <VStack
+                align="center"
+                gap="gap8"
+            >
                 <Text title={starsCount ? t('thank you for rating') : title} />
-                <StarRating selectedStars={starsCount} size={40} onSelect={onSelectStars} />
+                <StarRating
+                    selectedStars={starsCount}
+                    size={40}
+                    onSelect={onSelectStars}
+                />
             </VStack>
             <BrowserView>
                 <Modal isOpen={isModalOpen} lazy onClose={closeHandler}>

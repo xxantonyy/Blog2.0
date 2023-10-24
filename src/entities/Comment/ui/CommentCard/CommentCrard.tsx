@@ -6,6 +6,7 @@ import { AppLink } from '@/shared/ui/AppLink';
 import { Comment } from '../../model/types/comment';
 import cls from './CommentCrard.module.scss';
 import { getRouteProfile } from '@/shared/const/router';
+import { VStack } from '@/shared/ui/Stack/VStack/VStack';
 
 interface CommentCrardProps {
    className?: string;
@@ -22,7 +23,10 @@ export const CommentCrard = (props: CommentCrardProps) => {
 
     if (isLoading) {
         return (
-            <div className={classNames('', {}, [className])}>
+            <div
+                data-testid="CommentCard.Loading"
+                className={classNames('', {}, [className])}
+            >
                 <div>
                     <Skeleton width={30} height={30} border="50%" />
                     <Skeleton height={16} width={100} />
@@ -33,12 +37,17 @@ export const CommentCrard = (props: CommentCrardProps) => {
     }
 
     return (
-        <div className={classNames(cls.CommentCrard, {}, [className])}>
+        <VStack
+            data-testid="CommentCard.Content"
+            gap="gap8"
+            max
+            className={classNames(cls.CommentCrard, {}, [className])}
+        >
             <AppLink to={getRouteProfile(comment.user.id)} className={cls.header}>
                 {comment.user.avatar ? <Avatar className={cls.avatar} size={30} src={comment.user.avatar} /> : null}
                 <Text className={cls.username} text={comment.user.username} />
             </AppLink>
             <Text className={cls.commentText} text={comment.text} />
-        </div>
+        </VStack>
     );
 };
