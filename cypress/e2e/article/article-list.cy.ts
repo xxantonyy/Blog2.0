@@ -4,7 +4,8 @@ describe('Пользователь заходит на страницу со с�
             cy.visit('articles');
         });
     });
-    it('и статьи успешно подгружаются', () => {
+    it('И статьи успешно подгружаются', () => {
+        cy.intercept('POST', '**/articles?*', { fixture: 'articles.json' });
         cy.getByTestId('ArticleList').should('exist');
         cy.getByTestId('ArticleListItem').should('have.length.greaterThan', 3);
     });
