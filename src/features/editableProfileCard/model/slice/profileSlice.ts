@@ -36,14 +36,14 @@ export const profileSlice = createSlice({
                 state.error = undefined;
                 state.isLoading = true;
             })
-            .addCase(fetchProfileData.fulfilled, (
-                state,
-                action: PayloadAction<Profile>,
-            ) => {
-                state.isLoading = false;
-                state.data = action.payload;
-                state.form = action.payload;
-            })
+            .addCase(
+                fetchProfileData.fulfilled,
+                (state, action: PayloadAction<Profile>) => {
+                    state.isLoading = false;
+                    state.data = action.payload;
+                    state.form = action.payload;
+                },
+            )
             .addCase(fetchProfileData.rejected, (state, action) => {
                 state.isLoading = false;
                 state.error = action.payload;
@@ -53,16 +53,16 @@ export const profileSlice = createSlice({
                 state.ValidateError = undefined;
                 state.isLoading = true;
             })
-            .addCase(updateaProfileData.fulfilled, (
-                state,
-                action: PayloadAction<Profile>,
-            ) => {
-                state.isLoading = false;
-                state.data = action.payload;
-                state.form = action.payload;
-                state.readonly = true;
-                state.ValidateError = undefined;
-            })
+            .addCase(
+                updateaProfileData.fulfilled,
+                (state, action: PayloadAction<Profile>) => {
+                    state.isLoading = false;
+                    state.data = action.payload;
+                    state.form = action.payload;
+                    state.readonly = true;
+                    state.ValidateError = undefined;
+                },
+            )
             .addCase(updateaProfileData.rejected, (state, action) => {
                 state.isLoading = false;
                 state.ValidateError = action.payload;

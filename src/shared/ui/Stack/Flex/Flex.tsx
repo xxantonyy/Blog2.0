@@ -34,13 +34,13 @@ const directionGap: Record<FlexGap, string> = {
 };
 
 export interface flexProps {
-   className?: string;
-   children?: ReactNode;
-   justify?: FlexJustify;
-   align?: FlexAlign;
-   direction?: FlexDirection;
-   gap?: FlexGap;
-   max?: boolean
+    className?: string;
+    children?: ReactNode;
+    justify?: FlexJustify;
+    align?: FlexAlign;
+    direction?: FlexDirection;
+    gap?: FlexGap;
+    max?: boolean;
 }
 
 export const Flex = (props: flexProps) => {

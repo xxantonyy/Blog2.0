@@ -16,7 +16,10 @@ const ProfilePage = ({ className }: ProfilePageProps) => {
     const { t } = useTranslation('profile');
 
     return (
-        <Page data-testid="ProfilePage" className={classNames('', {}, [className])}>
+        <Page
+            data-testid="ProfilePage"
+            className={classNames('', {}, [className])}
+        >
             <VStack gap="gap16">
                 <EditableProfileCard id={id} />
                 <ProfileRating profileId={id || ''} />

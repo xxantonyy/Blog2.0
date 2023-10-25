@@ -7,15 +7,12 @@ import { Notification } from '../../model/types/notifications';
 import cls from './NotificationItem.module.scss';
 
 interface NotificationItemProps {
-   className?: string;
-   data: Notification;
+    className?: string;
+    data: Notification;
 }
 
 export const NotificationItem = memo((props: NotificationItemProps) => {
-    const {
-        className,
-        data,
-    } = props;
+    const { className, data } = props;
     const { t } = useTranslation();
 
     const content = (
@@ -29,7 +26,12 @@ export const NotificationItem = memo((props: NotificationItemProps) => {
 
     if (data.href) {
         return (
-            <a className={cls.link} target="_blank" href={data.href} rel="noreferrer">
+            <a
+                className={cls.link}
+                target="_blank"
+                href={data.href}
+                rel="noreferrer"
+            >
                 {content}
             </a>
         );

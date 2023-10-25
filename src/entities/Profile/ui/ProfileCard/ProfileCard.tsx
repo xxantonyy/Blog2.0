@@ -15,14 +15,14 @@ interface ProfileCardProps {
     isLoading?: boolean;
     error?: string;
     readonly?: boolean;
-    onChangeFirstName?: (value?: string)=> void;
-    onChangeLastName?: (value?: string)=> void;
-    onChangeAgeName?: (value?: string)=> void;
-    onChangeCityName?: (value?: string)=> void;
-    onChangeUserName?: (value?: string)=> void;
-    onChangeAvatar?: (value?: string)=> void;
-    onChangeCurrency?: (currency: Currency)=> void;
-    onChangeCountry?: (country: Country)=> void;
+    onChangeFirstName?: (value?: string) => void;
+    onChangeLastName?: (value?: string) => void;
+    onChangeAgeName?: (value?: string) => void;
+    onChangeCityName?: (value?: string) => void;
+    onChangeUserName?: (value?: string) => void;
+    onChangeAvatar?: (value?: string) => void;
+    onChangeCurrency?: (currency: Currency) => void;
+    onChangeCountry?: (country: Country) => void;
 }
 
 export const ProfileCard = ({
@@ -44,7 +44,13 @@ export const ProfileCard = ({
 
     if (isLoading) {
         return (
-            <div className={classNames(cls.ProfileCard, { [cls.loading]: true }, [className])}>
+            <div
+                className={classNames(
+                    cls.ProfileCard,
+                    { [cls.loading]: true },
+                    [className],
+                )}
+            >
                 <Loader />
             </div>
         );
@@ -52,7 +58,12 @@ export const ProfileCard = ({
 
     if (error) {
         return (
-            <div className={classNames(cls.ProfileCard, {}, [className, cls.error])}>
+            <div
+                className={classNames(cls.ProfileCard, {}, [
+                    className,
+                    cls.error,
+                ])}
+            >
                 <Text
                     theme={TextTheme.ERROR}
                     title={t('erorr message')}
@@ -70,9 +81,12 @@ export const ProfileCard = ({
     return (
         <div className={classNames(cls.ProfileCard, mod, [className])}>
             <div className={cls.data}>
-
                 {data?.avatar && (
-                    <div className={classNames(cls.avatarWrapper, {}, [className])}>
+                    <div
+                        className={classNames(cls.avatarWrapper, {}, [
+                            className,
+                        ])}
+                    >
                         <Avatar src={data?.avatar} size={150} alt="" />
                     </div>
                 )}

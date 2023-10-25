@@ -8,21 +8,19 @@ import {
 import { useTheme } from '../useTheme/useTheme';
 
 interface useModalProps {
-   onClose?: () => void;
-   isOpen?: boolean;
-   animatiomDelay?: number;
+    onClose?: () => void;
+    isOpen?: boolean;
+    animatiomDelay?: number;
 }
 
 export function useModal(props: useModalProps) {
-    const {
-        onClose,
-        isOpen,
-        animatiomDelay,
-    } = props;
+    const { onClose, isOpen, animatiomDelay } = props;
 
     const [isClosing, setIsClosing] = useState(false);
     const [isMounted, setIsMounted] = useState(false);
-    const timerRef = useRef() as MutableRefObject<ReturnType<typeof setTimeout>>;
+    const timerRef = useRef() as MutableRefObject<
+        ReturnType<typeof setTimeout>
+    >;
     const { theme } = useTheme();
 
     useEffect(() => {
@@ -42,11 +40,14 @@ export function useModal(props: useModalProps) {
     }, [animatiomDelay, onClose]);
 
     // Новые ссылки!!!
-    const onKeyDown = useCallback((e: KeyboardEvent) => {
-        if (e.key === 'Escape') {
-            close();
-        }
-    }, [close]);
+    const onKeyDown = useCallback(
+        (e: KeyboardEvent) => {
+            if (e.key === 'Escape') {
+                close();
+            }
+        },
+        [close],
+    );
 
     const onContentClick = (e: React.MouseEvent) => {
         e.stopPropagation();

@@ -13,7 +13,8 @@ const Template: ComponentStory<typeof Code> = (args) => <Code {...args} />;
 
 export const Primary = Template.bind({});
 Primary.args = {
-    text: '<div>Hello World!!!</div>, \n'
-    + 'fsdfsdfsdfws, \n'
-    + 'gdfgdfgsdfsdfsdfs, \n',
+    text:
+        '<div>Hello World!!!</div>, \n'
+        + 'fsdfsdfsdfws, \n'
+        + 'gdfgdfgsdfsdfsdfs, \n',
 };

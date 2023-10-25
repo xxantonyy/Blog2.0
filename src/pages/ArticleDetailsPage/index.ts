@@ -5,4 +5,7 @@ export { ArticleDetailsPageAsync as ArticleDetailsPage } from './ui/ArticleDetai
 export type { ArticleDetailsCommentsSchema } from './model/types/ArticleDetailsCommentsSchema';
 export type { ArticleDetailsPageRecommendationsSchema } from './model/types/ArticleDetailsPageRecommendationsSchema';
 
-export { getArticleCommentsIsLoading, getArticleCommentsError } from './selectors/comments/comments';
+export {
+    getArticleCommentsIsLoading,
+    getArticleCommentsError,
+} from './selectors/comments/comments';

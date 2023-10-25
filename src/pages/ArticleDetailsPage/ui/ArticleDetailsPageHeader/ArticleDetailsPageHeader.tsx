@@ -8,16 +8,19 @@ import { getUserAuthData } from '@/entities/User';
 import { getArticleDetaislData } from '@/entities/Article';
 import { getCanEditArticle } from '../../selectors/article';
 import cls from './ArticleDetailsPageHeader.module.scss';
-import { getRouteArticleDetails, getRouteArticles } from '@/shared/const/router';
+import {
+    getRouteArticleDetails,
+    getRouteArticles,
+} from '@/shared/const/router';
 
 interface ArticleDetailsPageHeaderProps {
-   className?: string;
+    className?: string;
 }
 
-export const ArticleDetailsPageHeader = (props: ArticleDetailsPageHeaderProps) => {
-    const {
-        className,
-    } = props;
+export const ArticleDetailsPageHeader = (
+    props: ArticleDetailsPageHeaderProps,
+) => {
+    const { className } = props;
     const { t } = useTranslation();
     const navigate = useNavigate();
     const userDara = useSelector(getUserAuthData);
@@ -33,12 +36,12 @@ export const ArticleDetailsPageHeader = (props: ArticleDetailsPageHeaderProps) =
     }, [article?.id, navigate]);
 
     return (
-        <div className={classNames(cls.ArticleDetailsPageHeader, {}, [className])}>
-
-            <Button
-                theme={ButtonTheme.OUTLINE}
-                onClick={onBackToList}
-            >
+        <div
+            className={classNames(cls.ArticleDetailsPageHeader, {}, [
+                className,
+            ])}
+        >
+            <Button theme={ButtonTheme.OUTLINE} onClick={onBackToList}>
                 {t('Back to List')}
             </Button>
             {canEdit && (

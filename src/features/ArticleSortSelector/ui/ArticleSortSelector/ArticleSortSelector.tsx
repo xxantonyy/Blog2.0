@@ -20,31 +20,37 @@ export const ArticleSortSelector = memo((props: ArticleSortSelectorProps) => {
     } = props;
     const { t } = useTranslation();
 
-    const orderOptions = useMemo<SelectOptions<SortOrder>[]>(() => [
-        {
-            value: 'asc',
-            content: t('возрастанию'),
-        },
-        {
-            value: 'desc',
-            content: t('убыванию'),
-        },
-    ], [t]);
+    const orderOptions = useMemo<SelectOptions<SortOrder>[]>(
+        () => [
+            {
+                value: 'asc',
+                content: t('возрастанию'),
+            },
+            {
+                value: 'desc',
+                content: t('убыванию'),
+            },
+        ],
+        [t],
+    );
 
-    const sortFieldOptions = useMemo<SelectOptions<ArticleSordField>[]>(() => [
-        {
-            value: ArticleSordField.CREATED,
-            content: t('дате создания'),
-        },
-        {
-            value: ArticleSordField.TITLE,
-            content: t('названию'),
-        },
-        {
-            value: ArticleSordField.VIEWS,
-            content: t('просмотрам'),
-        },
-    ], [t]);
+    const sortFieldOptions = useMemo<SelectOptions<ArticleSordField>[]>(
+        () => [
+            {
+                value: ArticleSordField.CREATED,
+                content: t('дате создания'),
+            },
+            {
+                value: ArticleSordField.TITLE,
+                content: t('названию'),
+            },
+            {
+                value: ArticleSordField.VIEWS,
+                content: t('просмотрам'),
+            },
+        ],
+        [t],
+    );
 
     return (
         <div className={classNames(cls.ArticleSortSelector, {}, [className])}>

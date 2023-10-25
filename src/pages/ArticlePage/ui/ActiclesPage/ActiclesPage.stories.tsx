@@ -10,8 +10,9 @@ export default {
     },
 } as ComponentMeta<typeof ActiclesPage>;
 
-const Template: ComponentStory<typeof ActiclesPage> = (args) => <ActiclesPage {...args} />;
+const Template: ComponentStory<typeof ActiclesPage> = (args) => (
+    <ActiclesPage {...args} />
+);
 
 export const Primary = Template.bind({});
-Primary.args = {
-};
+Primary.args = {};

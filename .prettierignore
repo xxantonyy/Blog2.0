@@ -1,0 +1,8 @@
+# Ignore artifacts:
+build
+coverage
+node_module
+*.html
+*.scss
+*.css
+*.json

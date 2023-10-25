@@ -6,27 +6,24 @@ import { Icon } from '../Icon/icon';
 import cls from './StarRating.module.scss';
 
 interface StarRatingProps {
-   className?: string;
-   onSelect?: (StarsCount: number) => void;
-   size?: number;
-   selectedStars?: number;
+    className?: string;
+    onSelect?: (StarsCount: number) => void;
+    size?: number;
+    selectedStars?: number;
 }
 
 const stars = [1, 2, 3, 4, 5];
 
 export const StarRating = memo((props: StarRatingProps) => {
     const {
-        className,
-        onSelect,
-        selectedStars = 0,
-        size = 30,
+        className, onSelect, selectedStars = 0, size = 30,
     } = props;
     const { t } = useTranslation();
 
     const [currentStarCount, setCurrentStarCount] = useState(selectedStars);
     const [isSelected, setIsSelected] = useState(Boolean(selectedStars));
 
-    const onHover = (starsCount : number) => () => {
+    const onHover = (starsCount: number) => () => {
         if (!isSelected) {
             setCurrentStarCount(starsCount);
         }
@@ -56,7 +53,11 @@ export const StarRating = memo((props: StarRatingProps) => {
                     className={classNames(
                         cls.starIcon,
                         { [cls.isSelected]: isSelected },
-                        [currentStarCount >= starNumber ? cls.hovered : cls.normal],
+                        [
+                            currentStarCount >= starNumber
+                                ? cls.hovered
+                                : cls.normal,
+                        ],
                     )}
                     width={size}
                     height={size}

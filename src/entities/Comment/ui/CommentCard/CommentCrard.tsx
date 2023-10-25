@@ -9,17 +9,13 @@ import { getRouteProfile } from '@/shared/const/router';
 import { VStack } from '@/shared/ui/Stack/VStack/VStack';
 
 interface CommentCrardProps {
-   className?: string;
-   comment : Comment;
-   isLoading?: boolean;
+    className?: string;
+    comment: Comment;
+    isLoading?: boolean;
 }
 
 export const CommentCrard = (props: CommentCrardProps) => {
-    const {
-        className,
-        comment,
-        isLoading,
-    } = props;
+    const { className, comment, isLoading } = props;
 
     if (isLoading) {
         return (
@@ -43,8 +39,17 @@ export const CommentCrard = (props: CommentCrardProps) => {
             max
             className={classNames(cls.CommentCrard, {}, [className])}
         >
-            <AppLink to={getRouteProfile(comment.user.id)} className={cls.header}>
-                {comment.user.avatar ? <Avatar className={cls.avatar} size={30} src={comment.user.avatar} /> : null}
+            <AppLink
+                to={getRouteProfile(comment.user.id)}
+                className={cls.header}
+            >
+                {comment.user.avatar ? (
+                    <Avatar
+                        className={cls.avatar}
+                        size={30}
+                        src={comment.user.avatar}
+                    />
+                ) : null}
                 <Text className={cls.username} text={comment.user.username} />
             </AppLink>
             <Text className={cls.commentText} text={comment.text} />

@@ -9,17 +9,17 @@ import popupCls from '../../styles/popup.module.scss';
 import cls from './DporDown.module.scss';
 
 export interface DropDownItem {
-   disabled?: boolean;
-   content?: ReactNode;
-   onClick?: () => void;
-   href?: string;
+    disabled?: boolean;
+    content?: ReactNode;
+    onClick?: () => void;
+    href?: string;
 }
 
 export interface DropDownProps {
-   className?: string;
-   items: DropDownItem[];
-   trigger: ReactNode;
-   direction?: DropDownDirection;
+    className?: string;
+    items: DropDownItem[];
+    trigger: ReactNode;
+    direction?: DropDownDirection;
 }
 
 export function MyDropdown(props: DropDownProps) {
@@ -30,21 +30,11 @@ export function MyDropdown(props: DropDownProps) {
     const menuClasses = [mapDirectionClass[direction]];
 
     return (
-        <Menu
-            as="div"
-            className={classNames(popupCls.popup, {}, [className])}
-        >
-            <Menu.Button
-                className={popupCls.trigger}
-            >
-                {trigger}
-
-            </Menu.Button>
-            <Menu.Items
-                className={classNames(cls.menu, {}, menuClasses)}
-            >
+        <Menu as="div" className={classNames(popupCls.popup, {}, [className])}>
+            <Menu.Button className={popupCls.trigger}>{trigger}</Menu.Button>
+            <Menu.Items className={classNames(cls.menu, {}, menuClasses)}>
                 {items.map((item, index) => {
-                    const content = ({ active } : {active: boolean}) => (
+                    const content = ({ active }: { active: boolean }) => (
                         <button
                             // eslint-disable-next-line react/no-array-index-key
                             key={index}

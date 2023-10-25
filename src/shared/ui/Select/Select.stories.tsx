@@ -18,6 +18,5 @@ Primary.args = {
     options: [
         { value: '123', content: 'Первый пункт' },
         { value: '1232', content: 'Первый пункт2' },
-
     ],
 };

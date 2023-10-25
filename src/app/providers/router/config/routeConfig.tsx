@@ -9,7 +9,16 @@ import { NotFoundPage } from '@/pages/NotFoundPage';
 import { ProfilePage } from '@/pages/ProfilePage';
 import {
     // eslint-disable-next-line max-len
-    AppRoutes, getRouteAbout, getRouteArticleDetails, getRouteArticles, getRouteForbidden, getRouteMain, getRouteProfile, getRouteAdmin, getRouteArticleCreate, getRouteArticleEdit,
+    AppRoutes,
+    getRouteAbout,
+    getRouteArticleDetails,
+    getRouteArticles,
+    getRouteForbidden,
+    getRouteMain,
+    getRouteProfile,
+    getRouteAdmin,
+    getRouteArticleCreate,
+    getRouteArticleEdit,
 } from '@/shared/const/router';
 import { AppRoutProps } from '@/shared/types/router';
 import { UserRole } from '@/shared/types/user';

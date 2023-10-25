@@ -1,6 +1,4 @@
-import {
-    PayloadAction, createSlice,
-} from '@reduxjs/toolkit';
+import { PayloadAction, createSlice } from '@reduxjs/toolkit';
 import { UISchema } from '../types/UISchema';
 
 const initialState: UISchema = {
@@ -11,12 +9,14 @@ export const UISlice = createSlice({
     name: 'ui',
     initialState,
     reducers: {
-        setScrollPosition: (state, { payload }: PayloadAction<{path: string, position: number }>) => {
+        setScrollPosition: (
+            state,
+            { payload }: PayloadAction<{ path: string; position: number }>,
+        ) => {
             state.scroll[payload.path] = payload.position;
         },
     },
-    extraReducers: (builder) => {
-    },
+    extraReducers: (builder) => {},
 });
 
 // Action creators are generated for each case reducer function

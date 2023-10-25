@@ -6,5 +6,4 @@ export const mapDirectionClass: Record<DropDownDirection, string> = {
     'bottom right': cls.bottomRight,
     'top left': cls.topLeft,
     'top right': cls.topRight,
-
 };

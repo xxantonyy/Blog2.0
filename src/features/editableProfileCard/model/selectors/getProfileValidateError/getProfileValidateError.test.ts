@@ -14,10 +14,14 @@ describe('getProfileValidateError.test', () => {
                 ValidateError,
             },
         };
-        expect(getProfileValidateError(state as StateSchema)).toEqual(ValidateError);
+        expect(getProfileValidateError(state as StateSchema)).toEqual(
+            ValidateError,
+        );
     });
     test('should work with empty state', () => {
         const state: DeepPartial<StateSchema> = {};
-        expect(getProfileValidateError(state as StateSchema)).toEqual(undefined);
+        expect(getProfileValidateError(state as StateSchema)).toEqual(
+            undefined,
+        );
     });
 });

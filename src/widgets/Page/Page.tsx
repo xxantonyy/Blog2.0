@@ -40,10 +40,12 @@ export const Page = memo((props: PageProps) => {
     });
 
     const onScroll = (e: UIEvent<HTMLDivElement>) => {
-        dispatch(UIActions.setScrollPosition({
-            position: e.currentTarget.scrollTop,
-            path: pathname,
-        }));
+        dispatch(
+            UIActions.setScrollPosition({
+                position: e.currentTarget.scrollTop,
+                path: pathname,
+            }),
+        );
     };
 
     return (
@@ -55,7 +57,9 @@ export const Page = memo((props: PageProps) => {
             data-testid={props['data-testid'] ?? 'Page'}
         >
             {children}
-            {onScrollEnd ? <div className={cls.trigger} ref={triggerRef} /> : null}
+            {onScrollEnd ? (
+                <div className={cls.trigger} ref={triggerRef} />
+            ) : null}
         </section>
     );
 });

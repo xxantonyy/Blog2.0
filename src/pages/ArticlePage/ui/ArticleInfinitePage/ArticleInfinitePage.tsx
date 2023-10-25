@@ -5,18 +5,19 @@ import { useSearchParams } from 'react-router-dom';
 import { ArticleList } from '@/entities/Article';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { useInitialEffect } from '@/shared/lib/hooks/useInitialEffect/useInitialEffect';
-import { getArticleIsloading, getArticView } from '../../model/selectors/getArticleSelectors';
+import {
+    getArticleIsloading,
+    getArticView,
+} from '../../model/selectors/getArticleSelectors';
 import { initArticlesPage } from '../../model/service/initArticlesPage';
 import { getArticles } from '../../model/slice/articlePageSlice';
 
 interface ArticleInfinitePageProps {
-   className?: string;
+    className?: string;
 }
 
 export const ArticleInfinitePage = memo((props: ArticleInfinitePageProps) => {
-    const {
-        className,
-    } = props;
+    const { className } = props;
     const { t } = useTranslation();
 
     const dispatch = useAppDispatch();

@@ -15,13 +15,13 @@ import { VStack } from '@/shared/ui/Stack/VStack/VStack';
 import { HStack } from '@/shared/ui/Stack/HStack/HStack';
 
 interface RatingCardProps {
-   className?: string;
-   title?: string;
-   feedBackTitle?: string;
-   hasFeedback?: boolean;
-   onCancel?: (starsCount: number) => void;
-   onAccept?: (starsCount: number, feedback?: string) => void;
-   rate?: number;
+    className?: string;
+    title?: string;
+    feedBackTitle?: string;
+    hasFeedback?: boolean;
+    onCancel?: (starsCount: number) => void;
+    onAccept?: (starsCount: number, feedback?: string) => void;
+    rate?: number;
 }
 
 export const RatingCard = memo((props: RatingCardProps) => {
@@ -50,20 +50,21 @@ export const RatingCard = memo((props: RatingCardProps) => {
         onCancel?.(starsCount);
     }, [onCancel, starsCount]);
 
-    const onSelectStars = useCallback((stars: number) => {
-        setStarsCount(stars);
-        if (hasFeedback) {
+    const onSelectStars = useCallback(
+        (stars: number) => {
+            setStarsCount(stars);
+            if (hasFeedback) {
+                setIsModalOpen(true);
+            } else {
+                onAccept?.(stars);
+            }
             setIsModalOpen(true);
-        } else {
-            onAccept?.(stars);
-        }
-        setIsModalOpen(true);
-    }, [hasFeedback, onAccept]);
+        },
+        [hasFeedback, onAccept],
+    );
 
     const modalContent = (
-        <VStack
-            gap="gap32"
-        >
+        <VStack gap="gap32">
             <Text title={feedBackTitle} />
             <Input
                 data-testid="RatingCard.Input"
@@ -75,10 +76,7 @@ export const RatingCard = memo((props: RatingCardProps) => {
                 <Button onClick={closeHandler} theme={ButtonTheme.OUTLINE_RED}>
                     {t('Close')}
                 </Button>
-                <Button
-                    data-testid="RatingCard.Send"
-                    onClick={acceptHandler}
-                >
+                <Button data-testid="RatingCard.Send" onClick={acceptHandler}>
                     {t('Send')}
                 </Button>
             </HStack>
@@ -91,10 +89,7 @@ export const RatingCard = memo((props: RatingCardProps) => {
             max
             className={classNames(cls.RatingCard, {}, [className])}
         >
-            <VStack
-                align="center"
-                gap="gap8"
-            >
+            <VStack align="center" gap="gap8">
                 <Text title={starsCount ? t('thank you for rating') : title} />
                 <StarRating
                     selectedStars={starsCount}
@@ -112,7 +107,6 @@ export const RatingCard = memo((props: RatingCardProps) => {
                     {modalContent}
                 </Drawer>
             </MobileView>
-
         </Card>
     );
 });

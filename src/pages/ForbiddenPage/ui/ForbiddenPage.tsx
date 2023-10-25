@@ -4,17 +4,18 @@ import { classNames } from '@/shared/lib/classNames/classNames';
 import { Page } from '@/widgets';
 
 interface ForbiddenPageProps {
-   className?: string;
+    className?: string;
 }
 
 const ForbiddenPage = memo((props: ForbiddenPageProps) => {
-    const {
-        className,
-    } = props;
+    const { className } = props;
     const { t } = useTranslation();
 
     return (
-        <Page data-testid="ForbiddenPage" className={classNames('', {}, [className])}>
+        <Page
+            data-testid="ForbiddenPage"
+            className={classNames('', {}, [className])}
+        >
             {t('NotHaveAllow')}
         </Page>
     );

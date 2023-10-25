@@ -6,28 +6,31 @@ import { CommentCrard } from '../CommentCard/CommentCrard';
 import { Comment } from '../../model/types/comment';
 
 interface CommentListProps {
-   className?: string;
-   comments?: Comment[];
-   isLoading?: boolean;
+    className?: string;
+    comments?: Comment[];
+    isLoading?: boolean;
 }
 
 export const CommentList = (props: CommentListProps) => {
-    const {
-        className,
-        comments,
-        isLoading,
-    } = props;
+    const { className, comments, isLoading } = props;
 
     const { t } = useTranslation();
     return (
         // eslint-disable-next-line i18next/no-literal-string
         <div className={classNames(cls.CommentList, {}, [className])}>
-            {comments?.length
-                ? comments.map((comment) => (
+            {comments?.length ? (
+                comments.map((comment) => (
                     // eslint-disable-next-line max-len
-                    <CommentCrard key={comment.id} isLoading={isLoading} className={cls.commentCard} comment={comment} />
+                    <CommentCrard
+                        key={comment.id}
+                        isLoading={isLoading}
+                        className={cls.commentCard}
+                        comment={comment}
+                    />
                 ))
-                : <Text title={t('comments 0')} />}
+            ) : (
+                <Text title={t('comments 0')} />
+            )}
         </div>
     );
 };

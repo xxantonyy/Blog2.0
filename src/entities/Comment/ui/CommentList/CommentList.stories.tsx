@@ -11,20 +11,22 @@ export default {
     },
 } as ComponentMeta<typeof CommentList>;
 
-const Template: ComponentStory<typeof CommentList> = (args) => <CommentList {...args} />;
+const Template: ComponentStory<typeof CommentList> = (args) => (
+    <CommentList {...args} />
+);
 
 export const Normal = Template.bind({});
 Normal.args = {
-    comments: [{
-        id: '1',
-        text: '12314w3r2',
-        user: {
+    comments: [
+        {
             id: '1',
-            username: 'user',
-            avatar: 'https://sun9-68.userapi.com/impg/UXAyJ38vGTwT_O6_qzGIQSjCLWNxncf2RE5A6w/5275X5kiSf4.jpg?size=810x1080&quality=95&sign=1b47a08ba0d066b212092fca4aa89c1b&type=album',
+            text: '12314w3r2',
+            user: {
+                id: '1',
+                username: 'user',
+                avatar: 'https://sun9-68.userapi.com/impg/UXAyJ38vGTwT_O6_qzGIQSjCLWNxncf2RE5A6w/5275X5kiSf4.jpg?size=810x1080&quality=95&sign=1b47a08ba0d066b212092fca4aa89c1b&type=album',
+            },
         },
-    }],
+    ],
 };
-Normal.decorators = [
-    StoreDecorator({}),
-];
+Normal.decorators = [StoreDecorator({})];

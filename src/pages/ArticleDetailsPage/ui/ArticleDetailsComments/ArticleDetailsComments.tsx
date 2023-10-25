@@ -15,43 +15,40 @@ import { AddCommentFormAsync as AddCommentForm } from '@/features/AddCommentForm
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
 
 interface ArticleDetailsCommentsProps {
-   className?: string;
-   id?: string
+    className?: string;
+    id?: string;
 }
 
-export const ArticleDetailsComments = memo((props: ArticleDetailsCommentsProps) => {
-    const {
-        className,
-        id,
-    } = props;
-    const { t } = useTranslation();
+export const ArticleDetailsComments = memo(
+    (props: ArticleDetailsCommentsProps) => {
+        const { className, id } = props;
+        const { t } = useTranslation();
 
-    const dispatch = useAppDispatch();
-    const commetns = useSelector(getArticleComments.selectAll);
-    const IsLoading = useSelector(getArticleCommentsIsLoading);
+        const dispatch = useAppDispatch();
+        const commetns = useSelector(getArticleComments.selectAll);
+        const IsLoading = useSelector(getArticleCommentsIsLoading);
 
-    useInitialEffect(() => {
-        dispatch(fetchCommentsByArticleId(id));
-    });
+        useInitialEffect(() => {
+            dispatch(fetchCommentsByArticleId(id));
+        });
 
-    const onSendComment = useCallback((text: string) => {
-        dispatch(addCommentForArticle(text));
-    }, [dispatch]);
+        const onSendComment = useCallback(
+            (text: string) => {
+                dispatch(addCommentForArticle(text));
+            },
+            [dispatch],
+        );
 
-    return (
-        <div className={classNames('', {}, [className])}>
-            <Text
-                size={TextSize.L}
-                className=""
-                title={t('Coments')}
-            />
-            <Suspense fallback={<Skeleton border="50" height={200} width={200} />}>
-                <AddCommentForm onSandComment={onSendComment} />
-            </Suspense>
-            <CommentList
-                isLoading={IsLoading}
-                comments={commetns}
-            />
-        </div>
-    );
-});
+        return (
+            <div className={classNames('', {}, [className])}>
+                <Text size={TextSize.L} className="" title={t('Coments')} />
+                <Suspense
+                    fallback={<Skeleton border="50" height={200} width={200} />}
+                >
+                    <AddCommentForm onSandComment={onSendComment} />
+                </Suspense>
+                <CommentList isLoading={IsLoading} comments={commetns} />
+            </div>
+        );
+    },
+);

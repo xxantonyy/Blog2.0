@@ -11,7 +11,9 @@ export default {
     },
 } as ComponentMeta<typeof CurrenctSelect>;
 
-const Template: ComponentStory<typeof CurrenctSelect> = (args) => <CurrenctSelect {...args} />;
+const Template: ComponentStory<typeof CurrenctSelect> = (args) => (
+    <CurrenctSelect {...args} />
+);
 
 export const Primary = Template.bind({});
 Primary.args = {

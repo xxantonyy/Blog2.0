@@ -1,9 +1,10 @@
 /* eslint-disable max-len */
-import {
-    memo, useCallback,
-} from 'react';
+import { memo, useCallback } from 'react';
 import { classNames } from '@/shared/lib/classNames/classNames';
-import { DynamicModuleLoader, ReducersList } from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
+import {
+    DynamicModuleLoader,
+    ReducersList,
+} from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { Page } from '@/widgets';
 import { fetchNextArticlePage } from '../../model/service/fetchNextArticlePage';
@@ -13,7 +14,7 @@ import { ArticlePageFilters } from '../ArticlePageFilters/ArticlePageFilters';
 import cls from './ActiclesPage.module.scss';
 
 interface ActiclesPageProps {
-   className?: string;
+    className?: string;
 }
 
 const reducers: ReducersList = {
@@ -21,9 +22,7 @@ const reducers: ReducersList = {
 };
 
 const ActiclesPage = (props: ActiclesPageProps) => {
-    const {
-        className,
-    } = props;
+    const { className } = props;
 
     const dispatch = useAppDispatch();
 
@@ -33,12 +32,15 @@ const ActiclesPage = (props: ActiclesPageProps) => {
 
     return (
         <DynamicModuleLoader reducers={reducers} removeAfterUnmount={false}>
-            <Page data-testid="ArticlesPage" onScrollEnd={onLoadNextPart} className={classNames(cls.ActiclesPage, {}, [className])}>
+            <Page
+                data-testid="ArticlesPage"
+                onScrollEnd={onLoadNextPart}
+                className={classNames(cls.ActiclesPage, {}, [className])}
+            >
                 <ArticlePageFilters />
                 <ArticleInfinitePage />
             </Page>
         </DynamicModuleLoader>
-
     );
 };
 

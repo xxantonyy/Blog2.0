@@ -7,27 +7,26 @@ import NoPhoto from '@/shared/assets/icons/user-filled.svg';
 import { Skeleton } from '../Skeleton';
 
 interface AvatarProps {
-   className?: string;
-   src?: string;
-   size?: number;
-   alt?: string;
+    className?: string;
+    src?: string;
+    size?: number;
+    alt?: string;
 }
 
 export const Avatar = (props: AvatarProps) => {
     const {
-        className,
-        src,
-        size = 100,
-        alt,
+        className, src, size = 100, alt,
     } = props;
 
-    const mods: Mods = {
-    };
+    const mods: Mods = {};
 
-    const styles = useMemo<CSSProperties>(() => ({
-        width: size,
-        height: size,
-    }), [size]);
+    const styles = useMemo<CSSProperties>(
+        () => ({
+            width: size,
+            height: size,
+        }),
+        [size],
+    );
 
     const fallback = <Skeleton width={size} height={size} border="50%" />;
     const errorFallback = <Icon width={size} height={size} Svg={NoPhoto} />;

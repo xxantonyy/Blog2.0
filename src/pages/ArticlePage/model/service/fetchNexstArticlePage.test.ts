@@ -26,13 +26,22 @@ describe('fetchNextArticlePage', () => {
         };
 
         // Имитируем getState и селекторы
-        const getStateSpy = jest.spyOn(require('../selectors/getArticleSelectors'), 'getArticlePage');
+        const getStateSpy = jest.spyOn(
+            require('../selectors/getArticleSelectors'),
+            'getArticlePage',
+        );
         getStateSpy.mockReturnValue(initialState.articlePage.page);
 
-        const hasMoreSpy = jest.spyOn(require('../selectors/getArticleSelectors'), 'getArticleHasMore');
+        const hasMoreSpy = jest.spyOn(
+            require('../selectors/getArticleSelectors'),
+            'getArticleHasMore',
+        );
         hasMoreSpy.mockReturnValue(initialState.articlePage.hasMore);
 
-        const isLoadingSpy = jest.spyOn(require('../selectors/getArticleSelectors'), 'getArticleIsloading');
+        const isLoadingSpy = jest.spyOn(
+            require('../selectors/getArticleSelectors'),
+            'getArticleIsloading',
+        );
         isLoadingSpy.mockReturnValue(initialState.articlePage.isLoading);
 
         const result = fetchNextArticlePage();

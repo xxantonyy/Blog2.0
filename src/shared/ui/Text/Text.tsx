@@ -26,12 +26,12 @@ interface TextProps {
     text?: string;
     theme?: TextTheme;
     align?: TextAlign;
-    size?:TextSize;
+    size?: TextSize;
 
     'data-testid'?: string;
 }
 
-export type HeaderTagType = 'h1' | 'h2'| 'h3';
+export type HeaderTagType = 'h1' | 'h2' | 'h3';
 
 const mapSizeToHeaderTag: Record<TextSize, HeaderTagType> = {
     [TextSize.S]: 'h3',
@@ -69,10 +69,7 @@ export const Text = memo((props: TextProps) => {
                 </HeaderTag>
             )}
             {text && (
-                <p
-                    className={cls.text}
-                    data-testid={`${dataTestId}.Paragraph`}
-                >
+                <p className={cls.text} data-testid={`${dataTestId}.Paragraph`}>
                     {text}
                 </p>
             )}

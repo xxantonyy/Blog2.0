@@ -10,15 +10,12 @@ import { MyPopover } from '@/shared/ui/Popups';
 import cls from './NotificationButton.module.scss';
 
 interface NotificationButtonProps {
-   className?: string;
-   svg: VFC<SVGProps<SVGSVGElement>>;
+    className?: string;
+    svg: VFC<SVGProps<SVGSVGElement>>;
 }
 
 export const NotificationButton = memo((props: NotificationButtonProps) => {
-    const {
-        className,
-        svg,
-    } = props;
+    const { className, svg } = props;
 
     const [isOpen, setIsOpen] = useState(false);
 
@@ -43,7 +40,6 @@ export const NotificationButton = memo((props: NotificationButtonProps) => {
                 <MyPopover trigger={trigger}>
                     <NotificationList className={cls.notifications} />
                 </MyPopover>
-
             </BrowserView>
             <MobileView>
                 {trigger}
@@ -52,6 +48,5 @@ export const NotificationButton = memo((props: NotificationButtonProps) => {
                 </Drawer>
             </MobileView>
         </div>
-
     );
 });

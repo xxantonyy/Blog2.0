@@ -2,7 +2,10 @@ import { memo, useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
 import {
-    getUserAuthData, isUserAdmin, isUserManager, userActions,
+    getUserAuthData,
+    isUserAdmin,
+    isUserManager,
+    userActions,
 } from '@/entities/User';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { Avatar } from '@/shared/ui/Avatar';
@@ -11,13 +14,11 @@ import cls from './DropDownButton.module.scss';
 import { getRouteAdmin, getRouteProfile } from '@/shared/const/router';
 
 interface DropDownButtonProps {
-   className?: string;
+    className?: string;
 }
 
 export const DropDownButton = memo((props: DropDownButtonProps) => {
-    const {
-        className,
-    } = props;
+    const { className } = props;
     const { t } = useTranslation();
     const dispatch = useAppDispatch();
     const authData = useSelector(getUserAuthData);
@@ -40,10 +41,14 @@ export const DropDownButton = memo((props: DropDownButtonProps) => {
                         content: t('Profile'),
                         href: getRouteProfile(authData.id),
                     },
-                    ...(isAdminPanelAvable ? [{
-                        content: t('Admin'),
-                        href: getRouteAdmin(),
-                    }] : []),
+                    ...(isAdminPanelAvable
+                        ? [
+                            {
+                                content: t('Admin'),
+                                href: getRouteAdmin(),
+                            },
+                        ]
+                        : []),
 
                     {
                         content: t('Exit'),

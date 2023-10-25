@@ -2,9 +2,7 @@
 import { memo, useCallback, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useDispatch, useSelector } from 'react-redux';
-import {
-    getUserAuthData,
-} from '@/entities/User';
+import { getUserAuthData } from '@/entities/User';
 import { LoginModal } from '@/features/AuthByUsername';
 import { NotificationButton } from '@/features/notificationsButton';
 import { classNames } from '@/shared/lib/classNames/classNames';
@@ -68,10 +66,7 @@ export const Navbar = memo(({ className }: NavbarProps) => {
                 {t('Войти')}
             </Button>
             {isAuthModal && (
-                <LoginModal
-                    isOpen={isAuthModal}
-                    onClose={onCloseModal}
-                />
+                <LoginModal isOpen={isAuthModal} onClose={onCloseModal} />
             )}
         </header>
     );

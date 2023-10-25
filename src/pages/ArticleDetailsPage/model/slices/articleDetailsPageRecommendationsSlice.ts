@@ -1,7 +1,4 @@
-import {
-    createEntityAdapter,
-    createSlice,
-} from '@reduxjs/toolkit';
+import { createEntityAdapter, createSlice } from '@reduxjs/toolkit';
 import { StateSchema } from '@/app/providers/StoreProvider';
 import { Article } from '@/entities/Article';
 import { ArticleDetailsCommentsSchema } from '../types/ArticleDetailsCommentsSchema';
@@ -9,36 +6,30 @@ import { fetchArticleRecommendations } from '../services/fetchArticleRecommendat
 
 const RecommendationsAdapter = createEntityAdapter<Article>({
     selectId: (article) => article.id,
-
 });
 
-export const getArticleRecommendations = RecommendationsAdapter
-    .getSelectors<StateSchema>(
-        (state) => state.articleRecommendations || RecommendationsAdapter
-            .getInitialState(),
-    );
+export const getArticleRecommendations = RecommendationsAdapter.getSelectors<StateSchema>(
+    (state) => state.articleRecommendations
+            || RecommendationsAdapter.getInitialState(),
+);
 
 const articleDetailsPageRecommendationsSlice = createSlice({
     name: 'articleDetailsPageRecommendationsSlice',
-    initialState: RecommendationsAdapter
-        .getInitialState<ArticleDetailsCommentsSchema>({
+    initialState:
+        RecommendationsAdapter.getInitialState<ArticleDetailsCommentsSchema>({
             isLoading: false,
             error: undefined,
             ids: [],
             entities: {},
         }),
-    reducers: {
-    },
+    reducers: {},
     extraReducers: (builder) => {
         builder
             .addCase(fetchArticleRecommendations.pending, (state) => {
                 state.error = undefined;
                 state.isLoading = true;
             })
-            .addCase(fetchArticleRecommendations.fulfilled, (
-                state,
-                action,
-            ) => {
+            .addCase(fetchArticleRecommendations.fulfilled, (state, action) => {
                 state.isLoading = false;
                 RecommendationsAdapter.setAll(state, action.payload);
             })

@@ -83,6 +83,7 @@ module.exports = {
                 testFilesPatterns: ['**/*.test.*', '**/*.story.*', '**/StoreDecorator.tsx'],
             },
         ],
+        'react/jsx-max-props-per-line': ['error', { maximum: 3 }],
     },
     globals: {
         __IS_DEV__: true,

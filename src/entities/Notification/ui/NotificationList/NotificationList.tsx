@@ -7,13 +7,11 @@ import { NotificationItem } from '../NotificationItem/NotificationItem';
 import { VStack } from '@/shared/ui/Stack/VStack/VStack';
 
 interface NotificationListProps {
-   className?: string;
+    className?: string;
 }
 
 export const NotificationList = memo((props: NotificationListProps) => {
-    const {
-        className,
-    } = props;
+    const { className } = props;
     const { data, isLoading } = useNotificatoins(null, {
         pollingInterval: 5000,
     });

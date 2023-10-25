@@ -1,6 +1,4 @@
-import {
-    Suspense, memo, useCallback,
-} from 'react';
+import { Suspense, memo, useCallback } from 'react';
 import { useSelector } from 'react-redux';
 import { Route, Routes } from 'react-router-dom';
 import { getUserAuthData } from '@/entities/User';
@@ -14,16 +12,20 @@ const AppRouter = () => {
 
     const renderWithWrapper = useCallback((route: AppRoutProps) => {
         const element = (
-            <Suspense fallback={<PageLoader />}>
-                {route.element}
-            </Suspense>
+            <Suspense fallback={<PageLoader />}>{route.element}</Suspense>
         );
 
         return (
             <Route
                 key={route.path}
                 path={route.path}
-                element={route.authOnly ? <RequireAuth roles={route.roles}>{element}</RequireAuth> : element}
+                element={
+                    route.authOnly ? (
+                        <RequireAuth roles={route.roles}>{element}</RequireAuth>
+                    ) : (
+                        element
+                    )
+                }
             />
         );
     }, []);

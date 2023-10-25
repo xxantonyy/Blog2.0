@@ -42,9 +42,7 @@ describe('updateaProfileData.test', () => {
         const result = await thunk.callThunk('1');
 
         expect(result.meta.requestStatus).toBe('rejected');
-        expect(result.payload).toEqual([
-            ValidateProfileError.SERVER_ERROR,
-        ]);
+        expect(result.payload).toEqual([ValidateProfileError.SERVER_ERROR]);
     });
 
     test('validate error', async () => {

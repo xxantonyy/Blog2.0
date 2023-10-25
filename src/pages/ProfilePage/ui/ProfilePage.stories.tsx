@@ -14,38 +14,45 @@ export default {
     },
 } as ComponentMeta<typeof ProfilePage>;
 
-const Template: ComponentStory<typeof ProfilePage> = (args) => <ProfilePage {...args} />;
+const Template: ComponentStory<typeof ProfilePage> = (args) => (
+    <ProfilePage {...args} />
+);
 
 export const Normal = Template.bind({});
 Normal.args = {};
-Normal.decorators = [StoreDecorator({
-    profile: {
-        form: {
-            first: 'Антон',
-            lastname: 'Нестеров',
-            age: 23,
-            currency: Currency.RUB,
-            country: Country.Russia,
-            city: 'Москва',
-            username: 'admin',
-            avatar: 'https://kartinki.pibig.info/uploads/posts/2023-04/1682016583_kartinki-pibig-info-p-kartinka-kotik-za-kompyuterom-arti-instagr-1.jpg',
+Normal.decorators = [
+    StoreDecorator({
+        profile: {
+            form: {
+                first: 'Антон',
+                lastname: 'Нестеров',
+                age: 23,
+                currency: Currency.RUB,
+                country: Country.Russia,
+                city: 'Москва',
+                username: 'admin',
+                avatar: 'https://kartinki.pibig.info/uploads/posts/2023-04/1682016583_kartinki-pibig-info-p-kartinka-kotik-za-kompyuterom-arti-instagr-1.jpg',
+            },
         },
-    },
-})];
+    }),
+];
 
 export const Dark = Template.bind({});
 Dark.args = {};
-Dark.decorators = [ThemeDecorator(Theme.DARK), StoreDecorator({
-    profile: {
-        form: {
-            first: 'Антон',
-            lastname: 'Нестеров',
-            age: 23,
-            currency: Currency.RUB,
-            country: Country.Russia,
-            city: 'Москва',
-            username: 'admin',
-            avatar: 'https://kartinki.pibig.info/uploads/posts/2023-04/1682016583_kartinki-pibig-info-p-kartinka-kotik-za-kompyuterom-arti-instagr-1.jpg',
+Dark.decorators = [
+    ThemeDecorator(Theme.DARK),
+    StoreDecorator({
+        profile: {
+            form: {
+                first: 'Антон',
+                lastname: 'Нестеров',
+                age: 23,
+                currency: Currency.RUB,
+                country: Country.Russia,
+                city: 'Москва',
+                username: 'admin',
+                avatar: 'https://kartinki.pibig.info/uploads/posts/2023-04/1682016583_kartinki-pibig-info-p-kartinka-kotik-za-kompyuterom-arti-instagr-1.jpg',
+            },
         },
-    },
-})];
+    }),
+];

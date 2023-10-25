@@ -4,7 +4,10 @@ import { memo, useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
 import { classNames } from '@/shared/lib/classNames/classNames';
-import { DynamicModuleLoader, ReducersList } from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
+import {
+    DynamicModuleLoader,
+    ReducersList,
+} from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
 // eslint-disable-next-line max-len
 
@@ -14,10 +17,12 @@ import { useInitialEffect } from '@/shared/lib/hooks/useInitialEffect/useInitial
 import { Avatar } from '@/shared/ui/Avatar';
 import { Icon } from '@/shared/ui/Icon';
 import { Skeleton } from '@/shared/ui/Skeleton';
+import { Text, TextAlign, TextSize } from '@/shared/ui/Text';
 import {
-    Text, TextAlign, TextSize,
-} from '@/shared/ui/Text';
-import { getArticleDetaislData, getArticleDetaislError, getArticleDetaislIsLoading } from '../../model/selectors/articleDetails';
+    getArticleDetaislData,
+    getArticleDetaislError,
+    getArticleDetaislIsLoading,
+} from '../../model/selectors/articleDetails';
 import { fetchArticleById } from '../../model/services/fetchArticleById';
 import { articleDetailsReducer } from '../../model/slice/articleDetailsSlice';
 import { ArticleBlock, ArticleBlockType } from '../../model/types/article';
@@ -85,7 +90,12 @@ export const ArticleDetails = memo((props: ArticleDetailsProps) => {
     if (isLoading) {
         content = (
             <>
-                <Skeleton className={cls.avatar} width={200} height={200} border="50%" />
+                <Skeleton
+                    className={cls.avatar}
+                    width={200}
+                    height={200}
+                    border="50%"
+                />
                 <Skeleton className={cls.title} width={300} height={32} />
                 <Skeleton className={cls.skeleton} width={600} height={24} />
                 <Skeleton className={cls.skeleton} width="100%" height={200} />
@@ -111,11 +121,7 @@ export const ArticleDetails = memo((props: ArticleDetailsProps) => {
                         />
                     </div>
                 </HStack>
-                <VStack
-                    gap="gap4"
-                    max
-                    data-testid="ArticleDetails.Info"
-                >
+                <VStack gap="gap4" max data-testid="ArticleDetails.Info">
                     <Text
                         className={cls.title}
                         title={article?.title}
@@ -132,7 +138,6 @@ export const ArticleDetails = memo((props: ArticleDetailsProps) => {
                     </div>
                     {article?.blocks.map(renderBlock)}
                 </VStack>
-
             </>
         );
     }

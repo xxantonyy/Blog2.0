@@ -10,8 +10,9 @@ export default {
     },
 } as ComponentMeta<typeof MyPopover>;
 
-const Template: ComponentStory<typeof MyPopover> = (args) => <MyPopover {...args} />;
+const Template: ComponentStory<typeof MyPopover> = (args) => (
+    <MyPopover {...args} />
+);
 
 export const Primary = Template.bind({});
-Primary.args = {
-};
+Primary.args = {};
