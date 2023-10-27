@@ -1,13 +1,8 @@
-import {
-    CreateSliceOptions,
-    SliceCaseReducers,
-    bindActionCreators,
-    createSlice,
-} from '@reduxjs/toolkit';
-import { useMemo } from 'react';
+import { bindActionCreators, createSlice } from '@reduxjs/toolkit';
+import { SliceCaseReducers, CreateSliceOptions } from '@reduxjs/toolkit/dist';
 import { useDispatch } from 'react-redux';
+import { useMemo } from 'react';
 
-// eslint-disable-next-line max-len
 export function buildSlice<
     State,
     CaseReducers extends SliceCaseReducers<State>,
@@ -20,6 +15,7 @@ export function buildSlice<
 
         // @ts-ignore
         return useMemo(
+            // @ts-ignore
             () => bindActionCreators(slice.actions, dispatch),
             [dispatch],
         );
