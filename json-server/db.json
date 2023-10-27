@@ -639,7 +639,11 @@
       "roles": [
         "ADMIN"
       ],
-      "avatar": "https://koshka.top/uploads/posts/2021-12/1640316382_1-koshka-top-p-narisovannikh-kotikov-1.jpg"
+      "avatar": "https://koshka.top/uploads/posts/2021-12/1640316382_1-koshka-top-p-narisovannikh-kotikov-1.jpg",
+      "features": {
+        "isArticleRatingEnabled": true,
+        "isCounterEnabled": false
+      }
     },
     {
       "id": "2",
@@ -648,7 +652,11 @@
       "roles": [
         "USER"
       ],
-      "avatar": "https://koshka.top/uploads/posts/2021-12/1640316382_1-koshka-top-p-narisovannikh-kotikov-1.jpg"
+      "avatar": "https://koshka.top/uploads/posts/2021-12/1640316382_1-koshka-top-p-narisovannikh-kotikov-1.jpg",
+      "features": {
+        "isArticleRatingEnabled": false,
+        "isCounterEnabled": true
+      }
     },
     {
       "id": "3",
@@ -657,7 +665,11 @@
       "roles": [
         "MANAGER"
       ],
-      "avatar": "https://koshka.top/uploads/posts/2021-12/1640316382_1-koshka-top-p-narisovannikh-kotikov-1.jpg"
+      "avatar": "https://koshka.top/uploads/posts/2021-12/1640316382_1-koshka-top-p-narisovannikh-kotikov-1.jpg",
+      "features": {
+        "isArticleRatingEnabled": false,
+        "isCounterEnabled": false
+      }
     }
   ],
   "profile": [
