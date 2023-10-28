@@ -40,7 +40,6 @@ const ArticleDetailsPage = (props: ArticleDetailsPageProps) => {
         articleDetailsComments: articleDetailsCommentsReducer,
     };
 
-    console.log(isArticleRatingEnabled);
     return (
         // eslint-disable-next-line i18next/no-literal-string
         <DynamicModuleLoader removeAfterUnmount reducers={reducer}>
