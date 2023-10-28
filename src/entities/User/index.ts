@@ -1,3 +1,12 @@
+export { saveJsonSettings } from './model/services/saveJsonSettings';
+
+export {
+    getJsonSettings,
+    getJsonSettingsByKey,
+    useJsonSettings,
+    useJsonSettingsByKey,
+} from './model/selectors/jsonSelector';
+
 export { getUserAuthData } from './model/selectors/getUserAuthData/getUserAuthData';
 
 export { getUserInited } from './model/selectors/getUserAuthData/getUserInited';

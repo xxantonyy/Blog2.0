@@ -643,6 +643,16 @@
       "features": {
         "isArticleRatingEnabled": true,
         "isCounterEnabled": false
+      },
+      "jsoneSettings": {
+        "theme": "app_dark_theme",
+        "isFirstVisit": true,
+        "settingsPageHaveBeenOpen": false
+      },
+      "jsonSettings": {
+        "theme": "app_oranges_theme",
+        "isFirstVisit": true,
+        "settingsPageHaveBeenOpen": false
       }
     },
     {
@@ -656,6 +666,11 @@
       "features": {
         "isArticleRatingEnabled": false,
         "isCounterEnabled": true
+      },
+      "jsoneSettings": {
+        "theme": "app_dark_theme",
+        "isFirstVisit": true,
+        "settingsPageHaveBeenOpen": false
       }
     },
     {
@@ -669,6 +684,11 @@
       "features": {
         "isArticleRatingEnabled": false,
         "isCounterEnabled": false
+      },
+      "jsoneSettings": {
+        "theme": "app_dark_theme",
+        "isFirstVisit": true,
+        "settingsPageHaveBeenOpen": false
       }
     }
   ],

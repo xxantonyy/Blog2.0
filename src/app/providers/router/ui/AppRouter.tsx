@@ -1,15 +1,11 @@
 import { Suspense, memo, useCallback } from 'react';
-import { useSelector } from 'react-redux';
 import { Route, Routes } from 'react-router-dom';
-import { getUserAuthData } from '@/entities/User';
-import { PageLoader } from '@/shared/ui/PageLoader';
-import { RequireAuth } from './RequireAuth';
-import { routeConfig } from '../config/routeConfig';
 import { AppRoutProps } from '@/shared/types/router';
+import { PageLoader } from '@/shared/ui/PageLoader';
+import { routeConfig } from '../config/routeConfig';
+import { RequireAuth } from './RequireAuth';
 
 const AppRouter = () => {
-    const isAuth = useSelector(getUserAuthData);
-
     const renderWithWrapper = useCallback((route: AppRoutProps) => {
         const element = (
             <Suspense fallback={<PageLoader />}>{route.element}</Suspense>
