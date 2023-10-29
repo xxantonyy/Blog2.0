@@ -5,7 +5,7 @@ import { JsonSettings } from '../types/jsoneSettings';
 
 const defaultJson: JsonSettings = {};
 
-export const [[useJsonSettings, getJsonSettings]] = buildSelectors((state: StateSchema) => state.user?.authData?.jsoneSettings || defaultJson);
+export const [[useJsonSettings, getJsonSettings]] = buildSelectors((state: StateSchema) => state.user?.authData?.jsonSettings || defaultJson);
 
 // eslint-disable-next-line max-len
-export const [[useJsonSettingsByKey, getJsonSettingsByKey]] = buildSelectors((state, key: keyof JsonSettings) => state.user?.authData?.jsoneSettings?.[key]);
+export const [[useJsonSettingsByKey, getJsonSettingsByKey]] = buildSelectors((state, key: keyof JsonSettings) => state.user?.authData?.jsonSettings?.[key]);

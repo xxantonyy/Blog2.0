@@ -29,11 +29,11 @@ export const saveJsonSettings = createAsyncThunk<
             }),
         ).unwrap();
 
-        if (!response.jsoneSettings) {
+        if (!response.jsonSettings) {
             return rejectWithValue('');
         }
 
-        return response.jsoneSettings;
+        return response.jsonSettings;
     } catch (e) {
         console.log(e);
         return rejectWithValue('');

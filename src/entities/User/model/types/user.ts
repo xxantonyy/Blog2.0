@@ -5,7 +5,7 @@ import { JsonSettings } from './jsoneSettings';
 export interface User {
     id: string;
     username: string;
-    jsoneSettings?: JsonSettings;
+    jsonSettings?: JsonSettings;
     avatar?: string;
     roles?: UserRole[];
     features?: FeatureFlags;
