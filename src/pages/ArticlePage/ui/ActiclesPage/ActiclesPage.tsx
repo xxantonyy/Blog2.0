@@ -12,6 +12,7 @@ import { articlePageReducer } from '../../model/slice/articlePageSlice';
 import { ArticleInfinitePage } from '../ArticleInfinitePage/ArticleInfinitePage';
 import { ArticlePageFilters } from '../ArticlePageFilters/ArticlePageFilters';
 import cls from './ActiclesPage.module.scss';
+import { Articleagereeting } from '@/features/articleagereeting';
 
 interface ActiclesPageProps {
     className?: string;
@@ -39,6 +40,7 @@ const ActiclesPage = (props: ActiclesPageProps) => {
             >
                 <ArticlePageFilters />
                 <ArticleInfinitePage />
+                <Articleagereeting />
             </Page>
         </DynamicModuleLoader>
     );
