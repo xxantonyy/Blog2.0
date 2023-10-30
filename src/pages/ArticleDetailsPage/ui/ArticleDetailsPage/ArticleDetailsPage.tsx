@@ -15,6 +15,8 @@ import { articleDetailsCommentsReducer } from '../../model/slices/articleDetails
 import { ArticleDetailsComments } from '../ArticleDetailsComments/ArticleDetailsComments';
 import { ArticleDetailsPageHeader } from '../ArticleDetailsPageHeader/ArticleDetailsPageHeader';
 import cls from './ArticleDetailsPage.module.scss';
+import { ToggleFeatures } from '@/shared/lib/future';
+import { Card } from '@/shared/ui/Card';
 
 interface ArticleDetailsPageProps {
     className?: string;
@@ -46,7 +48,11 @@ const ArticleDetailsPage = (props: ArticleDetailsPageProps) => {
             >
                 <ArticleDetailsPageHeader />
                 <ArticleDetails id={id} />
-                <ArticleRating articleId={id} />
+                <ToggleFeatures
+                    feature="isArticleRatingEnabled"
+                    on={<ArticleRating articleId={id} />}
+                    off={<Card>{t('Cooming soon')}</Card>}
+                />
                 <ArticleRecommendationsList />
                 <ArticleDetailsComments id={id} />
             </Page>
