@@ -4,16 +4,17 @@ import { useTranslation } from 'react-i18next';
 import { useDispatch, useSelector } from 'react-redux';
 import { getUserAuthData } from '@/entities/User';
 import { LoginModal } from '@/features/AuthByUsername';
-import { NotificationButton } from '@/features/notificationsButton';
 import { classNames } from '@/shared/lib/classNames/classNames';
-import { AppLink, AppLinkTheme } from '@/shared/ui/AppLink';
 import { Button, ButtonTheme } from '@/shared/ui/Button';
-import { Text, TextTheme } from '@/shared/ui/Text';
-import NotificatoinPng from '../../../shared/assets/icons/notification-20-20.svg';
 import cls from './Navbar.module.scss';
+import { ToggleFeatures } from '@/shared/lib/future';
+import { Text, TextTheme } from '@/shared/ui/Text';
 import { DropDownButton } from '@/features/dropdownButton';
+import { NotificationButton } from '@/features/notificationsButton';
 import { getRouteArticleCreate } from '@/shared/const/router';
+import { AppLink, AppLinkTheme } from '@/shared/ui/AppLink';
 import { HStack } from '@/shared/ui/Stack/HStack/HStack';
+import NotificatoinPng from '@/shared/assets/icons/notification-20-20.svg';
 
 interface NavbarProps {
     className?: string;
@@ -35,24 +36,38 @@ export const Navbar = memo(({ className }: NavbarProps) => {
 
     if (authData) {
         return (
-            <header className={classNames(cls.Navbar, {}, [className])}>
-                <Text
-                    theme={TextTheme.INVERTED}
-                    className={cls.appName}
-                    title={t('Tony App')}
-                />
-                <AppLink
-                    theme={AppLinkTheme.SECONDARY}
-                    className={cls.linkCreate}
-                    to={getRouteArticleCreate()}
-                >
-                    {t('Create Article')}
-                </AppLink>
-                <HStack gap="gap16" className={cls.actions}>
-                    <NotificationButton svg={NotificatoinPng} />
-                    <DropDownButton />
-                </HStack>
-            </header>
+            <ToggleFeatures
+                feature="isAppRedisigned"
+                on={(
+                    <header className={classNames(cls.NavbarRedesigned, {}, [className])}>
+                        <HStack gap="gap16" className={cls.actions}>
+                            <NotificationButton svg={NotificatoinPng} />
+                            <DropDownButton />
+                        </HStack>
+                    </header>
+                )}
+                off={(
+                    <header className={classNames(cls.Navbar, {}, [className])}>
+                        <Text
+                            theme={TextTheme.INVERTED}
+                            className={cls.appName}
+                            title={t('Tony App')}
+                        />
+                        <AppLink
+                            theme={AppLinkTheme.SECONDARY}
+                            className={cls.linkCreate}
+                            to={getRouteArticleCreate()}
+                        >
+                            {t('Create Article')}
+                        </AppLink>
+                        <HStack gap="gap16" className={cls.actions}>
+                            <NotificationButton svg={NotificatoinPng} />
+                            <DropDownButton />
+                        </HStack>
+                    </header>
+                )}
+            />
+
         );
     }
 

@@ -642,7 +642,8 @@
       "avatar": "https://koshka.top/uploads/posts/2021-12/1640316382_1-koshka-top-p-narisovannikh-kotikov-1.jpg",
       "features": {
         "isArticleRatingEnabled": true,
-        "isCounterEnabled": false
+        "isCounterEnabled": false,
+        "isAppRedisigned": true
       },
       "jsonSettings": {
         "theme": "app_dark_theme",

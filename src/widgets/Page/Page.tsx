@@ -12,6 +12,7 @@ import { StateSchema } from '@/app/providers/StoreProvider';
 import cls from './Page.module.scss';
 // eslint-disable-next-line ttx/layer-imports
 import { TestProps } from '@/app/providers/router/ui/test';
+import { toggleFeatures } from '@/shared/lib/future';
 
 interface PageProps extends TestProps {
     className?: string;
@@ -48,10 +49,17 @@ export const Page = memo((props: PageProps) => {
         );
     };
 
+    const cnname = toggleFeatures({
+        name: 'isAppRedisigned',
+        on: () => cls.PageRedesigned,
+        off: () => cls.Page,
+
+    });
+
     return (
         <section
             ref={wrapperRef}
-            className={classNames(cls.Page, {}, [className])}
+            className={classNames(cnname, {}, [className])}
             onScroll={onScroll}
             id={PAGE_ID}
             data-testid={props['data-testid'] ?? 'Page'}
