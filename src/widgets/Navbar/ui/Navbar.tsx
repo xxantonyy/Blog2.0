@@ -5,16 +5,16 @@ import { useDispatch, useSelector } from 'react-redux';
 import { getUserAuthData } from '@/entities/User';
 import { LoginModal } from '@/features/AuthByUsername';
 import { classNames } from '@/shared/lib/classNames/classNames';
-import { Button, ButtonTheme } from '@/shared/ui/Button';
+import { Button } from '@/shared/ui/redesigned/Button';
 import cls from './Navbar.module.scss';
 import { ToggleFeatures } from '@/shared/lib/future';
-import { Text, TextTheme } from '@/shared/ui/Text';
+import { Text, TextTheme } from '@/shared/ui/deprecated/Text';
 import { DropDownButton } from '@/features/dropdownButton';
 import { NotificationButton } from '@/features/notificationsButton';
 import { getRouteArticleCreate } from '@/shared/const/router';
-import { AppLink, AppLinkTheme } from '@/shared/ui/AppLink';
-import { HStack } from '@/shared/ui/Stack/HStack/HStack';
+import { AppLink } from '@/shared/ui/redesigned/AppLink';
 import NotificatoinPng from '@/shared/assets/icons/notification-20-20.svg';
+import { HStack } from '@/shared/ui/deprecated/Stack';
 
 interface NavbarProps {
     className?: string;
@@ -40,7 +40,7 @@ export const Navbar = memo(({ className }: NavbarProps) => {
                 feature="isAppRedisigned"
                 on={(
                     <header className={classNames(cls.NavbarRedesigned, {}, [className])}>
-                        <HStack gap="gap16" className={cls.actions}>
+                        <HStack gap="16" className={cls.actions}>
                             <NotificationButton svg={NotificatoinPng} />
                             <DropDownButton />
                         </HStack>
@@ -54,13 +54,13 @@ export const Navbar = memo(({ className }: NavbarProps) => {
                             title={t('Tony App')}
                         />
                         <AppLink
-                            theme={AppLinkTheme.SECONDARY}
+                            variant="primary"
                             className={cls.linkCreate}
                             to={getRouteArticleCreate()}
                         >
                             {t('Create Article')}
                         </AppLink>
-                        <HStack gap="gap16" className={cls.actions}>
+                        <HStack gap="16" className={cls.actions}>
                             <NotificationButton svg={NotificatoinPng} />
                             <DropDownButton />
                         </HStack>
@@ -74,7 +74,7 @@ export const Navbar = memo(({ className }: NavbarProps) => {
     return (
         <header className={classNames(cls.Navbar, {}, [className])}>
             <Button
-                theme={ButtonTheme.CLEAR_INVERTED}
+                variant="clear"
                 className={cls.links}
                 onClick={onShowModal}
             >

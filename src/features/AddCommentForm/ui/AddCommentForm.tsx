@@ -2,8 +2,7 @@ import { useTranslation } from 'react-i18next';
 import { useDispatch, useSelector } from 'react-redux';
 import { useCallback } from 'react';
 import { classNames } from '@/shared/lib/classNames/classNames';
-import { Input } from '@/shared/ui/Input';
-import { Button, ButtonTheme } from '@/shared/ui/Button';
+import { Button } from '@/shared/ui/redesigned/Button';
 import {
     DynamicModuleLoader,
     ReducersList,
@@ -14,6 +13,7 @@ import {
     addCommentFormActions,
     addCommentFormReducer,
 } from '../model/slices/addCommentFormSlice';
+import { Input } from '@/shared/ui/deprecated/Input';
 
 interface AddCommentFormProps {
     className?: string;
@@ -57,7 +57,7 @@ const AddCommentForm = (props: AddCommentFormProps) => {
                 />
                 <Button
                     data-testid="AddCommentForm.Button"
-                    theme={ButtonTheme.OUTLINE}
+                    variant="clear"
                     onClick={onSandHandler}
                 >
                     {t('Sent')}

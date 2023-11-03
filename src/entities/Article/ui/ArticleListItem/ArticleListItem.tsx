@@ -3,13 +3,13 @@
 import { useTranslation } from 'react-i18next';
 import { HTMLAttributeAnchorTarget, memo } from 'react';
 import { classNames } from '@/shared/lib/classNames/classNames';
-import { Text } from '@/shared/ui/Text';
-import { Icon } from '@/shared/ui/Icon';
+import { Text } from '@/shared/ui/deprecated/Text';
+import { Icon } from '@/shared/ui/redesigned/Icon';
 import EyeIcon from '@/shared/assets/icons/eye-20-20.svg';
-import { Card } from '@/shared/ui/Card';
-import { Avatar } from '@/shared/ui/Avatar';
-import { Button, ButtonTheme } from '@/shared/ui/Button';
-import { AppLink } from '@/shared/ui/AppLink';
+import { Card } from '@/shared/ui/deprecated/Card';
+import { Avatar } from '@/shared/ui/deprecated/Avatar';
+import { Button } from '@/shared/ui/redesigned/Button';
+import { AppLink } from '@/shared/ui/redesigned/AppLink';
 import {
     Article,
     ArticleBlockType,
@@ -19,9 +19,9 @@ import {
 import cls from './ArticleListItem.module.scss';
 import { ArticleTextBlockComponent } from '../ArticleTextCodeComponent copy/ArticleTextBlockComponent';
 import { getRouteArticleDetails } from '@/shared/const/router';
-import { AppImage } from '@/shared/ui/AppImage';
+import { AppImage } from '@/shared/ui/deprecated/AppImage';
 // import NoPhoto from '@/shared/assets/icons/no_photo.png';
-import { Skeleton } from '@/shared/ui/Skeleton';
+import { Skeleton } from '@/shared/ui/deprecated/Skeleton';
 
 interface ArticleListItemProps {
     className?: string;
@@ -82,7 +82,7 @@ export const ArticleListItem = memo((props: ArticleListItemProps) => {
                             target={target}
                             to={getRouteArticleDetails(article.id)}
                         >
-                            <Button theme={ButtonTheme.OUTLINE}>
+                            <Button variant="clear">
                                 {t('Reed more')}
                             </Button>
                         </AppLink>

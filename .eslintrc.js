@@ -58,7 +58,9 @@ module.exports = {
                     'gap',
                     'div',
                     'border',
-                    'feature'],
+                    'feature',
+                    'variant',
+                ],
             },
         ],
         'max-len': ['error', { ignoreComments: true, code: 150 }],
@@ -85,6 +87,7 @@ module.exports = {
             },
         ],
         'react/jsx-max-props-per-line': ['error', { maximum: 3 }],
+        'react/no-array-index-key': 'off',
     },
     globals: {
         __IS_DEV__: true,

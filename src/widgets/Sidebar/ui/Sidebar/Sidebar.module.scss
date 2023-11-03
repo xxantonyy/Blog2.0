@@ -4,32 +4,33 @@
     background: var(--inverted-bg-color);
     position: relative;
     transition: width 0.3s;
+
+    .switchers {
+        position: absolute;
+        bottom: 20px;
+        display: flex;
+        justify-content: center;
+        width: 100%;
+    }
+    
+    .lang {
+        margin-left: 20px;
+    }
+    
+    .collapseBtn {
+        position: absolute;
+        right: -32px;
+        bottom: 32px;
+        z-index: 10;
+    }
+    
+    .items {
+        display: flex;
+        flex-direction: column;
+    }
 }
 
-.switchers {
-    position: absolute;
-    bottom: 20px;
-    display: flex;
-    justify-content: center;
-    width: 100%;
-}
 
-.lang {
-    margin-left: 20px;
-}
-
-.collapseBtn {
-    position: absolute;
-    right: -32px;
-    bottom: 32px;
-    z-index: 10;
-}
-
-.items {
-    margin-left: 30px;
-    display: flex;
-    flex-direction: column;
-}
 
 .collapsed {
     width: var(--sidebar-width-collapsed);
@@ -50,7 +51,63 @@
     width: 220px;
     height: 100%;
     border-radius: 32px;
+    position: relative;
+
+    .appLogo {
+        padding-top: 20px;
+        fill: black;
+    }
+
+    .items {
+        margin-top: 40px;
+        display: flex;
+        flex-direction: column;
+        position: relative;
+    }
+
+    .collapseBtn {
+        position: absolute;
+        right: 0;
+        top: 50%;
+        z-index: 10;
+        transform: rotate(90deg);
+        transition: 0.2s transform;
+    }
+
+    .switchers {
+        position: absolute;
+        bottom: 20px;
+        display: flex;
+        justify-content: center;
+        width: 100%;
+    }
+    
+    .lang {
+        margin-left: 20px;
+    }
+    
 }
-.appLogo {
-    padding-top: 20px;
+
+.collapsedRedesigned {
+    width: 50px;
+
+    .switchers {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .items {
+        margin-top: 20px;
+        display: flex;
+        align-items: center;
+    }
+
+    .lang {
+        margin-left: 0;
+    }
+
+    .collapseBtn {
+        transition: 0.2s transform;
+        transform: rotate(-90deg);
+    }
 }

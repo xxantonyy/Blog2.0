@@ -14,10 +14,8 @@ import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch
 import CalendarIcon from '@/shared/assets/icons/calendar-20-20.svg';
 import EyeIcon from '@/shared/assets/icons/eye-20-20.svg';
 import { useInitialEffect } from '@/shared/lib/hooks/useInitialEffect/useInitialEffect';
-import { Avatar } from '@/shared/ui/Avatar';
-import { Icon } from '@/shared/ui/Icon';
-import { Skeleton } from '@/shared/ui/Skeleton';
-import { Text, TextAlign, TextSize } from '@/shared/ui/Text';
+import { Avatar } from '@/shared/ui/deprecated/Avatar';
+import { Text, TextAlign, TextSize } from '@/shared/ui/deprecated/Text';
 import {
     getArticleDetaislData,
     getArticleDetaislError,
@@ -30,8 +28,9 @@ import { ArticleCodeBlockComponent } from '../ArticleCodeBlockComponent/ArticleC
 import { ArticleImageBlockComponent } from '../ArticleImageBlockComponent/ArticleImageBlockComponent';
 import { ArticleTextBlockComponent } from '../ArticleTextCodeComponent copy/ArticleTextBlockComponent';
 import cls from './ArticleDetails.module.scss';
-import { HStack } from '@/shared/ui/Stack/HStack/HStack';
-import { VStack } from '@/shared/ui/Stack/VStack/VStack';
+import { Skeleton } from '@/shared/ui/deprecated/Skeleton';
+import { HStack, VStack } from '@/shared/ui/deprecated/Stack';
+import { Icon } from '@/shared/ui/redesigned/Icon';
 
 interface ArticleDetailsProps {
     className?: string;
@@ -121,7 +120,7 @@ export const ArticleDetails = memo((props: ArticleDetailsProps) => {
                         />
                     </div>
                 </HStack>
-                <VStack gap="gap4" max data-testid="ArticleDetails.Info">
+                <VStack gap="4" max data-testid="ArticleDetails.Info">
                     <Text
                         className={cls.title}
                         title={article?.title}

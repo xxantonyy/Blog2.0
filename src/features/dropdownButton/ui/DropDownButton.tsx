@@ -8,10 +8,10 @@ import {
     userActions,
 } from '@/entities/User';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
-import { Avatar } from '@/shared/ui/Avatar';
-import { MyDropdown } from '@/shared/ui/Popups';
+import { Avatar } from '@/shared/ui/deprecated/Avatar';
 import cls from './DropDownButton.module.scss';
 import { getRouteAdmin, getRouteProfile } from '@/shared/const/router';
+import { Dropdown } from '@/shared/ui/deprecated/Popups';
 
 interface DropDownButtonProps {
     className?: string;
@@ -33,7 +33,7 @@ export const DropDownButton = memo((props: DropDownButtonProps) => {
 
     if (authData) {
         return (
-            <MyDropdown
+            <Dropdown
                 direction="bottom left"
                 className={cls.dropdown}
                 items={[

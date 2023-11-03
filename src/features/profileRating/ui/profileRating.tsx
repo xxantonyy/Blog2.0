@@ -3,8 +3,8 @@ import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
 import { RatingCard } from '@/entities/RatingCard';
 import { getUserAuthData } from '@/entities/User';
-import { Skeleton } from '@/shared/ui/Skeleton';
 import { useGetProfileRating, useRateProfile } from '../api/profileRatingApi';
+import { Skeleton } from '@/shared/ui/deprecated/Skeleton';
 
 interface ArticleProfileProps {
     className?: string;

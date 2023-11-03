@@ -3,16 +3,14 @@ import { memo, useCallback, useState } from 'react';
 import { BrowserView, MobileView } from 'react-device-detect';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import cls from './RatingCard.module.scss';
-import { Card } from '@/shared/ui/Card';
-import { Text } from '@/shared/ui/Text';
-import { StarRating } from '@/shared/ui/StarRating';
-import { Modal } from '@/shared/ui/Modal';
-import { Input } from '@/shared/ui/Input';
-
-import { Button, ButtonTheme } from '@/shared/ui/Button';
-import { Drawer } from '@/shared/ui/Drawer';
-import { VStack } from '@/shared/ui/Stack/VStack/VStack';
-import { HStack } from '@/shared/ui/Stack/HStack/HStack';
+import { Card } from '@/shared/ui/deprecated/Card';
+import { Text } from '@/shared/ui/deprecated/Text';
+import { Button } from '@/shared/ui/redesigned/Button';
+import { Input } from '@/shared/ui/deprecated/Input';
+import { HStack, VStack } from '@/shared/ui/deprecated/Stack';
+import { Drawer } from '@/shared/ui/deprecated/Drawer';
+import { Modal } from '@/shared/ui/deprecated/Modal';
+import { StarRating } from '@/shared/ui/deprecated/StarRating';
 
 interface RatingCardProps {
     className?: string;
@@ -64,7 +62,7 @@ export const RatingCard = memo((props: RatingCardProps) => {
     );
 
     const modalContent = (
-        <VStack gap="gap32">
+        <VStack gap="8">
             <Text title={feedBackTitle} />
             <Input
                 data-testid="RatingCard.Input"
@@ -72,8 +70,8 @@ export const RatingCard = memo((props: RatingCardProps) => {
                 value={feedback}
                 onChange={setFeedback}
             />
-            <HStack gap="gap8" justify="end" max>
-                <Button onClick={closeHandler} theme={ButtonTheme.OUTLINE_RED}>
+            <HStack gap="8" justify="end" max>
+                <Button onClick={closeHandler} variant="clear">
                     {t('Close')}
                 </Button>
                 <Button data-testid="RatingCard.Send" onClick={acceptHandler}>
@@ -89,7 +87,7 @@ export const RatingCard = memo((props: RatingCardProps) => {
             max
             className={classNames(cls.RatingCard, {}, [className])}
         >
-            <VStack align="center" gap="gap8">
+            <VStack align="center" gap="8">
                 <Text title={starsCount ? t('thank you for rating') : title} />
                 <StarRating
                     selectedStars={starsCount}

@@ -1,15 +1,19 @@
+/* eslint-disable i18next/no-literal-string */
 import { memo, useMemo, useState } from 'react';
 import { useSelector } from 'react-redux';
 import { classNames } from '@/shared/lib/classNames/classNames';
-import { ThemeSwitcher } from '@/shared/ui/ThemeSwitcher';
-import { LangSwitcher } from '@/shared/ui/LangSwitcher';
-import { Button, ButtonSize, ButtonTheme } from '@/shared/ui/Button';
-import { getSidebarItems } from '../../model/selector/getSidebarItems';
+import { Button as ButtonDeprecated, ButtonSize as ButtonSizeDeprecated, ButtonTheme } from '@/shared/ui/deprecated/Button';
+import { VStack } from '@/shared/ui/deprecated/Stack';
 import cls from './Sidebar.module.scss';
 import { SidebarItem } from '../SidebarItem/SidebarItem';
-import { VStack } from '@/shared/ui/Stack/VStack/VStack';
+
+import { AppLogo } from '@/shared/ui/redesigned/AppLogo';
 import { ToggleFeatures } from '@/shared/lib/future';
-import { AppLogo } from '@/shared/ui/AppLogo';
+import { LangSwitcher } from '@/shared/ui/deprecated/LangSwitcher';
+import { ThemeSwitcher } from '@/shared/ui/deprecated/ThemeSwitcher';
+import { getSidebarItems } from '../../model/selector/getSidebarItems';
+import { Icon } from '@/shared/ui/redesigned/Icon';
+import ArrowIcon from '@/shared/assets/icons/arrow-bottom.svg';
 
 interface SidebarProps {
     className?: string;
@@ -37,40 +41,66 @@ export const Sidebar = memo(({ className }: SidebarProps) => {
     return (
         <ToggleFeatures
             feature="isAppRedisigned"
-            off={(
+            on={(
                 <aside
                     data-testid="sidebar"
-                    className={classNames(cls.Sidebar, { [cls.collapsed]: collapsed }, [
-                        className,
-                    ])}
+                    className={classNames(
+                        cls.SidebarRedesigned,
+                        { [cls.collapsedRedesigned]: collapsed },
+                        [className],
+                    )}
                 >
-                    <Button
+                    <AppLogo size={collapsed ? 30 : 50} className={cls.appLogo} />
+                    <VStack
+                        z-index={15}
+                        role="navigation"
+                        gap="8"
+                        className={cls.items}
+                    >
+                        {itemsList}
+                    </VStack>
+                    <Icon
                         data-testid="sidebar-toggle"
                         onClick={onToggle}
                         className={cls.collapseBtn}
-                        theme={ButtonTheme.BACKGROUND_INVERTED}
-                        size={ButtonSize.L}
-                        square
-                    >
-                        {collapsed ? '>' : '<'}
-                    </Button>
-                    <VStack gap="gap8" className={cls.items}>
-                        {itemsList}
-                    </VStack>
+                        Svg={ArrowIcon}
+                        clicable
+                    />
                     <div className={cls.switchers}>
                         <ThemeSwitcher />
                         <LangSwitcher short={collapsed} className={cls.lang} />
                     </div>
                 </aside>
             )}
-            on={(
+            off={(
                 <aside
                     data-testid="sidebar"
-                    className={classNames(cls.SidebarRedesigned, { [cls.collapsed]: collapsed }, [
-                        className,
-                    ])}
+                    className={classNames(
+                        cls.Sidebar,
+                        { [cls.collapsed]: collapsed },
+                        [className],
+                    )}
                 >
-                    <AppLogo className={cls.appLogo} />
+                    <ButtonDeprecated
+                        data-testid="sidebar-toggle"
+                        onClick={onToggle}
+                        className={cls.collapseBtn}
+                        theme={ButtonTheme.CLEAR}
+                        size={ButtonSizeDeprecated.L}
+                        square
+                    >
+                        {collapsed ? '>' : '<'}
+                    </ButtonDeprecated>
+                    <VStack
+                        role="navigation" gap="8"
+                        className={cls.items}
+                    >
+                        {itemsList}
+                    </VStack>
+                    <div className={cls.switchers}>
+                        <ThemeSwitcher />
+                        <LangSwitcher short={collapsed} className={cls.lang} />
+                    </div>
                 </aside>
             )}
         />

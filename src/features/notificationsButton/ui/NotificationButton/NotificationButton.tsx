@@ -3,11 +3,11 @@ import {
 } from 'react';
 import { BrowserView, MobileView } from 'react-device-detect';
 import { NotificationList } from '@/entities/Notification';
-import { Button, ButtonTheme } from '@/shared/ui/Button';
-import { Drawer } from '@/shared/ui/Drawer';
-import { Icon } from '@/shared/ui/Icon';
-import { MyPopover } from '@/shared/ui/Popups';
+import { Button } from '@/shared/ui/redesigned/Button';
 import cls from './NotificationButton.module.scss';
+import { Drawer } from '@/shared/ui/deprecated/Drawer';
+import { Icon } from '@/shared/ui/redesigned/Icon';
+import { Popover as HPopover } from '@/shared/ui/deprecated/Popups/components/Popover/Popover';
 
 interface NotificationButtonProps {
     className?: string;
@@ -28,18 +28,17 @@ export const NotificationButton = memo((props: NotificationButtonProps) => {
     }, []);
 
     const trigger = (
-        <Button onClick={OpenDrawer} theme={ButtonTheme.CLEAR}>
-            <Icon inverted Svg={svg} />
+        <Button onClick={OpenDrawer} variant="clear">
+            <Icon Svg={svg} />
         </Button>
     );
 
     return (
         <div>
             <BrowserView>
-                {' '}
-                <MyPopover trigger={trigger}>
+                <HPopover trigger={trigger}>
                     <NotificationList className={cls.notifications} />
-                </MyPopover>
+                </HPopover>
             </BrowserView>
             <MobileView>
                 {trigger}

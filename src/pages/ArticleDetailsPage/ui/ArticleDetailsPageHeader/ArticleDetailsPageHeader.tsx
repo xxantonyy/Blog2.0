@@ -2,7 +2,7 @@ import { useTranslation } from 'react-i18next';
 import { useCallback } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useSelector } from 'react-redux';
-import { Button, ButtonTheme } from '@/shared/ui/Button';
+import { Button } from '@/shared/ui/redesigned/Button';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { getUserAuthData } from '@/entities/User';
 import { getArticleDetaislData } from '@/entities/Article';
@@ -41,13 +41,13 @@ export const ArticleDetailsPageHeader = (
                 className,
             ])}
         >
-            <Button theme={ButtonTheme.OUTLINE} onClick={onBackToList}>
+            <Button variant="clear" onClick={onBackToList}>
                 {t('Back to List')}
             </Button>
             {canEdit && (
                 <Button
                     className={cls.editBtn}
-                    theme={ButtonTheme.OUTLINE}
+                    variant="clear"
                     onClick={onEditArticle}
                 >
                     {t('Redact')}
