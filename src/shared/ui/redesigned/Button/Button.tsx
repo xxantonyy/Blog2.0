@@ -6,11 +6,6 @@ export type ButtonVariant = 'clear' | 'outline';
 
 export type ButtonSize = 'size_m'| 'size_l'| 'size_xl';
 
-/**
- * Устарел, используем новые компаненты
- * * @deprecated
- */
-
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
     className?: string;
     variant?: ButtonVariant;

@@ -52,8 +52,10 @@
     height: 100%;
     border-radius: 32px;
     position: relative;
+    transition: width 0.2s;
 
     .appLogo {
+        position: relative;
         padding-top: 20px;
         fill: black;
     }
@@ -63,6 +65,7 @@
         display: flex;
         flex-direction: column;
         position: relative;
+        transition: all 0.3s;
     }
 
     .collapseBtn {
@@ -71,7 +74,7 @@
         top: 50%;
         z-index: 10;
         transform: rotate(90deg);
-        transition: 0.2s transform;
+        transition: 0.2s all;
     }
 
     .switchers {
@@ -90,6 +93,7 @@
 
 .collapsedRedesigned {
     width: 50px;
+    transition: width 0.2s;
 
     .switchers {
         flex-direction: column;
@@ -97,9 +101,10 @@
     }
 
     .items {
-        margin-top: 20px;
+        margin-top: 40px;
         display: flex;
         align-items: center;
+        transition: all 0.3s;
     }
 
     .lang {

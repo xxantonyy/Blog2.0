@@ -2,11 +2,13 @@
     margin-top: 10px;
     display: flex;
     align-items: center;
+    transition: all 0.3s;
 }
 
 .link {
     margin-left: 10px;
     opacity: 1;
+    transition: opacity 0.5s;
 }
 
 
@@ -14,7 +16,7 @@
     .link {
         opacity: 0;
         transition: 0.2s opacity;
-        width: 0;
+        width: 0;  
     }
 }
 
@@ -23,6 +25,8 @@
     align-items: center;
     padding: 0 8px;
     width: 100%;
+    transition: all 0.3s;
+    height: 30px;
 }
 
 .collapsedRedesigned{
@@ -30,7 +34,16 @@
         width: 0;
         opacity: 0;
         margin: 0;
+        transition: opacity 0.1s;
     }
+    .icon{
+        margin-left: 0;
+    }
+
+}
+
+.icon{
+    margin-left: 10px;
 }
 
 .active {

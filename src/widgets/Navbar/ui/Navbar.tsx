@@ -13,7 +13,6 @@ import { DropDownButton } from '@/features/dropdownButton';
 import { NotificationButton } from '@/features/notificationsButton';
 import { getRouteArticleCreate } from '@/shared/const/router';
 import { AppLink } from '@/shared/ui/redesigned/AppLink';
-import NotificatoinPng from '@/shared/assets/icons/notification-20-20.svg';
 import { HStack } from '@/shared/ui/deprecated/Stack';
 
 interface NavbarProps {
@@ -41,7 +40,7 @@ export const Navbar = memo(({ className }: NavbarProps) => {
                 on={(
                     <header className={classNames(cls.NavbarRedesigned, {}, [className])}>
                         <HStack gap="16" className={cls.actions}>
-                            <NotificationButton svg={NotificatoinPng} />
+                            <NotificationButton />
                             <DropDownButton />
                         </HStack>
                     </header>
@@ -61,7 +60,7 @@ export const Navbar = memo(({ className }: NavbarProps) => {
                             {t('Create Article')}
                         </AppLink>
                         <HStack gap="16" className={cls.actions}>
-                            <NotificationButton svg={NotificatoinPng} />
+                            <NotificationButton />
                             <DropDownButton />
                         </HStack>
                     </header>

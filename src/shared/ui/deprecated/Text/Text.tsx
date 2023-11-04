@@ -31,11 +31,6 @@ interface TextProps {
     'data-testid'?: string;
 }
 
-/**
- * Устарел, используем новые компаненты
- * * @deprecated
- */
-
 export type HeaderTagType = 'h1' | 'h2' | 'h3';
 
 const mapSizeToHeaderTag: Record<TextSize, HeaderTagType> = {
@@ -43,6 +38,11 @@ const mapSizeToHeaderTag: Record<TextSize, HeaderTagType> = {
     [TextSize.M]: 'h2',
     [TextSize.L]: 'h1',
 };
+
+/**
+ * Устарел, используем новые компаненты
+ * * @deprecated
+ */
 
 export const Text = memo((props: TextProps) => {
     const {

@@ -8,10 +8,13 @@ import {
     userActions,
 } from '@/entities/User';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
-import { Avatar } from '@/shared/ui/deprecated/Avatar';
+import { Avatar as AvatarDepricated } from '@/shared/ui/deprecated/Avatar';
+import { Avatar } from '@/shared/ui/redesigned/Avatar';
 import cls from './DropDownButton.module.scss';
 import { getRouteAdmin, getRouteProfile } from '@/shared/const/router';
-import { Dropdown } from '@/shared/ui/deprecated/Popups';
+import { Dropdown as DropdownDepricated } from '@/shared/ui/deprecated/Popups';
+import { ToggleFeatures } from '@/shared/lib/future';
+import { Dropdown } from '@/shared/ui/redesigned/Popups';
 
 interface DropDownButtonProps {
     className?: string;
@@ -32,30 +35,45 @@ export const DropDownButton = memo((props: DropDownButtonProps) => {
     }, [dispatch]);
 
     if (authData) {
-        return (
-            <Dropdown
-                direction="bottom left"
-                className={cls.dropdown}
-                items={[
+        const items = [
+            {
+                content: t('Profile'),
+                href: getRouteProfile(authData.id),
+            },
+            ...(isAdminPanelAvable
+                ? [
                     {
-                        content: t('Profile'),
-                        href: getRouteProfile(authData.id),
+                        content: t('Admin'),
+                        href: getRouteAdmin(),
                     },
-                    ...(isAdminPanelAvable
-                        ? [
-                            {
-                                content: t('Admin'),
-                                href: getRouteAdmin(),
-                            },
-                        ]
-                        : []),
+                ]
+                : []),
 
-                    {
-                        content: t('Exit'),
-                        onClick: onLogout,
-                    },
-                ]}
-                trigger={<Avatar size={30} src={authData.avatar} />}
+            {
+                content: t('Exit'),
+                onClick: onLogout,
+            },
+        ];
+
+        return (
+            <ToggleFeatures
+                feature="isAppRedisigned"
+                on={(
+                    <Dropdown
+                        direction="bottom left"
+                        className={cls.dropdown}
+                        items={items}
+                        trigger={<Avatar size={40} src={authData.avatar} />}
+                    />
+                )}
+                off={(
+                    <DropdownDepricated
+                        direction="bottom left"
+                        className={cls.dropdown}
+                        items={items}
+                        trigger={<AvatarDepricated size={30} src={authData.avatar} />}
+                    />
+                )}
             />
         );
     }

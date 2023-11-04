@@ -1,10 +1,9 @@
 import { CSSProperties, useMemo } from 'react';
-import { Mods, classNames } from '@/shared/lib/classNames/classNames';
+import { classNames, Mods } from '@/shared/lib/classNames/classNames';
 import cls from './Avatar.module.scss';
 import { AppImage } from '../../redesigned/AppImage';
-
-import NoPhoto from '@/shared/assets/icons/user-filled.svg';
-import { Icon } from '../../redesigned/Icon';
+import UserIcon from '../../../assets/icons/user-filled.svg';
+import { Icon } from '../Icon';
 import { Skeleton } from '../Skeleton';
 
 interface AvatarProps {
@@ -13,16 +12,10 @@ interface AvatarProps {
     size?: number;
     alt?: string;
 }
-/**
- * Устарел, используем новые компаненты
- * * @deprecated
- */
 
-export const Avatar = (props: AvatarProps) => {
-    const {
-        className, src, size = 100, alt,
-    } = props;
-
+export const Avatar = ({
+    className, src, size = 100, alt,
+}: AvatarProps) => {
     const mods: Mods = {};
 
     const styles = useMemo<CSSProperties>(
@@ -34,7 +27,7 @@ export const Avatar = (props: AvatarProps) => {
     );
 
     const fallback = <Skeleton width={size} height={size} border="50%" />;
-    const errorFallback = <Icon width={size} height={size} Svg={NoPhoto} />;
+    const errorFallback = <Icon width={size} height={size} Svg={UserIcon} />;
 
     return (
         <AppImage
@@ -43,7 +36,7 @@ export const Avatar = (props: AvatarProps) => {
             src={src}
             alt={alt}
             style={styles}
-            className={classNames(cls.avatar, mods, [className])}
+            className={classNames(cls.Avatar, mods, [className])}
         />
     );
 };

@@ -14,8 +14,7 @@ interface AppLogoProps {
 export const AppLogo = memo((props: AppLogoProps) => {
     const {
         className,
-        size = 50,
-
+        size,
     } = props;
     const { t } = useTranslation();
 
@@ -31,7 +30,9 @@ export const AppLogo = memo((props: AppLogoProps) => {
             justify="center"
         >
             <AppSvg
-                width={size} height={size} color="black"
+                height={size}
+                width={size}
+                color="black"
                 className={cls.appLogo}
             />
             <div className={cls.gradientBig} />
