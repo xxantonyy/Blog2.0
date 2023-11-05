@@ -60,6 +60,7 @@
   "old": "old",
   "rate article": "rate article",
   "rate profile": "rate profile",
+  "sort by": "sort by",
   "thank you for rating": "thank you for rating",
   "throw error": "throw error",
   "title": "",
@@ -93,6 +94,7 @@
   "Обновить страницу": "Обновить страницу",
   "Отменить": "Отменить",
   "Переключить": "Переключить",
+  "Поиск": "Поиск",
   "Произошла непредвиденная ошибка": "Произошла непредвиденная ошибка",
   "Произошла ошибка при загрузке статьи": {
     "": ""
