@@ -46,6 +46,8 @@ export const ArticlesFilters = memo((props: ArticlesFiltersProps) => {
         >
             <VStack gap="32">
                 <Input
+                    // eslint-disable-next-line i18next/no-literal-string
+                    size="s"
                     addoneLeft={
                         <Icon Svg={SearchIcon} />
                     }

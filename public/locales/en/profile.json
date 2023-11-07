@@ -7,8 +7,6 @@
   "profile.error message": "Try to refresh website",
   "Отменить": "Cancel",
   "Сохранить": "Save",
-  "Возраст": "Years",
-  "Город": "Your City",
   "Введите число": "Enter number",
   "profile.enterusername": "Enter user name",
   "profile.Enter avatatr": "Enter url at avatar",
@@ -17,5 +15,12 @@
   "Введите вашу страну": "Enter your country",
   "Введите вашу валюту": "Enter your currency",
   "Укажите валюту": "Choose currency",
-  "Выберите страну": "Choose country"
+  "Выберите страну": "Choose country",
+  "Имя":"Name",
+  "Фамилия":"Lastname",
+  "Возраст":"Years",
+  "Город":"City",
+  "Ник":"Nickname",
+  "Аватар":"Avatar"
+  
 }
