@@ -7,6 +7,7 @@ import { ForbiddenPage } from '@/pages/ForbiddenPage';
 import { MainPage } from '@/pages/MainPage';
 import { NotFoundPage } from '@/pages/NotFoundPage';
 import { ProfilePage } from '@/pages/ProfilePage';
+import { SettingsPage } from '@/pages/SettingsPage';
 import {
     // eslint-disable-next-line max-len
     AppRoutes,
@@ -19,6 +20,7 @@ import {
     getRouteAdmin,
     getRouteArticleCreate,
     getRouteArticleEdit,
+    getRouteSettings,
 } from '@/shared/const/router';
 import { AppRoutProps } from '@/shared/types/router';
 import { UserRole } from '@/shared/types/user';
@@ -27,6 +29,10 @@ export const routeConfig: Record<AppRoutes, AppRoutProps> = {
     [AppRoutes.MAIN]: {
         path: getRouteMain(),
         element: <MainPage />,
+    },
+    [AppRoutes.SETTINGS]: {
+        path: getRouteSettings(),
+        element: <SettingsPage />,
     },
     [AppRoutes.ABOUT]: {
         path: getRouteAbout(),

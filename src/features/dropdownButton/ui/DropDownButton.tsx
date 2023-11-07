@@ -11,7 +11,7 @@ import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch
 import { Avatar as AvatarDepricated } from '@/shared/ui/deprecated/Avatar';
 import { Avatar } from '@/shared/ui/redesigned/Avatar';
 import cls from './DropDownButton.module.scss';
-import { getRouteAdmin, getRouteProfile } from '@/shared/const/router';
+import { getRouteAdmin, getRouteProfile, getRouteSettings } from '@/shared/const/router';
 import { Dropdown as DropdownDepricated } from '@/shared/ui/deprecated/Popups';
 import { ToggleFeatures } from '@/shared/lib/future';
 import { Dropdown } from '@/shared/ui/redesigned/Popups';
@@ -49,6 +49,10 @@ export const DropDownButton = memo((props: DropDownButtonProps) => {
                 ]
                 : []),
 
+            {
+                content: t('Settings'),
+                href: getRouteSettings(),
+            },
             {
                 content: t('Exit'),
                 onClick: onLogout,
