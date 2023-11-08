@@ -2,8 +2,10 @@ import { useTranslation } from 'react-i18next';
 import { memo } from 'react';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { ArticleTextBlock } from '@/entities/Article';
-import { Text } from '@/shared/ui/deprecated/Text';
+import { Text as TextDeprecated } from '@/shared/ui/deprecated/Text';
+import { Text } from '@/shared/ui/redesigned/Text';
 import cls from './ArticleTextBlockComponent.module.scss';
+import { ToggleFeatures } from '@/shared/lib/future';
 
 interface ArticleTextBlockComponentProps {
     className?: string;
@@ -23,15 +25,42 @@ export const ArticleTextBlockComponent = memo(
                 ])}
             >
                 {block.tytle && (
-                    <Text title={block.tytle} className={cls.title} />
+                    <ToggleFeatures
+                        feature="isAppRedisigned"
+                        on={(
+                            <Text
+                                title={block.tytle}
+                                className={cls.title}
+                            />
+                        )}
+                        off={(
+                            <TextDeprecated
+                                title={block.tytle}
+                                className={cls.title}
+                            />
+                        )}
+                    />
+
                 )}
                 {block.paragraphs.map((paragraph) => (
-                    // eslint-disable-next-line react/no-array-index-key
-                    <Text
-                        key={paragraph}
-                        text={paragraph}
-                        className={cls.paragraph}
+                    <ToggleFeatures
+                        feature="isAppRedisigned"
+                        on={(
+                            <Text
+                                key={paragraph}
+                                text={paragraph}
+                                className={cls.paragraph}
+                            />
+                        )}
+                        off={(
+                            <TextDeprecated
+                                key={paragraph}
+                                text={paragraph}
+                                className={cls.paragraph}
+                            />
+                        )}
                     />
+
                 ))}
             </div>
         );

@@ -66,5 +66,9 @@
   "greetings text": "\nHere you can search and view articles on various topics",
   "Cooming soon": "Rating coming soon",
   "sort by": "Sort by:",
-  "Settings": "Settings"
+  "Settings": "Settings",
+  "{{count}} просмотров_zero": "{{count}} views",
+  "{{count}} просмотров_one": "{{count}} view",
+  "{{count}} просмотров_other": "{{count}} views",
+  "Edit": "Edit"
 }
