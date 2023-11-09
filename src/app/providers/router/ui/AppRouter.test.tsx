@@ -38,9 +38,9 @@ describe('app/router/AppRouter', () => {
 
     test('Доступ к закрытой страницы для авторизованного пользователя', async () => {
         componentRender(<AppRouter />, {
-            route: getRouteProfile('1'),
+            route: getRouteProfile('2'),
             initialState: {
-                user: { _inited: true, authData: {} },
+                user: { _inited: true, authData: { id: '2' } },
             },
         });
 

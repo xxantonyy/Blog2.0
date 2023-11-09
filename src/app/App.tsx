@@ -12,6 +12,7 @@ import { MainLayout } from '@/shared/layout';
 import { PageLoader } from '@/shared/ui/deprecated/PageLoader';
 import { AppLoaderLayout } from '@/shared/layout/AppLoaderLayout';
 import { useAppToolbar } from './lib/useAppToolbar';
+import { withTheme } from './providers/ThemeProvider/ui/withTheme';
 
 function App() {
     const { theme } = useTheme();
@@ -67,4 +68,4 @@ function App() {
     );
 }
 
-export default App;
+export default withTheme(App);
