@@ -4,7 +4,9 @@ import { useSelector } from 'react-redux';
 import { RatingCard } from '@/entities/RatingCard';
 import { getUserAuthData } from '@/entities/User';
 import { useGetArticleRating, useRateArticle } from '../api/ArticleRatingApi';
-import { Skeleton } from '@/shared/ui/deprecated/Skeleton';
+import { Skeleton } from '@/shared/ui/redesigned/Skeleton';
+import { Skeleton as SkeletonDeprecated } from '@/shared/ui/deprecated/Skeleton';
+import { ToggleFeatures } from '@/shared/lib/future';
 
 interface ArticleRatingProps {
     className?: string;
@@ -57,7 +59,13 @@ export const ArticleRating = memo((props: ArticleRatingProps) => {
     );
 
     if (isLoading) {
-        return <Skeleton height={120} width="100%" />;
+        return (
+            <ToggleFeatures
+                feature="isAppRedisigned"
+                on={<Skeleton height={120} width="100%" border="32px" />}
+                off={<SkeletonDeprecated height={120} width="100%" />}
+            />
+        );
     }
     return (
         <RatingCard
@@ -66,7 +74,7 @@ export const ArticleRating = memo((props: ArticleRatingProps) => {
             rate={rating?.rate}
             className={className}
             title={t('rate article')}
-            feedBackTitle={t('feedback')}
+            feedbackTitle={t('feedback')}
             hasFeedback
         />
     );

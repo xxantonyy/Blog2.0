@@ -26,6 +26,10 @@
     outline: none;
 }
 
+.fullWidth {
+    width: 100%;
+}
+
 .clearInverted {
     padding: 0;
     border: none;
@@ -35,10 +39,14 @@
 }
 
 .outline {
-    border: 1px solid var(--icon-redesigned);
+    border: 2px solid var(--icon-redesigned);
     background: none;
     outline: none;
     border-radius: 34px;
+
+    &:hover {
+        border: 2px solid var(--accent-redesigned);
+    }
 }
 .filled{
     background: var(--light-bg-redesigned);

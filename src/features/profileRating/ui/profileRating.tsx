@@ -66,7 +66,7 @@ export const ProfileRating = memo((props: ArticleProfileProps) => {
             rate={rating?.rate}
             className={className}
             title={t('rate profile')}
-            feedBackTitle={t('feedback')}
+            feedbackTitle={t('feedback')}
             hasFeedback
         />
     );

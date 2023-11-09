@@ -16,6 +16,7 @@ interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
     max?: boolean;
     addoneLeft?: ReactNode;
     addoneRight?: ReactNode;
+    fullWidth?: boolean;
 }
 
 export const Button = memo((props: ButtonProps) => {
@@ -26,6 +27,7 @@ export const Button = memo((props: ButtonProps) => {
         square,
         disabled,
         addoneLeft,
+        fullWidth,
         addoneRight,
         size = 'size_m',
         ...otherProps
@@ -35,6 +37,7 @@ export const Button = memo((props: ButtonProps) => {
         [cls.square]: square,
         [cls.disabled]: disabled,
         [cls.withAddon]: Boolean(addoneLeft) || Boolean(addoneRight),
+        [cls.fullWidth]: fullWidth,
     };
 
     return (

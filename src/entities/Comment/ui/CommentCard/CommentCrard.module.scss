@@ -1,17 +1,17 @@
-.CommentCrard {
+.CommentCard {
    padding: 10px;
-   border: 1px solid var(--primary-color)
+   border: 1px solid var(--primary-color);
 }
 
 .header {
    display: flex;
    align-items: center;
-   margin-bottom: 10px;
 }
 
-.commentText { 
-   margin-top: 10px;
-}
 .username {
    margin-left: 10px;
+}
+
+.loading {
+   border: none;
 }

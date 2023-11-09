@@ -1,68 +1,49 @@
-/* eslint-disable max-len */
 /* eslint-disable i18next/no-literal-string */
-import { memo } from 'react';
 import { useTranslation } from 'react-i18next';
+import { memo, useEffect } from 'react';
 import { useSelector } from 'react-redux';
-import { classNames } from '@/shared/lib/classNames/classNames';
 import {
     DynamicModuleLoader,
     ReducersList,
 } from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
+import { classNames } from '@/shared/lib/classNames/classNames';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
-// eslint-disable-next-line max-len
-
-import CalendarIcon from '@/shared/assets/icons/calendar-20-20.svg';
-import EyeIcon from '@/shared/assets/icons/eye-20-20.svg';
-import { useInitialEffect } from '@/shared/lib/hooks/useInitialEffect/useInitialEffect';
-import { Avatar as AvatarDeprecated } from '@/shared/ui/deprecated/Avatar';
 import {
-    Text as TextDeprecated, TextAlign, TextSize,
+    Text as TextDeprecated,
+    TextAlign,
+    TextSize,
 } from '@/shared/ui/deprecated/Text';
 import { Text } from '@/shared/ui/redesigned/Text';
-
-import {
-    getArticleDetaislData,
-    getArticleDetaislError,
-    getArticleDetaislIsLoading,
-} from '../../model/selectors/articleDetails';
-import { fetchArticleById } from '../../model/services/fetchArticleById';
+import { Skeleton as SkeletonDeprecated } from '@/shared/ui/deprecated/Skeleton';
+import { Skeleton as SkeletonRedesigned } from '@/shared/ui/redesigned/Skeleton';
+import { Avatar } from '@/shared/ui/deprecated/Avatar';
+import EyeIcon from '@/shared/assets/icons/eye-20-20.svg';
+import CalendarIcon from '@/shared/assets/icons/calendar-20-20.svg';
+import { Icon } from '@/shared/ui/deprecated/Icon';
+import { HStack, VStack } from '@/shared/ui/redesigned/Stack';
 import { articleDetailsReducer } from '../../model/slice/articleDetailsSlice';
 import cls from './ArticleDetails.module.scss';
-import { Skeleton } from '@/shared/ui/redesigned/Skeleton';
-import { Skeleton as SkeletonDeprecated } from '@/shared/ui/deprecated/Skeleton';
-import { HStack, VStack } from '@/shared/ui/deprecated/Stack';
-import { Icon } from '@/shared/ui/redesigned/Icon';
 import { renderArticleBlock } from './renderBlock';
-import { ToggleFeatures } from '@/shared/lib/future';
 import { AppImage } from '@/shared/ui/redesigned/AppImage';
+import { toggleFeatures, ToggleFeatures } from '@/shared/lib/future';
+import { fetchArticleById } from '../../model/services/fetchArticleById';
+import { getArticleDetaislData, getArticleDetaislIsLoading, getArticleDetaislError } from '../../model/selectors/articleDetails';
 
 interface ArticleDetailsProps {
     className?: string;
-    id: string;
+    id?: string;
 }
 
 const reducers: ReducersList = {
     articleDetails: articleDetailsReducer,
 };
 
-export const ArticleDetails = memo((props: ArticleDetailsProps) => {
-    const { className, id } = props;
-    const { t } = useTranslation();
-    const dispatch = useAppDispatch();
-    const isLoading = useSelector(getArticleDetaislIsLoading);
+const Deprecated = () => {
     const article = useSelector(getArticleDetaislData);
-    const error = useSelector(getArticleDetaislError);
-
-    const Deprecated = memo(() => (
+    return (
         <>
             <HStack justify="center" max className={cls.avatarWrapper}>
-                <div className={cls.avatarWrapper}>
-                    <AvatarDeprecated
-                        size={200}
-                        src={article?.img}
-                        className={cls.avatar}
-                    />
-                </div>
+                <Avatar size={200} src={article?.img} className={cls.avatar} />
             </HStack>
             <VStack gap="4" max data-testid="ArticleDetails.Info">
                 <TextDeprecated
@@ -71,69 +52,76 @@ export const ArticleDetails = memo((props: ArticleDetailsProps) => {
                     text={article?.subtitle}
                     size={TextSize.L}
                 />
-                <div className={cls.articleInfo}>
+                <HStack gap="8" className={cls.articleInfo}>
                     <Icon className={cls.icon} Svg={EyeIcon} />
                     <TextDeprecated text={String(article?.views)} />
-                </div>
-                <div className={cls.articleInfo}>
+                </HStack>
+                <HStack gap="8" className={cls.articleInfo}>
                     <Icon className={cls.icon} Svg={CalendarIcon} />
                     <TextDeprecated text={article?.createdAt} />
-                </div>
-                {article?.blocks.map(renderArticleBlock)}
+                </HStack>
             </VStack>
+            {article?.blocks.map(renderArticleBlock)}
         </>
-    ));
+    );
+};
 
-    const Redesigned = memo(() => (
+const Redesigned = () => {
+    const article = useSelector(getArticleDetaislData);
+
+    return (
         <>
             <Text title={article?.title} size="l" bold />
             <Text title={article?.subtitle} />
             <AppImage
-                fallback={<Skeleton width="100%" height={420} border="16px" />}
+                fallback={(
+                    <SkeletonRedesigned
+                        width="100%"
+                        height={420}
+                        border="16px"
+                    />
+                )}
                 src={article?.img}
                 className={cls.img}
             />
             {article?.blocks.map(renderArticleBlock)}
         </>
-    ));
+    );
+};
 
-    useInitialEffect(() => {
-        dispatch(fetchArticleById(id));
+export const ArticleDetailsSkeleton = () => {
+    const Skeleton = toggleFeatures({
+        name: 'isAppRedisigned',
+        on: () => SkeletonRedesigned,
+        off: () => SkeletonDeprecated,
     });
+    return (
+        <VStack gap="16" max>
+            <Skeleton className={cls.title} width={400} height={32} />
+            <Skeleton className={cls.skeleton} width={300} height={24} />
+            <Skeleton className={cls.skeleton} width="100%" height={300} />
+            <Skeleton className={cls.skeleton} width="100%" height={200} />
+        </VStack>
+    );
+};
+
+export const ArticleDetails = memo((props: ArticleDetailsProps) => {
+    const { className, id } = props;
+    const { t } = useTranslation();
+    const dispatch = useAppDispatch();
+    const isLoading = useSelector(getArticleDetaislIsLoading);
+    const error = useSelector(getArticleDetaislError);
+
+    useEffect(() => {
+        if (__PROJECT__ !== 'storybook') {
+            dispatch(fetchArticleById(id));
+        }
+    }, [dispatch, id]);
 
     let content;
 
     if (isLoading) {
-        content = (
-            <>
-                <SkeletonDeprecated
-                    className={cls.avatar}
-                    width={200}
-                    height={200}
-                    border="50%"
-                />
-                <SkeletonDeprecated
-                    className={cls.title}
-                    width={300}
-                    height={32}
-                />
-                <SkeletonDeprecated
-                    className={cls.skeleton}
-                    width={600}
-                    height={24}
-                />
-                <SkeletonDeprecated
-                    className={cls.skeleton}
-                    width="100%"
-                    height={200}
-                />
-                <SkeletonDeprecated
-                    className={cls.skeleton}
-                    width="100%"
-                    height={200}
-                />
-            </>
-        );
+        content = <ArticleDetailsSkeleton />;
     } else if (error) {
         content = (
             <TextDeprecated

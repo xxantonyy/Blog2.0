@@ -1,9 +1,12 @@
 import { useTranslation } from 'react-i18next';
 import { classNames } from '@/shared/lib/classNames/classNames';
-import { Text } from '@/shared/ui/deprecated/Text';
+import { Text as TextDeprecated } from '@/shared/ui/deprecated/Text';
+import { Text } from '@/shared/ui/redesigned/Text';
 import cls from './CommentList.module.scss';
-import { CommentCrard } from '../CommentCard/CommentCrard';
 import { Comment } from '../../model/types/comment';
+import { ToggleFeatures } from '@/shared/lib/future';
+import { CommentCard } from '../CommentCard/CommentCrard';
+import { VStack } from '@/shared/ui/redesigned/Stack';
 
 interface CommentListProps {
     className?: string;
@@ -17,11 +20,11 @@ export const CommentList = (props: CommentListProps) => {
     const { t } = useTranslation();
     return (
         // eslint-disable-next-line i18next/no-literal-string
-        <div className={classNames(cls.CommentList, {}, [className])}>
+        <VStack gap="16" className={classNames(cls.CommentList, {}, [className])}>
             {comments?.length ? (
                 comments.map((comment) => (
                     // eslint-disable-next-line max-len
-                    <CommentCrard
+                    <CommentCard
                         key={comment.id}
                         isLoading={isLoading}
                         className={cls.commentCard}
@@ -29,8 +32,13 @@ export const CommentList = (props: CommentListProps) => {
                     />
                 ))
             ) : (
-                <Text title={t('comments 0')} />
+                <ToggleFeatures
+                    feature="isAppRedisigned"
+                    on={<Text title={t('comments 0')} />}
+                    off={<TextDeprecated title={t('comments 0')} />}
+                />
+
             )}
-        </div>
+        </VStack>
     );
 };
