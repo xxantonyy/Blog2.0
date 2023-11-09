@@ -46,7 +46,28 @@
 
     &:hover {
         border: 2px solid var(--accent-redesigned);
+        
+        &.error{
+            color: var(--cancel-redesigned);
+        }
+        
+        &.success{
+            color: var(--save-redesigned)
+        }
     }
+
+    &.error{
+        border: 2px solid var(--cancel-redesigned);
+    }
+    
+    &.success{
+        border: 2px solid var(--save-redesigned);
+    }
+    
+    &.normal{
+        border: 2px solid var(--accent-redesigned);
+    }
+    
 }
 .filled{
     background: var(--light-bg-redesigned);

@@ -71,7 +71,7 @@ export const ProfileCardRedesigned = ({
     return (
         <Card
             padding="24"
-            border="round"
+            border="partial"
             max
             className={classNames(cls.ProfileCardRedesigned, {}, [className])}
         >
