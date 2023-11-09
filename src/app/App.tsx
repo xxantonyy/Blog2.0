@@ -11,11 +11,13 @@ import { ToggleFeatures } from '@/shared/lib/future';
 import { MainLayout } from '@/shared/layout';
 import { PageLoader } from '@/shared/ui/deprecated/PageLoader';
 import { AppLoaderLayout } from '@/shared/layout/AppLoaderLayout';
+import { useAppToolbar } from './lib/useAppToolbar';
 
 function App() {
     const { theme } = useTheme();
     const dispatch = useAppDispatch();
     const inited = useSelector(getUserInited);
+    const toolbar = useAppToolbar();
 
     useEffect(() => {
         if (!inited) { dispatch(initAuthData()); }
@@ -56,6 +58,7 @@ function App() {
                             header={<Navbar />}
                             content={<AppRouter />}
                             sidebar={<Sidebar />}
+                            toolbar={toolbar}
                         />
                     </Suspense>
                 </div>
