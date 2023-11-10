@@ -36,7 +36,7 @@ export const ThemeSwitcher = memo(({ className }: ThemeSwitcherProps) => {
             on={(
                 <IconRedesigned
                     Svg={ThemeIconRedesigned}
-                    clicable
+                    clickable
                     onClick={onToggleHandler}
                 />
             )} off={(

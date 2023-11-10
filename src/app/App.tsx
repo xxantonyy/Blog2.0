@@ -42,7 +42,7 @@ function App() {
         <ToggleFeatures
             feature="isAppRedisigned"
             off={(
-                <div id="app" className={classNames('app', {}, [theme])}>
+                <div id="app" className={classNames('app_redisigned', {}, [theme])}>
                     <Suspense fallback="">
                         <Navbar />
                         <div className="content-page">

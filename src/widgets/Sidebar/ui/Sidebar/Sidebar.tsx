@@ -63,7 +63,7 @@ export const Sidebar = memo(({ className }: SidebarProps) => {
                         onClick={onToggle}
                         className={cls.collapseBtn}
                         Svg={ArrowIcon}
-                        clicable
+                        clickable
                     />
                     <div className={cls.switchers}>
                         <ThemeSwitcher />

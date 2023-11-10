@@ -33,7 +33,7 @@ export const NotificationButton = memo((props: NotificationButtonProps) => {
         <ToggleFeatures
             feature="isAppRedisigned"
             on={(
-                <Icon Svg={NotificationIcon} onClick={OpenDrawer} clicable />
+                <Icon Svg={NotificationIcon} onClick={OpenDrawer} clickable />
             )} off={(
                 <ButtonDepricated onClick={OpenDrawer} theme={ButtonTheme.CLEAR}>
                     <IconDepricated Svg={NotificationIconDepricated} inverted />
