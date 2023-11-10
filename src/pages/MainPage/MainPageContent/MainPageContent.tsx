@@ -59,6 +59,12 @@ const MainPageContent = memo((props: MainPageContentProps) => {
                     <Text
                         text="Проект использует фейковый бек, хоститься на Netlify, бэк лежит на Vercel."
                     />
+                    <Text
+                        title="Github репозиторий."
+                    />
+                    <Card border="round">
+                        <a target="_blank" href="https://github.com/xxantonyy/Blog2.0" rel="noreferrer">GitHub</a>
+                    </Card>
                 </VStack>
             </Card>
 
